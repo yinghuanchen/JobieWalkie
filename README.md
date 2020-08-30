@@ -2,7 +2,7 @@
    <br>
    <img src="https://github.com/yinghuanchen/JobieWalkie/blob/master/images/jobiewalkie-icon.jpeg" alt="JobieWalkie" width="200">
    <br>
-   HappyHour
+   JobieWalkie
    <br>
 </h1>
 
