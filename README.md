@@ -1,6 +1,6 @@
 <h1 align="center">
    <br>
-   <img src="https://github.com/clint-chu/HappyHour/blob/master/app/assets/images/readme/happyhour-logo.jpg" alt="JobieWalkie" width="200">
+   <img src="https://github.com/yinghuanchen/JobieWalkie/blob/master/images/jobiewalkie-icon.jpeg" alt="JobieWalkie" width="200">
    <br>
    HappyHour
    <br>
