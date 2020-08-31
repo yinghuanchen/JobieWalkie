@@ -1,0 +1,23 @@
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 10px;
+    background-color: aliceblue;
+    border: 1px solid blue;
+}
+
+/* .NavBar button {
+    height: 20px;
+} */
+
+.left-container{
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+}
+
+.login-signup-link{
+    margin-right: 10px;
+}

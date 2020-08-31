@@ -1,7 +1,8 @@
-import React from "react"
-import { connect } from "react-redux"
-import { Link, useHistory } from "react-router-dom"
-import { logout } from "../../actions/session_actions"
+import React from "react";
+import { connect } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+import { logout } from "../../actions/session_actions";
+import '../../stylesheets/navbar.css'
 
 const NavBar = ({ loggedIn, logout }) => {
 
@@ -17,14 +18,15 @@ const NavBar = ({ loggedIn, logout }) => {
     const getLinks = () => {
         if (loggedIn) {
             return (
-                <div className="NavBar">
+                <div>
                     {/* JW-TODO: more links to the pages if needed on the navbar */}
+                    <span> Hello </span>
                     <button onClick={handleLogout}>Logout</button>
                 </div>
             )
         } else {
             return (
-                <div className="Links">
+                <div className="login-signup-link">
                     <Link to={"/signup"}>Signup</Link>
                     <Link to={"/login"}>Login</Link>
                 </div>
@@ -33,9 +35,9 @@ const NavBar = ({ loggedIn, logout }) => {
     }
 
     return (
-        <div>
-            <h1>JobieWalkie</h1>
-            {getLinks()}
+        <div className="NavBar">
+            <span className="left-container"> JobieWalkie</span>
+            <span className="right-container"> {getLinks()} </span>
         </div>
     )
 }

@@ -40,8 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // If this is a first time user, start with an empty store
     store = configureStore({})
   }
+
+  //TEST 
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  //TEST
+
+
   // Render our root component and pass in the store as a prop
   const root = document.getElementById("root")
-
   ReactDOM.render(<Root store={store} />, root)
 })
