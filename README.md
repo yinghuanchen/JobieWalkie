@@ -22,9 +22,9 @@ Frontend
 - JavaScript
 
 Backend
-- Ruby
-- Rails
-- PostgresSQL
+- ExpressJS
+- MongoDB
+- Mongoose
 
 Packages
 - Node.js
