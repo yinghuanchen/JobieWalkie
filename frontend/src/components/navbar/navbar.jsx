@@ -26,7 +26,7 @@ const NavBar = ({ loggedIn, logout }) => {
             )
         } else {
             return (
-                <div className="Links">
+                <div className="login-signup-link">
                     <Link to={"/signup"}>Signup</Link>
                     <Link to={"/login"}>Login</Link>
                 </div>
@@ -35,9 +35,9 @@ const NavBar = ({ loggedIn, logout }) => {
     }
 
     return (
-        <div>
-            <h1>JobieWalkie</h1>
-            {getLinks()}
+        <div className="NavBar">
+            <span className="left-container"> JobieWalkie</span>
+            <span className="right-container"> {getLinks()} </span>
         </div>
     )
 }
