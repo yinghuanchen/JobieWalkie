@@ -20,6 +20,7 @@ const NavBar = ({ loggedIn, logout }) => {
             return (
                 <div className="NavBar">
                     <button >Job Listings</button>
+                    <button >Companies</button>
                     <button onClick={handleLogout}>Logout</button>
                 </div>
             )
