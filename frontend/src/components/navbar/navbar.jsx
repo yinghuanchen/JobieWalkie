@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { Link, useHistory } from "react-router-dom"
 import { logout } from "../../actions/session_actions"
+import "./navbar.css"
 
 const NavBar = ({ loggedIn, logout }) => {
 
@@ -18,7 +19,7 @@ const NavBar = ({ loggedIn, logout }) => {
         if (loggedIn) {
             return (
                 <div className="NavBar">
-                    {/* JW-TODO: more links to the pages if needed on the navbar */}
+                    <button >Job Listings</button>
                     <button onClick={handleLogout}>Logout</button>
                 </div>
             )
