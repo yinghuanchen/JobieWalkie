@@ -18,9 +18,11 @@ const NavBar = ({ loggedIn, logout }) => {
     const getLinks = () => {
         if (loggedIn) {
             return (
-                <div className="NavBar">
+                <div className="nav-index">
+                    <button >Debriefs</button>
                     <button >Job Listings</button>
                     <button >Companies</button>
+                    <button >Profile</button>
                     <button onClick={handleLogout}>Logout</button>
                 </div>
             )
