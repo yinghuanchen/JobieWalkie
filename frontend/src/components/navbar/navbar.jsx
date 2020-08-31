@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { Link, useHistory } from "react-router-dom"
 import { logout } from "../../actions/session_actions"
-import "./navbar.css"
+import "../../stylesheets/navbar.css"
 
 const NavBar = ({ loggedIn, logout }) => {
 

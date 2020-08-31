@@ -7,8 +7,8 @@ import SignupFormContainer from "./session/signup_form_container"
 import NavBar from "../components/navbar/navbar"
 import Profile from "../components/profile/profile"
 
-//css reset file
-import '../stylesheets/css-reset.css'
+//import css reset
+import '../stylesheets/reset.css'
 
 const App = () => (
     <div>
