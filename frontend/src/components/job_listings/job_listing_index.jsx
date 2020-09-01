@@ -13,13 +13,14 @@ const JobListingIndex = ({ jobListings, fetchAllJobListings }) => {
         <>
             <div>
                 <h1>Job Listings</h1>
-                <JobListingList jobListings={jobListings}/>
+                <JobListingList key={jobListings.id} jobListings={jobListings}/>
             </div>
         </>
     )
 }
 
 const mapSTP = (state) => {
+    console.log("test", state)
     return {
         jobListings: Object.values(state.jobListings)
     }
@@ -32,5 +33,3 @@ const mapDTP = (dispatch) => {
 }
 
 export default connect(mapSTP, mapDTP)(JobListingIndex)
-
-
