@@ -10,10 +10,10 @@ const JobListingItem = ({ jobListing, currentUser, createDebrief }) => {
     const handleSubmit = () => {
         setIsDebriefing(false)
         createDebrief({
-            body: debriefBody,
-            job_listing_id: job_listing.id,
-            author_id: currentUser.id
-        })
+          body: debriefBody,
+          jobListing: jobListing.id,
+          author_id: currentUser.id,
+        });
     }
 
     const writeDebrief = isDebriefing ? (
