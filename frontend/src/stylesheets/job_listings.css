@@ -15,6 +15,7 @@
     padding-top: 8px;
     padding-bottom:8px;
     font-family: sans-serif;
+    padding-left: 10px;
 }
 
 
@@ -35,5 +36,10 @@
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.link-listings a {
+    margin-bottom: 9px;
 }

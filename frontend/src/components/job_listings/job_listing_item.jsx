@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaHeart } from "react-icons/fa"
+import { FaStar, FaExternalLinkAlt } from "react-icons/fa"
 
 const JobListingItem = ({ jobListing }) => {
   return (
@@ -12,8 +12,8 @@ const JobListingItem = ({ jobListing }) => {
       </div>
 
       <div className="link-listings">
-        <a href={`${jobListing.jobLink}`}>Easy Apply</a>
-        <FaHeart />
+          <a href={`${jobListing.jobLink}`}> <FaExternalLinkAlt className="link-logo"/> </a>
+          <FaStar />
       </div>
     </div>
   );
