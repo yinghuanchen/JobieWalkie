@@ -21,14 +21,12 @@ export const receiveCompany = (company) => ({
 // Thunk Action Creator
 export const fetchAllCompanies = () => (dispatch) => {
     return CompanyAPIUtil.fetchAllCompanies()
-        .then((companies) => {
-            return dispatch(receiveAllCompanies(jobListings))
-        })
+        .then((companies) => { dispatch(receiveAllCompanies(companies)) })
+        .catch((err) => console.log(err))
 }
 
 export const fetchCompany = (companyId) => (dispatch) => {
     return CompanyAPIUtil.fetchCompany(companyId)
-        .then((company) => {
-            return dispatch(receiveAllJobListings(company))
-        })
+        .then((company) => { dispatch(receiveCompany(company)) })
+        .catch((err) => console.log(err))
 }

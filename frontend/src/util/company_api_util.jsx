@@ -5,5 +5,5 @@ export const fetchAllCompanies = () => {
 }
 
 export const fetchCompany = (companyId) => {
-    return axios.get(`/api/companies/${companyId}`, companyId)
+    return axios.get(`/api/companies/${companyId}`)
 }

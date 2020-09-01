@@ -21,14 +21,12 @@ export const receiveJobListing = (jobListing) => ({
 // Thunk Action Creator
 export const fetchAllJobListings = () => (dispatch) => {
     return JobListingAPIUtil.fetchAllJobListings()
-        .then((jobListings) => {
-            return dispatch(receiveAllJobListings(jobListings))
-        })
+        .then((jobListings) => { dispatch(receiveAllJobListings(jobListings)) })
+        .catch((err) => console.log(err))
 }
 
 export const fetchJobListing = (jobListingId) => (dispatch) => {
     return JobListingAPIUtil.fetchJobListing(jobListingId)
-        .then((jobListing) => {
-            return dispatch(receiveAllJobListings(jobListing))
-        })
+        .then((jobListing) => { dispatch(receiveJobListing(jobListing)) })
+        .catch((err) => console.log(err))
 }
