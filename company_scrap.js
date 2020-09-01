@@ -29,7 +29,7 @@ async function main() {
     headless: false,
     // executablePath: '',
     devtools: true,
-    userDataDir: "./userData",
+    // userDataDir: "./userData",
     //defaultViewport: { width: 1920, height: 1080 },
   });
   const page = await browser.newPage();

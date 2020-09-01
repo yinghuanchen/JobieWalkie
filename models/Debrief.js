@@ -16,7 +16,7 @@ const DebriefSchema = new Schema(
       type: String,
       required: true,
     },
-    intervieDate: {
+    interviewDate: {
       type: String,
       required: true,
     },
