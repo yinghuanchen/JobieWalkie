@@ -1,28 +1,24 @@
-import React, { useEffect } from "react"
+import React, {useEffect} from "react"
 import { connect } from "react-redux"
 import { fetchAllJobListings } from "../../actions/job_listing_actions"
-import JobListingList from "./job_listing_list"
+// import JobListingList from "./job_listing_list"
+import JobListingItem from "./job_listing_item"
 
 const JobListingIndex = ({ jobListings, fetchAllJobListings }) => {
-    
     useEffect(() => {
         fetchAllJobListings()
     }, [fetchAllJobListings])
 
     return (
-        <>
-            <div>
-                <h1>Job Listings</h1>
-                <JobListingList key={jobListings.id} jobListings={jobListings}/>
-            </div>
-        </>
+        <ul>
+            {jobListings.map(jobListing => <JobListingItem jobListing={jobListing} />)}
+        </ul>
     )
 }
 
 const mapSTP = (state) => {
-    console.log("test", state)
     return {
-        jobListings: Object.values(state.jobListings)
+        jobListings: state.jobListings.data ? state.jobListings.data : []
     }
 }
 
