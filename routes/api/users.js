@@ -2,6 +2,8 @@ const express = require("express")
 const router = express.Router()
 const bcrypt = require("bcryptjs")
 const User = require("../../models/User")
+const Favorite = require("../../models/Favorite");
+const JobListing = require("../../models/JobListing");
 const jwt = require("jsonwebtoken")
 const keys = require("../../config/keys")
 const passport = require("passport")
@@ -25,6 +27,36 @@ router.get(
     })
   }
 )
+
+router.get(
+  "/current/favorites",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    // let favoriteJobListings = ["1"];
+    // Favorite.find({ user: req.user.id },function (err, result) {
+    //   console.log(result);//favoriteJobListings 
+    //   let favoriteJobListings = [];
+    //   result.forEach((favorite) =>{       
+    //     JobListing.findById(favorite.jobListing).then((joblisting) => {
+    //       //console.log(favoriteJobListings);
+    //       // favoriteJobListings.push("1");
+    //       favoriteJobListings.push(joblisting);
+    //       // return joblisting
+    //       // console.log(joblisting);
+    //     });
+    //   });
+    //   res.json({
+    //     favoriteJobListings,
+    //   });
+    //});
+    // populate: pull the object 
+    Favorite.find({ user: req.user.id}).populate('jobListing').then((listings)=>{
+      return res.json(listings.map((ele) => ele.jobListing));
+    })
+     
+    
+  }
+);
 
 // Register
 router.post("/register", (req, res) => {
