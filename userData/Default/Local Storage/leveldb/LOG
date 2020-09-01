@@ -1,0 +1,6 @@
+2020/09/02-00:48:59.416 3003 Reusing MANIFEST /Users/chenyinghuan/Desktop/JobieWalkie/userData/Default/Local Storage/leveldb/MANIFEST-000001
+2020/09/02-00:48:59.416 3003 Recovering log #3
+2020/09/02-00:48:59.417 3003 Reusing old log /Users/chenyinghuan/Desktop/JobieWalkie/userData/Default/Local Storage/leveldb/000003.log 
+2020/09/02-00:52:04.487 4307 Level-0 table #5: started
+2020/09/02-00:52:04.506 4307 Level-0 table #5: 16439 bytes OK
+2020/09/02-00:52:04.515 4307 Delete type=0 #3

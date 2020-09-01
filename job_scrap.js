@@ -42,20 +42,20 @@ const JobListing = require("./models/JobListing");
       `industries='${data.industries}'`
       //`description='${data.description}'`
     );
-    const date = new Date(data.date);
-    const newJobListing = new JobListing({
-      jobLink: data.link,
-      jobTitle: data.title,
-      companyName: data.company,
-      place: data.place,
-      jobDescription: data.description,
-      datePosted: date,
-      senorityLevel: data.senorityLevel,
-      jobFunction: data.jobFunction,
-      employmentType: data.employmentType,
-    });
+    // const date = new Date(data.date);
+    // const newJobListing = new JobListing({
+    //   jobLink: data.link,
+    //   jobTitle: data.title,
+    //   companyName: data.company,
+    //   place: data.place,
+    //   jobDescription: data.description,
+    //   datePosted: date,
+    //   senorityLevel: data.senorityLevel,
+    //   jobFunction: data.jobFunction,
+    //   employmentType: data.employmentType,
+    // });
 
-    newJobListing.save().then(()=>console.log('success'));
+    // newJobListing.save().then(()=>console.log('success'));
 
   });
 
@@ -76,7 +76,7 @@ const JobListing = require("./models/JobListing");
   const descriptionProcessor = () =>
     document
       .querySelector(".description__text")
-      .innerText.replace(/[\s\n\r]+/g, " ")
+      .innerText//.replace(/[\s\n\r]+/g, " ")
       .trim();
 
   // Run queries concurrently
@@ -84,6 +84,14 @@ const JobListing = require("./models/JobListing");
     scraper.run(
       ["Software Engineer"],
       ["San Francisco"],
+      [
+        "Software",
+        "Frontend",
+        "Backend",
+        "Full Stack",
+        "FullStack",
+        "Full-Stack",
+      ],
       {
         paginationMax: 1,
         descriptionProcessor,
