@@ -1,17 +1,17 @@
-import React from 'react';
+import React from 'react'
 
 const JobListingItem = ({ jobListing }) => {
   return (
-    <ul>
-      <p>{jobListing.companyName}</p>
-      {/* <p>{jobListing.jobLink}</p> */}
-      <p>{jobListing.location}</p>
-      <p>{jobListing.datePosted}</p>
+    <ul className="invidiual-job-listings">
       <a href={`${jobListing.jobLink}`}>{jobListing.jobTitle}</a>
-      <br/>
+      <p>{jobListing.companyName}</p>
+      <p>{jobListing.place}</p>
+      <p>{jobListing.datePosted}</p>
       <br/>
     </ul>
   )
 }
 
 export default JobListingItem
+
+// JW-TODO: Rename "jobFunction" to "jobDepartment", "place" to "jobLocation"
