@@ -15,8 +15,9 @@ const debriefReducer = (oldState = {}, action) => {
             return Object.assign({}, oldState, {[action.debrief._id]: action.debrief })
         case DELETE_DEBRIEF:
             delete nextState[action.debriefId]
+            return nextState
         default:
-            oldState
+            return oldState
     }
 }
 
