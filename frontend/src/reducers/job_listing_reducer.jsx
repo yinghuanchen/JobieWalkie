@@ -8,6 +8,7 @@ const JobListingReducer = (oldState = {}, action) => {
     
     switch (action.type) {
         case RECEIVE_ALL_JOB_LISTINGS:
+            // debugger
             return Object.assign({}, oldState, action.jobListings)
         case RECEIVE_JOB_LISTING:
             return Object.assign({}, oldState, { [action.jobListing.id]: action.jobListing})
