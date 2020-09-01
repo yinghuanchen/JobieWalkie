@@ -31,4 +31,4 @@ const App = () => (
 export default App
 
 // JW-TODO: How do we get rid of the missing favicon.ico error? (Delete favicon.ico to get the error in the terminal. Restart npm run dev.)
-// JW-TODO: How to get rid of the JwtStrategy error in terminal. (Run npm run dev in terminal.)
+// JW-TODO: Open up routes as frontend and backend are ready.

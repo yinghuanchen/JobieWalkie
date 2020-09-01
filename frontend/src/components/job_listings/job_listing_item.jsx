@@ -2,14 +2,19 @@ import React from 'react'
 
 const JobListingItem = ({ jobListing }) => {
   return (
-    <ul className="invidiual-job-listings">
-      <a href={`${jobListing.jobLink}`}>{jobListing.jobTitle}</a>
-      <p>{jobListing.companyName}</p>
-      <p>{jobListing.place}</p>
-      <p>{jobListing.datePosted}</p>
-      <br/>
-    </ul>
-  )
+    <div className="main-listings">
+      <div className="invidiual-job-listings">
+        <div className="listings-title">{jobListing.jobTitle}</div>
+        <div className="listings-item">{jobListing.companyName}</div>
+        <div className="listings-item">{jobListing.place}</div>
+        <div className="listings-item">{jobListing.datePosted}</div>
+      </div>
+      
+      <div className='link-listings'>
+        <a href={`${jobListing.jobLink}`}>Easy Apply</a>
+      </div>
+    </div>
+  );
 }
 
 export default JobListingItem

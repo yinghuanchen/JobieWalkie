@@ -5,9 +5,8 @@ const CompanyItem = ({ companies }) => {
     <ul>
       <p>{companies.companyName}</p>
       <p>{companies.place}</p>
-      <br />
     </ul>
-  );
-};
+  )
+}
 
-export default CompanyItem;
+export default CompanyItem
