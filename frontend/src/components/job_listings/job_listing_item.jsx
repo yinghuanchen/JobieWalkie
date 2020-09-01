@@ -1,7 +1,8 @@
 import React from 'react'
 import { FaStar, FaExternalLinkAlt } from "react-icons/fa"
+import FavoriteItem from "../favorites/favorite_item"
 
-const JobListingItem = ({ jobListing }) => {
+const JobListingItem = ({ favorite, jobListing }) => {
   return (
     <div className="main-listings">
       <div className="invidiual-job-listings">
@@ -12,8 +13,12 @@ const JobListingItem = ({ jobListing }) => {
       </div>
 
       <div className="link-listings">
-          <a href={`${jobListing.jobLink}`}> <FaExternalLinkAlt className="link-logo"/> </a>
-          <FaStar className = 'link-star' />
+        <a href={`${jobListing.jobLink}`}>
+          {" "}
+          <FaExternalLinkAlt className="link-logo" />{" "}
+        </a>
+        <FaStar className="link-star" />
+        {/* <FavoriteItem favorite={favorite} jobListing={jobListing}/> */}
       </div>
     </div>
   );
@@ -22,3 +27,4 @@ const JobListingItem = ({ jobListing }) => {
 export default JobListingItem
 
 // JW-TODO: Rename "jobFunction" to "jobDepartment", "place" to "jobLocation"
+// JW-TODO: Setup FavoriteItem
