@@ -1,0 +1,57 @@
+import React from "react"
+import { connect } from "react-redux"
+import { Link, useHistory } from "react-router-dom"
+import { logout } from "../../actions/session_actions"
+import "../../stylesheets/navbar.css"
+
+const NavBar = ({ loggedIn, logout }) => {
+
+    const pushHistory = useHistory()
+    const handleLogout = () => {
+        // Dispatch (call) logout prop
+        logout()
+        // Route to root page ("/")
+        pushHistory.push("/")
+    }
+
+    // Selectively render links dependent on whether the user is logged in
+    const getLinks = () => {
+        if (loggedIn) {
+            return (
+                <div className="nav-index">
+                    <button >Debriefs</button>
+                    <button >Job Listings</button>
+                    <button >Companies</button>
+                    <button >Profile</button>
+                    <button onClick={handleLogout}>Logout</button>
+                </div>
+            )
+        } else {
+            return (
+                <div className="login-signup-link">
+                    <Link to={"/signup"}>Signup</Link>
+                    <Link to={"/login"}>Login</Link>
+                </div>
+            )
+        }
+    }
+
+    return (
+        <div className="NavBar">
+            <span className="left-container"> JobieWalkie</span>
+            <span className="right-container"> {getLinks()} </span>
+        </div>
+    )
+}
+
+const mapSTP = (state) => {
+    return {
+    loggedIn: state.session.isAuthenticated
+}}
+
+const mapDTP = (dispatch) => {
+    return {
+        logout: () => dispatch(logout())
+}}
+
+export default connect(mapSTP, mapDTP)(NavBar)

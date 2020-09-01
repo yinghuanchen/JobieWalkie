@@ -4,17 +4,17 @@ const {
   LinkedinScraper,
   ERelevanceFilterOptions,
   ETimeFilterOptions,
-} = require("linkedin-jobs-scraper");
+} = require("linkedin-jobs-scraper")
 
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 const db = require("./config/keys").mongoURI;
 
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err))
 
-const JobListing = require("./models/JobListing");
+const JobListing = require("./models/JobListing")
   
 
 (async () => {
@@ -23,7 +23,7 @@ const JobListing = require("./models/JobListing");
   const scraper = new LinkedinScraper({
     headless: true,
     slowMo: 10,
-  });
+  })
 
   // // Add listeners for scraper events
   scraper.on(events.scraper.data, (data) => {
