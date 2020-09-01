@@ -6,18 +6,29 @@ const JobListing = require("../../models/JobListing");
 
 
 // Index
+// router.get("/", (req, res) => {
+//   JobListing.find()
+//     //might need to change the date string to date object
+//     .sort({ datePosted: -1 }) // newest first
+//     .then((jobListings) => {
+//       return res.send(jobListings);
+//     })
+//     .catch((err) =>
+//       res.status(404).json({ nojobListingsfound: "No jobListings found" })
+//     );
+// });
+    
 router.get("/", (req, res) => {
   JobListing.find()
     //might need to change the date string to date object
     .sort({ datePosted: -1 }) // newest first
     .then((jobListings) => {
-      return res.json(jobListings);
+      return res.send(jobListings);
     })
     .catch((err) =>
-      res.status(404).json({ notjobListingsfound: "No jobListings found" })
+      res.status(404).json({ nojobListingsfound: "No jobListings found" })
     );
 });
-    
    
 
 // Show 
