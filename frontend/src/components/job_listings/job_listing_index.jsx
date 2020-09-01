@@ -12,7 +12,6 @@ const JobListingIndex = ({ jobListings, fetchAllJobListings }) => {
     return (
       <>
         <div>
-          <h1>Job Listings</h1>
           <JobListingList jobListings={jobListings}/>
         </div>
       </>

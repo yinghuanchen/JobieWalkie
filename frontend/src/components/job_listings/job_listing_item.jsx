@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaHeart } from "react-icons/fa"
 
 const JobListingItem = ({ jobListing }) => {
   return (
@@ -9,9 +10,10 @@ const JobListingItem = ({ jobListing }) => {
         <div className="listings-item">{jobListing.place}</div>
         <div className="listings-item">{jobListing.datePosted}</div>
       </div>
-      
-      <div className='link-listings'>
+
+      <div className="link-listings">
         <a href={`${jobListing.jobLink}`}>Easy Apply</a>
+        <FaHeart />
       </div>
     </div>
   );
