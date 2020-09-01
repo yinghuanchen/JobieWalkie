@@ -9,7 +9,7 @@ export const fetchDebrief = (debriefId) => {
 }
 
 export const createDebrief = (debrief) => {
-    return axios.post(`/api/debriefs/`, debrief)
+    return axios.post(`/api/debriefs`, debrief)
 }
 
 export const updateDebrief = (debrief) => {
