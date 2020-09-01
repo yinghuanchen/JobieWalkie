@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { fetchAllJobListings } from "../../actions/job_listing_actions"
 import { fetchAllFavorites } from "../../actions/favorite_actions"
