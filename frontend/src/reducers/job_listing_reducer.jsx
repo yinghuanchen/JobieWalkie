@@ -8,9 +8,9 @@ const JobListingReducer = (oldState = {}, action) => {
     
     switch (action.type) {
         case RECEIVE_ALL_JOB_LISTINGS:
-            return Object.assign({}, oldState, action.job_listings)
+            return Object.assign({}, oldState, action.jobListings)
         case RECEIVE_JOB_LISTING:
-            return Object.assign({}, oldState, { [action.job_listing.id]: action.job_listing})
+            return Object.assign({}, oldState, { [action.jobListing.id]: action.jobListing})
         default:
             return oldState
     }
