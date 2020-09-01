@@ -1,8 +1,8 @@
 import React, {useEffect} from "react"
 import { connect } from "react-redux"
 import { fetchAllJobListings } from "../../actions/job_listing_actions"
-// import JobListingList from "./job_listing_list"
-import JobListingItem from "./job_listing_item"
+import JobListingList from "./job_listing_list"
+import '../../stylesheets/job_listings.css'
 
 const JobListingIndex = ({ jobListings, fetchAllJobListings }) => {
     useEffect(() => {
@@ -10,9 +10,11 @@ const JobListingIndex = ({ jobListings, fetchAllJobListings }) => {
     }, [fetchAllJobListings])
 
     return (
-        <ul>
-            {jobListings.map(jobListing => <JobListingItem jobListing={jobListing} />)}
-        </ul>
+      <>
+        <div>
+          <JobListingList jobListings={jobListings}/>
+        </div>
+      </>
     )
 }
 

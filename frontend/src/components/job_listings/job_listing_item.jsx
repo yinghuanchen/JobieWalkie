@@ -1,17 +1,24 @@
-import React from 'react';
+import React from 'react'
+import { FaHeart } from "react-icons/fa"
 
 const JobListingItem = ({ jobListing }) => {
   return (
-    <ul>
-      <p>{jobListing.companyName}</p>
-      {/* <p>{jobListing.jobLink}</p> */}
-      <p>{jobListing.location}</p>
-      <p>{jobListing.datePosted}</p>
-      <a href={`${jobListing.jobLink}`}>{jobListing.jobTitle}</a>
-      <br/>
-      <br/>
-    </ul>
-  )
+    <div className="main-listings">
+      <div className="invidiual-job-listings">
+        <div className="listings-title">{jobListing.jobTitle}</div>
+        <div className="listings-item">{jobListing.companyName}</div>
+        <div className="listings-item">{jobListing.place}</div>
+        <div className="listings-item">{jobListing.datePosted}</div>
+      </div>
+
+      <div className="link-listings">
+        <a href={`${jobListing.jobLink}`}>Easy Apply</a>
+        <FaHeart />
+      </div>
+    </div>
+  );
 }
 
 export default JobListingItem
+
+// JW-TODO: Rename "jobFunction" to "jobDepartment", "place" to "jobLocation"

@@ -1,0 +1,42 @@
+.main-listings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 10px;
+    border: 1px solid;
+    /* background: lightgray; */
+    z-index: 100;
+}
+
+.invidiual-job-listings{
+    flex:.8;
+    padding-top: 8px;
+    padding-bottom:8px;
+    font-family: sans-serif;
+}
+
+.invidiual-job-listings:hover {
+    background: lightgray;
+}
+
+.invidiual-job-listings > .listings-title{
+    font-size: 18px;
+    font-weight: 550;
+    /* color: red; */
+    color: #2D2D2D;
+}
+
+.invidiual-job-listings > .listings-item {
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+.link-listings {
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
