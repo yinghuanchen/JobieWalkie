@@ -4,9 +4,9 @@ const db = require("./config/keys").mongoURI
 const mongoose = require("mongoose")
 const bodyParser = require('body-parser')
 const passport = require("passport")
-const users = require("./routes/api/users");
-const jobListings = require('./routes/api/jobListings');
-const favorites = require("./routes/api/favorites");
+const users = require("./routes/api/users")
+const jobListings = require('./routes/api/jobListings')
+const favorites = require("./routes/api/favorites")
 const path = require("path")
 
 if (process.env.NODE_ENV === "production") {
