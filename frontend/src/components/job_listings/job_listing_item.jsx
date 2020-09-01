@@ -39,7 +39,7 @@ const JobListingItem = ({ jobListing, currentUser, createDebrief }) => {
 
 const mapSTP = (state) => {
     return {
-        currentUser: state.users.id
+        currentUser: state.user.id
     }
 }
 
