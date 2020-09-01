@@ -13,7 +13,7 @@ const JobListingItem = ({ jobListing }) => {
 
       <div className="link-listings">
           <a href={`${jobListing.jobLink}`}> <FaExternalLinkAlt className="link-logo"/> </a>
-          <FaStar />
+          <FaStar className = 'link-star' />
       </div>
     </div>
   );

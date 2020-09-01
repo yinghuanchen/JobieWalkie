@@ -1,13 +1,13 @@
 .main-listings {
     display: flex;
     justify-content: space-between;
-    margin-top: 5px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin-left: 10px;
+    margin-top: 4px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    margin-left: 4px;
     border: 1px solid;
-    /* background: lightgray; */
     z-index: 100;
+    box-shadow: 3px 3px grey;
 }
 
 .invidiual-job-listings{
@@ -40,6 +40,13 @@
     margin-right: 10px;
 }
 
-.link-listings a {
+.link-listings .link-logo {
     margin-bottom: 9px;
+    cursor:pointer;
 }
+
+.link-listings .link-star:hover {
+    color: 	#FFD700;
+    cursor:pointer;
+}
+
