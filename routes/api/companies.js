@@ -11,7 +11,6 @@ const Company = require("../../models/Company");
 router.get("/", (req, res) => {
   const queryName = new RegExp(req.body.name);
   console.log(queryName);
-//   debugger;
   if (queryName) {
     Company.find({ name: queryName })
       //might need to change the date string to date object

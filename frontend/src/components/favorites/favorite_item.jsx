@@ -7,7 +7,6 @@ const FavoriteItem = ({ jobListings, favorite, currentUser, createFavorite, dele
     const isFavorited = !!favorite
 
     const handleCreateFavorite = () => {
-        debugger
         createFavorite({
             user: currentUser,
             jobListing: jobListings._id

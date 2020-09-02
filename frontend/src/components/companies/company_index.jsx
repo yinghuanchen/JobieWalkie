@@ -9,7 +9,7 @@ const CompanyIndex = ({ companies, fetchAllCompanies }) => {
   useEffect(() => {
     fetchAllCompanies()
   }, [fetchAllCompanies])
-  // debugger
+
   return (
     <ul>
       {
@@ -26,7 +26,7 @@ const CompanyIndex = ({ companies, fetchAllCompanies }) => {
 }
 
 const mapSTP = (state) => {
-  // debugger
+
   return {
     companies: state.companies.data ? state.companies.data : []
   }

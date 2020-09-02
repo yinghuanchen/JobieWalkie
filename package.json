@@ -2,7 +2,7 @@
   "name": "JobieWalkie",
   "version": "1.0.0",
   "description": "<h1 align=\"center\">    <br>    <img src=\"https://github.com/yinghuanchen/JobieWalkie/blob/master/images/jobiewalkie-icon.jpeg\" alt=\"JobieWalkie\" width=\"200\">    <br>    JobieWalkie    <br> </h1>",
-  "main": "App.js",
+  "main": "app.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",

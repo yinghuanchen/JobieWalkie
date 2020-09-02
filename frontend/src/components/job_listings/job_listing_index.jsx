@@ -25,7 +25,6 @@ const JobListingIndex = ({ favorites, jobListings, fetchAllJobListings }) => {
 }
 
 const mapSTP = (state) => {
-  debugger
   return {
     jobListings: state.jobListings.data ? state.jobListings.data : [],
     favorites: Object.values(state.favorites)

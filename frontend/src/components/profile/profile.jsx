@@ -6,7 +6,6 @@ import { fetchAllFavorites } from "../../actions/favorite_actions"
 import JobListingList from "../job_listings/job_listing_list"
 
 const Profile = ({ currentUser, favorite, jobListings, fetchAllJobListings, fetchAllFavorites, match }) => {
-  // debugger
   // let favoriteId = match.params.favoriteId
 
   // useEffect(() => {
