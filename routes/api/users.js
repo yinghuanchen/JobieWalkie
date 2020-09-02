@@ -58,6 +58,19 @@ router.get(
   }
 );
 
+router.get(
+  "/current/debriefs",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Debrief.find({ user: req.user.id })
+      .then((debriefs) => {
+        return res.json(debriefs);
+      })
+      .catch((err) => res.json(err));
+  }
+);
+
+
 // Register
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body)

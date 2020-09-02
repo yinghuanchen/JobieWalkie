@@ -3,14 +3,15 @@ const router = express.Router();
 const passport = require("passport");
 const keys = require("../../config/keys");
 const Company = require("../../models/Company");
+const Debrief = require("../../models/Debrief");
 
 
 //var matches = aString.match(new RegExp(pattern));
 
 // Index
 router.get("/", (req, res) => {
-  const queryName = new RegExp(req.body.name);
-  console.log(queryName);
+  const queryName = new RegExp(req.body.name); //{name: querysting}
+  //console.log(queryName);
 //   debugger;
   if (queryName) {
       Company.find({ name: queryName })
@@ -44,5 +45,20 @@ router.get("/:id", (req, res) => {
       res.status(404).json({ nocompanyfound: "No company found with that ID" })
     );
 });
+
+// show debriefs 
+router.get(
+  "/:id/debriefs",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+
+    Debrief.find({ company: req.params.id })
+      .then((debriefs) => {
+        return res.json(debriefs);
+      })
+      .catch((err) => res.json(err));
+  }
+);
+
 
 module.exports = router;

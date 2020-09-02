@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require('passport'); 
 const keys = require("../../config/keys");
 const JobListing = require("../../models/JobListing");
+const Company = require("../../models/Company");
 
 
 // Index
@@ -41,5 +42,21 @@ router.get("/:id", (req, res) => {
         .json({ nojobListingfound: "No jobListing found with that ID" })
     );
 });
+
+
+// get company id
+// router.get("/:id/companyId", (req, res) => {
+//   JobListing.findById(req.params.id)
+//     .then((jobListing) => {
+//       Company.findOne({ name: jobListing.companyName })
+//       .then((company) => res.json(company._id))
+//       .catch((err) => {})
+//     })
+//     .catch((err) =>
+//       res
+//         .status(404)
+//         .json({ nojobListingfound: "No jobListing found with that ID" })
+//     );
+// });
 
 module.exports = router;
