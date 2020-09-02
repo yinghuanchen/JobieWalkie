@@ -1,17 +1,27 @@
-import React from 'react';
+import React from 'react'
+import { FaStar, FaExternalLinkAlt } from "react-icons/fa"
+import FavoriteItem from "../favorites/favorite_item"
 
-const JobListingItem = ({ jobListing }) => {
+const JobListingItem = ({ favorite, jobListing }) => {
   return (
-    <ul>
-      <p>{jobListing.companyName}</p>
-      {/* <p>{jobListing.jobLink}</p> */}
-      <p>{jobListing.location}</p>
-      <p>{jobListing.datePosted}</p>
-      <a href={`${jobListing.jobLink}`}>{jobListing.jobTitle}</a>
-      <br/>
-      <br/>
-    </ul>
-  )
+    <div className="main-listings">
+      <div className="invidiual-job-listings">
+        <div className="listings-title">{jobListing.jobTitle}</div>
+        <div className="listings-item">{jobListing.companyName}</div>
+        <div className="listings-item">{jobListing.place}</div>
+        <div className="listings-item">{jobListing.datePosted}</div>
+      </div>
+
+      <div className="link-listings">
+        <a href={`${jobListing.jobLink}`}>
+          {" "}
+          <FaExternalLinkAlt className="link-logo" />{" "}
+        </a>
+        {/* <FaStar className="link-star" /> */}
+        <FavoriteItem favorite={favorite} jobListing={jobListing}/>
+      </div>
+    </div>
+  );
 }
 
 export default JobListingItem

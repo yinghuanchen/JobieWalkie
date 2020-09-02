@@ -1,18 +1,17 @@
 import React from "react"
+import JobListingItem from "./job_listing_item"
 
 const JobListingList = ({ jobListings }) => {
     return (
-        <ul>
-            {
-                jobListings.map((jobListing, idx) => {
-                    return (
-                        <li key={idx}>
-                            {jobListing.id}
-                        </li>
-                    )
-                })
-            }
-        </ul>
+    <ul>
+        {
+            jobListings.map((jobListing) => {
+                return (
+                <JobListingItem key={jobListing._id} jobListing={jobListing}/>
+                )
+            })
+        }
+    </ul>
     )
 }
 

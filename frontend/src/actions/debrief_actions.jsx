@@ -24,30 +24,30 @@ export const removeDebrief = (debriefId) => ({
 // Thunk Action Creator
 export const fetchAllDebriefs = () => (dispatch) => {
     return DebriefAPIUtil.fetchAllDebriefs()
-        .then((debriefs) => { dispatch(receiveAllDebriefs(debriefs)) })
-        .catch((err) => console.log(err))
+    .then((debriefs) => { dispatch(receiveAllDebriefs(debriefs)) })
+    .catch((err) => console.log(err))
 }
 
 export const fetchDebrief = (debriefId) => (dispatch) => {
     return DebriefAPIUtil.fetchDebrief(debriefId)
-        .then((debrief) => { dispatch(receiveDebrief(debrief)) })
-        .catch((err) => console.log(err))
+    .then((debrief) => { dispatch(receiveDebrief(debrief)) })
+    .catch((err) => console.log(err))
 }
 
 export const createDebrief = (debrief) => (dispatch) => {
     return DebriefAPIUtil.createDebrief(debrief)
-        .then((debrief) => { dispatch(receiveDebrief(debrief)) })
-        .catch((err) => console.log(err))
+    .then((debrief) => { dispatch(receiveDebrief(debrief)) })
+    .catch((err) => console.log(err))
 }
 
 export const updateDebrief = (debrief) => (dispatch) => {
     return DebriefAPIUtil.updateDebrief(debrief)
-        .then((debrief) => { dispatch(receiveDebrief(debrief)) })
-        .catch((err) => console.log(err))
+    .then((debrief) => { dispatch(receiveDebrief(debrief)) })
+    .catch((err) => console.log(err))
 }
 
 export const deleteDebrief = (debriefId) => (dispatch) => {
     return DebriefAPIUtil.deleteDebrief(debriefId)
-      .then((debrief) => { dispatch(receiveDebrief(debrief)) })
-      .catch((err) => console.log(err));
+    .then(() => { dispatch(receiveDebrief(debriefId)) })
+    .catch((err) => console.log(err));
 }
