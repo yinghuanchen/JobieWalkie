@@ -84,7 +84,17 @@ const JobListing = require("./models/JobListing");
     scraper.run(
       ["Software Engineer"],
       ["San Francisco"],
-      //["Software", "Backend", "Frontend", "Fullstack", "Full-stack", "Full Stack"],
+      // [
+      //   "Software",
+      //   "Backend",
+      //   "Back End",
+      //   "Frontend",
+      //   "Front End",
+      //   "Fullstack",
+      //   "Full-Stack",
+      //   "Full Stack",
+      //   "Web"
+      // ],
       {
         paginationMax: 1,
         descriptionProcessor,

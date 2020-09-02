@@ -7,18 +7,6 @@ const Company = require("../../models/Company");
 
 
 // Index
-// router.get("/", (req, res) => {
-//   JobListing.find()
-//     //might need to change the date string to date object
-//     .sort({ datePosted: -1 }) // newest first
-//     .then((jobListings) => {
-//       return res.send(jobListings);
-//     })
-//     .catch((err) =>
-//       res.status(404).json({ nojobListingsfound: "No jobListings found" })
-//     );
-// });
-    
 router.get("/", (req, res) => {
   JobListing.find()
     //might need to change the date string to date object
@@ -45,18 +33,28 @@ router.get("/:id", (req, res) => {
 
 
 // get company id
-// router.get("/:id/companyId", (req, res) => {
-//   JobListing.findById(req.params.id)
-//     .then((jobListing) => {
-//       Company.findOne({ name: jobListing.companyName })
-//       .then((company) => res.json(company._id))
-//       .catch((err) => {})
-//     })
-//     .catch((err) =>
-//       res
-//         .status(404)
-//         .json({ nojobListingfound: "No jobListing found with that ID" })
-//     );
-// });
+router.get("/:id/companyId", (req, res) => {
+  JobListing.findById(req.params.id)
+    .then((jobListing) => {
+      Company.findOne({ name: jobListing.companyName })
+      .then((company) => res.json(company.id))
+      .catch((err) => {
+        const newCompany = new Company({
+          name: jobListing.companyName,
+          companyLink: "",
+          companyImg: "",
+        });
+        newCompany
+          .save()
+          .then((newCompany) => res.json(newCompany.id))
+          .catch((err) => console.log(err));
+      })
+    })
+    .catch((err) =>
+      res
+        .status(404)
+        .json({ nojobListingfound: "No jobListing found with that ID" })
+    );
+});
 
 module.exports = router;
