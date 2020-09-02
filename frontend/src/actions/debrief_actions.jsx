@@ -28,6 +28,14 @@ export const fetchAllDebriefs = () => (dispatch) => {
     .catch((err) => console.log(err))
 }
 
+export const fetchAllCompanyDebriefs = (companyId) => (dispatch) => {
+    return DebriefAPIUtil.fetchAllCompanyDebriefs(companyId)
+    .then((debriefs) => {
+        dispatch(receiveAllDebriefs(debriefs))
+    })
+    .catch((err) => console.log(err))
+}
+
 export const fetchDebrief = (debriefId) => (dispatch) => {
     return DebriefAPIUtil.fetchDebrief(debriefId)
     .then((debrief) => { dispatch(receiveDebrief(debrief)) })

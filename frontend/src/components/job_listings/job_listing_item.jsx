@@ -1,8 +1,28 @@
-import React from 'react'
-import { FaStar, FaExternalLinkAlt } from "react-icons/fa"
-import FavoriteItem from "../favorites/favorite_item"
+import React from "react"
+import { connect } from "react-redux"
+import { FaExternalLinkAlt } from "react-icons/fa"
+import { createFavorite, deleteFavorite } from "../../actions/favorite_actions"
 
-const JobListingItem = ({ favorite, jobListing }) => {
+const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorite, jobListing }) => {
+  const isFavorited = !!favorite
+
+  const handleCreateFavorite = () => {
+    createFavorite({
+      user: currentUser,
+      jobListing: jobListing._id
+    })
+  }
+
+  const handleDeleteFavorite = () => {
+    deleteFavorite(favorite)
+  }
+
+  const placeFavorite = isFavorited ? (
+    <button onClick={handleDeleteFavorite}>Favorited</button>
+    ) : (
+    <button onClick={handleCreateFavorite}>Not Favorited</button>     
+  )
+
   return (
     <div className="main-listings">
       <div className="invidiual-job-listings">
@@ -17,11 +37,23 @@ const JobListingItem = ({ favorite, jobListing }) => {
           {" "}
           <FaExternalLinkAlt className="link-logo" />{" "}
         </a>
-        {/* <FaStar className="link-star" /> */}
-        <FavoriteItem favorite={favorite} jobListing={jobListing}/>
+        {placeFavorite}
       </div>
     </div>
   );
 }
 
-export default JobListingItem
+const mapSTP = (state) => {
+  return {
+    favorite: state.favorites.data ? state.favorites.data : [],
+  };
+}
+
+const mapDTP = (dispatch) => {
+  return {
+    createFavorite: (favorite) => dispatch(createFavorite(favorite)),
+    deleteFavorite: (favorite) => dispatch(deleteFavorite(favorite._id)),
+  };
+};
+
+export default connect(mapSTP, mapDTP)(JobListingItem);

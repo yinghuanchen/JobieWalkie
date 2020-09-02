@@ -1,40 +1,44 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { fetchAllJobListings } from "../../actions/job_listing_actions"
-import { fetchAllFavorites } from "../../actions/favorite_actions"
-import JobListingList from "./job_listing_list"
+// import { fetchAllFavorites } from "../../actions/favorite_actions"
+import JobListingItem from "./job_listing_item"
 import '../../stylesheets/job_listings.css'
 
-const JobListingIndex = ({ favorites, jobListings, fetchAllJobListings }) => {
+const JobListingIndex = ({ jobListings, fetchAllJobListings }) => {
 
   useEffect(() => {
       fetchAllJobListings()
   }, [fetchAllJobListings])
 
-  useEffect(() => {
-    fetchAllFavorites()
-  }, [fetchAllFavorites])
+  // useEffect(() => {
+  //   fetchAllFavorites()
+  // }, [fetchAllFavorites])
 
   return (
-    <>
-      <div>
-        <JobListingList jobListings={jobListings}/>
-      </div>
-    </>
+    <ul>
+      {
+        jobListings.map((jobListing) => {
+          return (
+            <JobListingItem key={jobListing._id} jobListing={jobListing} />
+          )
+        })
+      }
+    </ul>
   )
 }
 
 const mapSTP = (state) => {
   return {
     jobListings: state.jobListings.data ? state.jobListings.data : [],
-    favorites: Object.values(state.favorites)
+    // favorites: Object.values(state.favorites)
   }
 }
 
 const mapDTP = (dispatch) => {
   return {
     fetchAllJobListings: () => dispatch(fetchAllJobListings()),
-    fetchAllFavorites: () => dispatch(fetchAllFavorites())
+    // fetchAllFavorites: () => dispatch(fetchAllFavorites())
   }
 }
 
