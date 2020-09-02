@@ -10,7 +10,14 @@ const Debrief = require("../../models/Debrief");
 
 // Index
 router.get("/", (req, res) => {
+<<<<<<< HEAD
   const queryName = new RegExp(req.body.name); //{name: querysting}
+  //console.log(queryName);
+//   debugger;
+=======
+  const queryName = new RegExp(req.body.name);
+  console.log(queryName);
+>>>>>>> master
   if (queryName) {
     Company.find({ name: queryName })
       //might need to change the date string to date object

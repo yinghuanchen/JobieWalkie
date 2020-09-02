@@ -28,14 +28,17 @@ router.delete(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const favorite = Favorite.findOne({
+    Favorite.findOne({
       jobListing: req.body.jobListingId,
       user: req.user.id,
-    });
-    const user = User.findById(req.body.userId);
-    Favorite.findByIdAndRemove(favorite.id)
-      .then(() => res.json({ msg: "favorite removed" }))
-      .catch((errs) => console.log(err));
+    })
+    .then((favorite) => {
+      Favorite.findByIdAndRemove(favorite.id)
+        .then(() => res.json({ msg: "favorite removed" }))
+        .catch((errs) => console.log(errs));
+    })
+    .catch((err) => res.json(err));
+    
   }
 );
 
