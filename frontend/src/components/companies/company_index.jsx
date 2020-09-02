@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { fetchAllCompanies } from "../../actions/company_actions"
-import CompanyItem from "./company_item"
+// import CompanyItem from "./company_item"
 import "../../stylesheets/job_listings.css"
 
 const CompanyIndex = ({ companies, fetchAllCompanies }) => {
@@ -9,15 +9,24 @@ const CompanyIndex = ({ companies, fetchAllCompanies }) => {
   useEffect(() => {
     fetchAllCompanies()
   }, [fetchAllCompanies])
-
+  // debugger
   return (
     <ul>
-        <CompanyItem key={companies._id} company={company} />
+      {
+        companies.map((company) => {
+          return (
+            <li>
+              {company.name}
+            </li>
+          )
+        })
+      }
     </ul>
   )
 }
 
 const mapSTP = (state) => {
+  // debugger
   return {
     companies: state.companies.data ? state.companies.data : []
   }

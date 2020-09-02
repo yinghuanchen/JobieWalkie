@@ -12,7 +12,7 @@ const favoriteReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_FAVORITES:
       return Object.assign({}, oldState, action.favorites)
     case RECEIVE_FAVORITE:
-      return Object.assign({}, oldState, {[action.favorite._id]: action.favorite })
+      return action.favorite
     case DELETE_FAVORITE:
       delete nextState[action.favoriteId]
       return nextState

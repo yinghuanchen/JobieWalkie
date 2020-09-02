@@ -1,43 +1,43 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from "react-redux"
-import { useParams } from "react-router-dom"
-import { fetchAllDebriefs } from "../../actions/debrief_actions"
+// import { fetchAllDebriefs } from "../../actions/debrief_actions"
 import { fetchCompany } from "../../actions/company_actions"
 
-const CompanyShow = ({ company, debriefs, fetchAllDebriefs, fetchCompany }) => {
+const CompanyShow = ({ company, debriefs, fetchAllDebriefs, fetchCompany, match }) => {
 
-    let { companyId } = useParams()
-    companyId = parseInt(companyId)
+    let companyId = match.params.companyId
 
     useEffect(() => {
         fetchCompany(companyId)
     }, [fetchCompany, companyId])
 
-    useEffect(() => {
-        fetchAllDebriefs()
-    }, [fetchAllDebriefs])
+    // useEffect(() => {
+    //     fetchAllDebriefs()
+    // }, [fetchAllDebriefs])
 
-    const companyDebriefs = debriefs.filter(debrief => debrief.company_id === companyId)
+    // const companyDebriefs = debriefs.filter(debrief => debrief.company_id === companyId)
+    if (!company) return null
 
     return (
         <>
-            <DebriefItem debriefs={companyDebriefs}/>
+        <div>
+            <p>{company.name}</p>
+            {/* <DebriefItem debriefs={companyDebriefs}/> */}
+        </div>       
         </>   
     )
 }
 
-export default CompanyShow
-
-const mapSTP = (state, ownProps) => {
+const mapSTP = (state) => {
     return {
-        company: state.debriefs.data[ownProps.match.params.companyId],
-        debriefs: state.debriefs.data ? state.debriefs.data : []
+        company: state.companies.data,
+        // debriefs: state.debriefs.data ? state.debriefs.data : []
     }
 }
 
 const mapDTP = (dispatch) => {
     return {
-        fetchAllDebriefs: () => dispatch(fetchAllDebriefs()),
+        // fetchAllDebriefs: () => dispatch(fetchAllDebriefs()),
         fetchCompany: (companyId) => dispatch(fetchCompany(companyId))
     }
 }

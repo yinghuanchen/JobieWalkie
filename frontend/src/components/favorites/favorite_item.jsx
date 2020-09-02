@@ -3,29 +3,32 @@ import { connect } from "react-redux"
 import { FaStar } from "react-icons/fa";
 import { createFavorite, deleteFavorite } from "../../actions/favorite_actions"
 
-const FavoriteItem = ({ jobListing, favorite, currentUser, createFavorite, deleteFavorite }) => {
-
+const FavoriteItem = ({ jobListings, favorite, currentUser, createFavorite, deleteFavorite }) => {
     const isFavorited = !!favorite
 
     const handleCreateFavorite = () => {
+        debugger
         createFavorite({
-            user_id: currentUser._id,
-            favorite_id: favorite._id
+            user: currentUser,
+            jobListing: jobListings._id
         })
     }
+
+    // JW-TODO: jobListings above needs a map
 
     const handleDeleteFavorite = () => {
         deleteFavorite(favorite)
     }
 
+    // <FaStar className="link-star" />
     const placeFavorite = isFavorited ? (
-      <>
-        <button onClick={handleDeleteFavorite}><FaStar className="link-star" /></button>
-      </>
+        <>
+            <button onClick={handleDeleteFavorite}>Favorited</button>
+        </>
     ) : (
-      <>
-        <button onClick={handleCreateFavorite}><FaStar className="link-star" /></button>
-      </>
+        <>
+            <button onClick={handleCreateFavorite}>Not Favorited</button>
+        </>
     );
 
     return (
@@ -38,7 +41,8 @@ const FavoriteItem = ({ jobListing, favorite, currentUser, createFavorite, delet
 
 const mapSTP = (state) => {
     return {
-        currentUser: state.session.users[state.session._id]
+        currentUser: state.session.user,
+        jobListings: state.jobListings.data ? state.jobListings.data : []
     }
 }
 

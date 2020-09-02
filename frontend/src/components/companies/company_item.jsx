@@ -1,12 +1,19 @@
-import React from "react"
+// import React from "react"
 
-const CompanyItem = ({ companies }) => {
-  return (
-    <ul>
-      <p>{companies.companyName}</p>
-      <p>{companies.place}</p>
-    </ul>
-  )
-}
+// const CompanyItem = ({ companies }) => {
+//   return (
+//     <ul>
+//       {
+//         companies.map((company) => {
+//           return (
+//             <li>
+//               {company.name}
+//             </li>
+//           )
+//         })
+//       }
+//     </ul>
+//   )
+// }
 
-export default CompanyItem
+// export default CompanyItem

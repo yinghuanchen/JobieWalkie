@@ -17,14 +17,11 @@ const JobListingItem = ({ favorite, jobListing }) => {
           {" "}
           <FaExternalLinkAlt className="link-logo" />{" "}
         </a>
-        <FaStar className="link-star" />
-        {/* <FavoriteItem favorite={favorite} jobListing={jobListing}/> */}
+        {/* <FaStar className="link-star" /> */}
+        <FavoriteItem favorite={favorite} jobListing={jobListing}/>
       </div>
     </div>
   );
 }
 
 export default JobListingItem
-
-// JW-TODO: Rename "jobFunction" to "jobDepartment", "place" to "jobLocation"
-// JW-TODO: Setup FavoriteItem

@@ -30,13 +30,13 @@ export const fetchAllFavorites = () => (dispatch) => {
     .catch((err) => console.log(err))
 }
 
-export const fetchFavorite = (favoriteId) => (dispatch) => {
-    return FavoriteAPIUtil.fetchFavorite(favoriteId)
-    .then((favorite) => {
-        dispatch(receiveFavorite(favorite))
-    })
-    .catch((err) => console.log(err))
-}
+// export const fetchFavorite = (favoriteId) => (dispatch) => {
+//     return FavoriteAPIUtil.fetchFavorite(favoriteId)
+//     .then((favorite) => {
+//         dispatch(receiveFavorite(favorite))
+//     })
+//     .catch((err) => console.log(err))
+// }
 
 export const createFavorite = (favorite) => (dispatch) => {
     return FavoriteAPIUtil.createFavorite(favorite)
