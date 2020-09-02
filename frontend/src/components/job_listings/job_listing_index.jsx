@@ -17,7 +17,7 @@ const JobListingIndex = ({ favorites, jobListings, fetchAllJobListings }) => {
 
   return (
     <>
-      <div>
+      <div >
         <JobListingList jobListings={jobListings}/>
       </div>
     </>

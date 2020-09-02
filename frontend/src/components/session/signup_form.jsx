@@ -55,46 +55,45 @@ class SignupForm extends React.Component {
     }
 
     render() {
-        return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    <div className="login-form">
-                        <br />
-                        <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.update("email")}
-                            placeholder="Email"
-                        />
-                        <br />
-                        <input
-                            type="text"
-                            value={this.state.handle}
-                            onChange={this.update("handle")}
-                            placeholder="Handle"
-                        />
-                        <br />
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.update("password")}
-                            placeholder="Password"
-                        />
-                        <br />
-                        <input
-                            type="password"
-                            value={this.state.password2}
-                            onChange={this.update("password2")}
-                            placeholder="Confirm Password"
-                        />
-                        <br />
-                        <input type="submit" value="Submit" />
-                        {this.renderErrors()}
-                    </div>
-                </form>
-            </div>
-        )
+       
+    return (
+      <div className="form-container">
+        <button className="demo-user-btn" onClick={this.handleDemoSubmit}>
+          <span className="fas fa-user-alt"></span>SIGN IN WITH DEMO USER
+        </button>
+        <div className="divider-container">
+          <span className="divider"></span>
+          <span className="divider-text">OR</span>
+          <span className="divider"></span>
+        </div>
+        <form onSubmit={this.handleSubmit} className="session-form">
+          <input
+            type="text"
+            onChange={this.update("handle")}
+            value={this.state.handle}
+            placeholder="Handle"
+            className="session-form-inputs"
+          />
+          <input
+            type="text"
+            onChange={this.update("email")}
+            value={this.state.email}
+            placeholder="Email"
+            className="session-form-inputs"
+          />
+          <input
+            type="password"
+            onChange={this.update("password")}
+            value={this.state.password}
+            placeholder="Password"
+            className="session-form-inputs"
+          />
+          <button className="session-form-btn">SIGN UP</button>
+          {this.renderErrors()}
+        </form>
+      </div>
+    );
     }
 }
 
-export default withRouter(SignupForm)
+export default withRouter(SignupForm);

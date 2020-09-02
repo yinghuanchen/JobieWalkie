@@ -3,16 +3,18 @@ const router = express.Router();
 const passport = require("passport");
 const keys = require("../../config/keys");
 const Company = require("../../models/Company");
+const e = require("express");
 
 
 //var matches = aString.match(new RegExp(pattern));
 
-// Index
-router.get("/", (req, res) => {
-  const queryName = new RegExp(req.body.name);
-  console.log(queryName);
+// Search 
+router.post("/", (req, res) => {
+  // debugger; 
+  //const queryName = new RegExp(req.body.name);
+  const queryName = req.body.name;
   if (queryName) {
-    Company.find({ name: queryName })
+    Company.find({ name: { $regex: queryName, $options: "i" } })
       //might need to change the date string to date object
       .then((companies) => {
         return res.json(companies);
@@ -21,18 +23,27 @@ router.get("/", (req, res) => {
         res.status(404).json({ noCompaniesFound: "No companies found" })
       );
   } else {
+    res.json({ noCompaniesFound: "No companies found" });
+  }
+});
+
+// Index
+router.get("/", (res, req) => {
     Company.find()
-      //might need to change the date string to date object
+      .sort({ name: 1 })
       .then((companies) => {
         return res.json(companies);
       })
       .catch((err) =>
         res.status(404).json({ noCompaniesFound: "No companies found" })
       );
-  }
-});
+})
 
-
+// Hi I would like to go to another breakout room but I think we can
+// 't 
+// me toooo
+// I solve the case sensitivity problem we can work on css so my search bar wont disappear
+// nice. yeah the search bar still flies away And the position for dropdown is so weird 
 // Show
 router.get("/:id", (req, res) => {
   Company.findById(req.params.id)

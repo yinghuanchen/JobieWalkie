@@ -10,16 +10,16 @@ router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-       Favorite.findOne({
-         jobListing: req.body.jobListingId,
-         user: req.user.id,
-       }).then((favorite) => {
-           if(favorite) return res.status(400).json({msg: "You've already like this!"});
-       })
-       const newFavorite = new Favorite({
-         jobListing: req.body.jobListingId,
-         user: req.user.id,
-       });
+    Favorite.findOne({
+        jobListing: req.body.jobListing,
+        user: req.user.id,
+    }).then((favorite) => {
+        if(favorite) return res.status(400).json({msg: "You've already like this!"});
+    })
+    const newFavorite = new Favorite({
+      jobListing: req.body.jobListingId,
+      user: req.user.id,
+    });
     newFavorite.save().then((newFavorite) => res.json(newFavorite));
   }
 );

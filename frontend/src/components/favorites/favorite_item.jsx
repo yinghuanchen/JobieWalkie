@@ -3,13 +3,13 @@ import { connect } from "react-redux"
 import { FaStar } from "react-icons/fa";
 import { createFavorite, deleteFavorite } from "../../actions/favorite_actions"
 
-const FavoriteItem = ({ jobListings, favorite, currentUser, createFavorite, deleteFavorite }) => {
+const FavoriteItem = ({ jobListing, favorite, currentUser, createFavorite, deleteFavorite }) => {
     const isFavorited = !!favorite
 
     const handleCreateFavorite = () => {
         createFavorite({
-            user: currentUser,
-            jobListing: jobListings._id
+            // user: currentUser,
+            jobListing: jobListing._id
         })
     }
 
@@ -41,7 +41,7 @@ const FavoriteItem = ({ jobListings, favorite, currentUser, createFavorite, dele
 const mapSTP = (state) => {
     return {
         currentUser: state.session.user,
-        jobListings: state.jobListings.data ? state.jobListings.data : []
+        // jobListings: state.jobListings.data ? state.jobListings.data : []
     }
 }
 

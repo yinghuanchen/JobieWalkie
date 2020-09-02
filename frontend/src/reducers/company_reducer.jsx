@@ -9,7 +9,7 @@ const companyReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_COMPANIES:
-      return Object.assign({}, oldState, action.companies)
+      return action.companies
     case RECEIVE_COMPANY:
       return action.company
     default:

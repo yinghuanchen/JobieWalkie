@@ -84,14 +84,6 @@ const JobListing = require("./models/JobListing")
     scraper.run(
       ["Software Engineer"],
       ["San Francisco"],
-      [
-        "Software",
-        "Frontend",
-        "Backend",
-        "Full Stack",
-        "FullStack",
-        "Full-Stack",
-      ],
       {
         paginationMax: 1,
         descriptionProcessor,
