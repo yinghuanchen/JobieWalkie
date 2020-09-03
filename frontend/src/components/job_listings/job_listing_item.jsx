@@ -1,29 +1,35 @@
-import React from "react"
+import React, {useState} from "react"
 import { connect } from "react-redux"
 import { FaExternalLinkAlt } from "react-icons/fa"
-import { createFavorite, deleteFavorite } from "../../actions/favorite_actions"
+import { createFavorite, deleteFavorite } from "../../actions/favorite_actions";
+import {fetchUserFavoriteJobListingIds} from '../../actions/favorite_actions';
 
-const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorite, jobListing }) => {
+const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites, jobListing, fetchUserFavoriteJobListingIds }) => {
 
     const handleCreateFavorite = () => {
         createFavorite({
-            user: currentUser,
-            jobListing: jobListing._id
-        })
+          //user: currentUser,
+          jobListingId: jobListing._id,
+        }).then(() => fetchUserFavoriteJobListingIds()); 
     }
 
     const handleDeleteFavorite = () => {
-        return deleteFavorite(favorite._id)
+        return deleteFavorite(jobListing._id).then(
+          () => fetchUserFavoriteJobListingIds()); 
     }
 
-    const favoriteJobListing = favorite.jobListing === jobListing._id
+    if (jobListing._id === "5f503ecf58fd92214b5ec124") {
+        console.log("5f503ecf58fd92214b5ec124");
+        console.log(favorites);
+    }
+    const isFavorite = favorites.includes(jobListing._id);
 
-    const placeFavorite = favoriteJobListing ? (
-        <button onClick={handleDeleteFavorite}>Favorited</button>
+    const placeFavorite = isFavorite ? (
+      <button onClick={handleDeleteFavorite}>Favorited</button>
     ) : (
-        <button onClick={handleCreateFavorite}>Not Favorited</button>
-    )
-
+      <button onClick={handleCreateFavorite}>Not Favorited</button>
+    );
+    // debugger;
     return (
         <div className="main-listings">
             <div className="invidiual-job-listings">
@@ -46,7 +52,7 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorite,
 
 const mapSTP = (state) => {
     return {
-        favorite: state.favorites.data ? state.favorites.data : [],
+        favorites: state.favorites ? state.favorites : [],
         // Clint-TODO: This is returning jobListings, not favorites. Look at the state and the data.
     }
 }
@@ -55,6 +61,7 @@ const mapDTP = (dispatch) => {
     return {
         createFavorite: (favorite) => dispatch(createFavorite(favorite)),
         deleteFavorite: (favorite) => dispatch(deleteFavorite(favorite)),
+        fetchUserFavoriteJobListingIds: () => dispatch(fetchUserFavoriteJobListingIds())
     }
 }
 
