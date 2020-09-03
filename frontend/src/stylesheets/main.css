@@ -15,7 +15,7 @@
 
 .main-text-1 {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     top: 90px;
     left: 170px;
     font-size: 50px;
@@ -23,7 +23,7 @@
 }
 .main-text-2 {
     position:  absolute;
-    z-index: 2;
+    z-index: 1;
     top: 170px;
     left: 370px;
     font-size: 50px;
