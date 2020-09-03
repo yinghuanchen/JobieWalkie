@@ -31,7 +31,7 @@ const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, ma
 
 const mapSTP = (state) => {
     return {
-        company: state.companies.data,
+        company: state.companies,
         debriefs: state.debriefs.data || []
     }
 }
