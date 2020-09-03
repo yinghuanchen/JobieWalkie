@@ -34,8 +34,8 @@ export const fetchCompanyDebriefs = (companyId) => (dispatch) => {
     .catch((err) => console.log(err))
 }
 
-export const fetchUserDebriefs = (userId) => (dispatch) => {
-    return DebriefAPIUtil.fetchUserDebriefs(userId)
+export const fetchUserDebriefs = () => (dispatch) => {
+    return DebriefAPIUtil.fetchUserDebriefs()
         .then((debriefs) => { dispatch(receiveAllDebriefs(debriefs)) })
         .catch((err) => console.log(err))
 }

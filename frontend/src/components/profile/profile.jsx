@@ -8,9 +8,9 @@ import DebriefList from "../debriefs/debrief_list"
 const Profile = ({ currentUser, debriefs, favorite, fetchAllFavorites, fetchAllJobListings, fetchUserDebriefs, jobListings, match }) => {
     // let favoriteId = match.params.favoriteId
 
-    // useEffect(() => {
-    //   fetchUserDebriefs(userId)
-    // }, [fetchUserDebriefs, userId])
+    useEffect(() => {
+      fetchUserDebriefs()
+    }, [fetchUserDebriefs])
 
     useEffect(() => {
         fetchAllFavorites()
@@ -45,7 +45,7 @@ const mapDTP = (dispatch) => {
     return {
         fetchAllFavorites: () => dispatch(fetchAllFavorites()), // JW-TODO: Fix backend route. Should rename this to fetchUserFavorites
         fetchAllJobListings: () => dispatch(fetchAllJobListings()),
-        fetchUserDebriefs: (userId) => dispatch(fetchUserDebriefs(userId)) // JW-TODO: Create backend route
+        fetchUserDebriefs: () => dispatch(fetchUserDebriefs()) // JW-TODO: Create backend route
     }
 }
 
