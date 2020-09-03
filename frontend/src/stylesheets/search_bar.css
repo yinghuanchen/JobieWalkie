@@ -1,4 +1,4 @@
-#search-bar-container {
+/* #search-bar-container {
     margin-top: 3px;
     height: 100%;
     z-index: 1;
@@ -13,7 +13,6 @@
 
 .search-bar-input {
     margin-left: 10px; 
-    /* position: absolute; */
     left: 50px;
      z-index: 2;
     outline: none;
@@ -29,7 +28,6 @@
 }
 .search-bar-input-btn {
   background: #f5f6f7;
-  /* border: black 1px solid; */
   border-radius: 0 2px 2px 0;
   display: inline-block;
   height: 45px;
@@ -72,4 +70,98 @@
     object-fit: scale-down;
     border: 1px solid #696969; 
     margin-right: 10px;
+} */
+
+#search-bar-container {
+    height: 100%;
+    z-index: 1;
+    width: 400px;
+    background-color: #212121;
+}
+#search-bar-container #search-bar-drop-down {
+    z-index: 1;
+    overflow: visible;
+    font-size: 20px;
+    font-family: inherit;
+}
+
+.search-bar-input {
+    box-sizing: border-box;
+    /* margin-left: 10px;  */
+    padding-top: 13px;
+    /* position: absolute; */
+    left: 50px;
+    height: 46px;
+    z-index: 2;
+    outline: none;
+    background-color: #212121;
+}
+
+.search-bar-input-text {
+    height: 25px; 
+    width: 300px;
+    border-radius: 1px 0px 0px 1px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #e2e2e2;
+    background-color: #121212;
+    text-indent: 10px;
+}
+
+.search-bar-input-text:focus {
+    outline: darkblue;
+}
+
+.search-bar-input-btn {
+  background-color: #313131;
+  /* border: black 1px solid; */
+  font-size: 12px;
+  border-radius: 0 2px 2px 0;
+  display: inline-block;
+  height: 25px;
+  width: 50px;
+  cursor: pointer;
+  position: absolute;
+  color: #6f6f6f;
+  z-index: 3;
+}
+
+#search-bar-drop-down {
+    position: relative;
+    left: 10px;
+    top: 0px;
+    background: white; 
+    font-size: 20px;
+    border: 1px solid black;
+    width: 300px;
+    z-index: 100;
+    color: #e2e2e2;
+    z-index: 3;
+}
+
+.search-bar-item {
+    margin: 1px;
+    display: flex;
+    border-bottom: lightgray 1px solid;
+    padding: 2px 0px 2px 2px; 
+}
+.search-bar-text-container {
+    margin-top: 6px;
+}
+.search-bar-img-container {
+    margin: auto 0;
+}
+
+#img {
+    overflow: hidden;
+    display: block;
+    height: 30px;
+    width: 30px; 
+    object-fit: scale-down;
+    border: 1px solid #696969; 
+    margin-right: 10px;
+}
+
+.fa-search {
+    background-color: #313131;
 }
