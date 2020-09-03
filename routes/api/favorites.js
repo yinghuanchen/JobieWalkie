@@ -17,22 +17,43 @@ router.post(
            if(favorite) return res.status(400).json({msg: "You've already like this!"});
        })
        const newFavorite = new Favorite({
-         jobListing: req.body.jobListing,
+         jobListing: req.body.jobListingId,
          user: req.user,
        });
-    newFavorite.save().then((newFavorite) => res.json(newFavorite))
+    newFavorite.save().then((newFavorite) => res.json(newFavorite.jobListing));
   }
 )
 
 router.delete(
-  "/:id",
+  "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Favorite.findByIdAndRemove(req.params.id)
-      .then(() => res.json({ msg: "favorite removed" }))
-      .catch((errs) => console.log(errs))
+    // Favorite.findById(req.params.id)
+    //   .then((favorte) )
+    // const favoriteId = ;
+    // Favorite.findByIdAndRemove(req.params.id)
+    //   .then(() => res.json(favoriteId))
+    //   .catch((errs) => console.log(errs)); 
+    Favorite.findOneAndDelete({
+      user: req.user.id,
+      jobListing: req.body.jobListingId,
+    }).then(()=> res.json({msg: "remove favorite!"}))
+    .catch((err) => console.log(err)); 
   }
 )
+
+// router.delete(
+//   "/:id",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     // Favorite.findById(req.params.id)
+//     //   .then((favorte) )
+//     const favoriteId = req.params.id;
+//     Favorite.findByIdAndRemove(req.params.id)
+//       .then(() => res.json(favoriteId))
+//       .catch((errs) => console.log(errs));
+//   }
+// );
 
 
 module.exports = router;
