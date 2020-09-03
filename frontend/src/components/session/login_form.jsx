@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
         )
     }
 
-    render() {
+    // render() {
         // return (
         //     <div>
         //         <form onSubmit={this.handleSubmit}>
@@ -77,27 +77,59 @@ class LoginForm extends React.Component {
         //         </form>
         //     </div>
         // )
+        // return (
+        //     <div className="form-container">
+        //         <button className='demo-user-btn' onClick={this.handleDemoSubmit}><span className="fas fa-user-alt"></span>SIGN IN WITH DEMO USER</button>
+        //         <div className='divider-container'>
+        //             <span className='divider'></span><span className='divider-text'>OR</span><span className='divider'></span>
+        //         </div>
+        //         <form onSubmit={this.handleSubmit} className="session-form">
+        //             <input
+        //                 type="text"
+        //                 value={this.state.email}
+        //                 onChange={this.update("email")}
+        //                 placeholder="Email"
+        //             />
+        //             <input
+        //                 type="password"
+        //                 value={this.state.password}
+        //                 onChange={this.update("password")}
+        //                 placeholder="Password"
+        //             />
+        //             <button className="session-form-btn">LOG IN</button>
+        //             {this.renderErrors()}
+        //         </form>
+        //     </div>
+        // )
+    // }
+    render() {
         return (
             <div className="form-container">
-                <button className='demo-user-btn' onClick={this.handleDemoSubmit}><span className="fas fa-user-alt"></span>SIGN IN WITH DEMO USER</button>
-                <div className='divider-container'>
-                    <span className='divider'></span><span className='divider-text'>OR</span><span className='divider'></span>
-                </div>
+                {/* <button className='demo-user-btn' onClick={this.handleDemoSubmit}><span className="fas fa-user-alt"></span>SIGN IN WITH DEMO USER</button> */}
+                {/* <div className='divider-container'>
+                <span className='divider'></span><span className='divider-text'>OR</span><span className='divider'></span>
+                </div> */}
                 <form onSubmit={this.handleSubmit} className="session-form">
+                <div>
                     <input
                         type="text"
                         value={this.state.email}
                         onChange={this.update("email")}
-                        placeholder="Email"
+                        required
                     />
+                    <label>Email</label>
+                </div>
+                <div>
                     <input
                         type="password"
                         value={this.state.password}
                         onChange={this.update("password")}
-                        placeholder="Password"
+                        required
                     />
-                    <button className="session-form-btn">LOG IN</button>
-                    {this.renderErrors()}
+                    <label>Password</label>
+                </div>
+                <button className="session-form-btn">LOG IN</button>
+                {this.renderErrors()}
                 </form>
             </div>
         )
