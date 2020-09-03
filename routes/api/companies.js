@@ -38,7 +38,7 @@ router.get("/", (req, res) => {
       )
 })
 
-// show
+// Show
 router.get("/:id", (req, res) => {
   Company.findById(req.params.id)
     .then((company) => res.json(company))
@@ -47,7 +47,7 @@ router.get("/:id", (req, res) => {
     )
 })
 
-// show debriefs 
+// Show debriefs 
 router.get(
   "/:id/debriefs",
   passport.authenticate("jwt", { session: false }),
