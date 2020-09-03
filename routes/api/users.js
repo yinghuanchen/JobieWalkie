@@ -27,16 +27,16 @@ router.get(
     })
   }
 )
-
+// User Profile: return An array of JobListing Object that a user favorited 
 router.get(
-  "/current/favorites",
+  "/current/jobListings",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     // let favoriteJobListings = ["1"];
     // Favorite.find({ user: req.user.id },function (err, result) {
-    //   console.log(result);//favoriteJobListings 
+    //   console.log(result);//favoriteJobListings
     //   let favoriteJobListings = [];
-    //   result.forEach((favorite) =>{       
+    //   result.forEach((favorite) =>{
     //     JobListing.findById(favorite.jobListing).then((joblisting) => {
     //       //console.log(favoriteJobListings);
     //       // favoriteJobListings.push("1");
@@ -49,14 +49,27 @@ router.get(
     //     favoriteJobListings,
     //   });
     //});
-    // populate: pull the object 
-    Favorite.find({ user: req.user.id}).populate('jobListing').then((listings)=>{
-      return res.json(listings.map((ele) => ele.jobListing));
-    })
-     
-    
+    // populate: pull the object
+    Favorite.find({ user: req.user.id })
+      .populate("jobListing")
+      .then((listings) => {
+        return res.json(listings.map((ele) => ele.jobListing));
+      });
   }
 );
+
+// Joblisting Index: return An array of Favorite object (which includes jobListing and user)
+router.get(
+  "/current/favorites",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Favorite.find({ user: req.user.id })
+      .then((listings) => {
+        return res.json(listings);
+      })
+  }
+)
+
 
 router.get(
   "/current/debriefs",
@@ -69,6 +82,18 @@ router.get(
       .catch((err) => res.json(err));
   }
 );
+
+// router.get(
+//   "/current/debriefIds",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     Debrief.find({ user: req.user.id })
+//       .then((debriefs) => {
+//         return res.json(debriefs.map((debrief) => debrief.id));
+//       })
+//       .catch((err) => res.json(err));
+//   }
+// );
 
 
 // Register

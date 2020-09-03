@@ -1,24 +1,21 @@
-import { searchCompany } from "../../actions/company_actions"; 
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import { Link,  useHistory } from "react-router-dom";
+import { searchCompany } from "../../actions/company_actions"
+import React, { useState, useEffect } from "react"
+import { connect } from "react-redux"
+import { Link, useHistory, withRouter } from "react-router-dom";
 import '../../stylesheets/search_bar.css'
 
-const SearchBar = ({ searchCompany, searchResults }) => {
+const SearchBar = ({ searchCompany, searchResults, path }) => {
   const [inputStr, setinputStr] = useState("");
   const [isDropdownOpen, setisDropdownOpen] = useState(false);
   const pushHistory = useHistory();
 
-    // useEffect(() => {
-    //   searchCompany(inputStr.trim());
-    // });
-
-  
-
+  useEffect(() => {
+    setinputStr('');
+  }, [path]);
 
   const handleUpdate = (e) => {
-    // console.log(e.target.value);
-    // console.log(e.target.value.trim());
+    //console.log(e.target.value);
+    console.log(e.target.value.trim());
     setinputStr(e.target.value);
     if (e.target.value.trim()) {
       searchCompany({ name: e.target.value.trim() });
@@ -29,13 +26,13 @@ const SearchBar = ({ searchCompany, searchResults }) => {
   };
 
   const handleClick = (e) => {
-      e.preventDefault(); 
-      if(inputStr.trim()) {
-          setinputStr(""); 
-          setisDropdownOpen(false);
-          //pushHistory.push(`/search?companyName=${inputStr.trim()}`);
-      }
-  }
+    e.preventDefault();
+    if (inputStr.trim()) {
+      setinputStr("");
+      setisDropdownOpen(false);
+      pushHistory.replace(`/search?companyName=${inputStr.trim()}`);
+    }
+  };
 
   const dropDownContent =
     isDropdownOpen && searchResults && searchResults.length > 0 ? (
@@ -54,7 +51,10 @@ const SearchBar = ({ searchCompany, searchResults }) => {
                     />
                   </Link>
                 </div>
-                <Link className="search-bar-text-container" to={`/companies/${company._id}`}>
+                <Link
+                  className="search-bar-text-container"
+                  to={`/companies/${company._id}`}
+                >
                   {company.name}
                 </Link>
               </li>
@@ -83,12 +83,13 @@ const SearchBar = ({ searchCompany, searchResults }) => {
   );
 };
 
-const mapSTP = (state) => ({
-  searchResults: state.companies.data, 
+const mapSTP = (state, ownProps) => ({
+  searchResults: state.companies.data,
+  path: ownProps.location.pathname,
 });
 
 const mapDTP = (dispatch) => ({
-  searchCompany: (query) => dispatch(searchCompany(query)),
-});
+    searchCompany: (query) => dispatch(searchCompany(query)),
+})
 
-export default connect(mapSTP, mapDTP)(SearchBar);
+export default withRouter(connect(mapSTP, mapDTP)(SearchBar));

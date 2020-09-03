@@ -17,10 +17,12 @@ router.post("/", (req, res) => {
         return res.json(companies);
       })
       .catch((err) =>
-        res.status(404).json({ noCompaniesFound: "No companies found" })
+        res.json([])
+        //res.status(404).json({ noCompaniesFound: "No companies found" })
       )
   } else {
-    res.json({ noCompaniesFound: "No companies found" });
+    res.json([]);
+    //res.json({ noCompaniesFound: "No companies found" });
   }
 })
 
@@ -36,7 +38,7 @@ router.get("/", (req, res) => {
       )
 })
 
-// show
+// Show
 router.get("/:id", (req, res) => {
   Company.findById(req.params.id)
     .then((company) => res.json(company))
@@ -45,12 +47,11 @@ router.get("/:id", (req, res) => {
     )
 })
 
-// show debriefs 
+// Show debriefs 
 router.get(
   "/:id/debriefs",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-
     Debrief.find({ company: req.params.id })
       .then((debriefs) => {
         return res.json(debriefs)

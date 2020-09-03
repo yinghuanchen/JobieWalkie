@@ -11,6 +11,7 @@ import JobListingIndex from "./job_listings/job_listing_index"
 import CompanyIndex from "./companies/company_index"
 import CompanyShow from "./companies/company_show"
 import ToDos from './todos/todo_item'
+import SearchResult from './search_result/search_result'
 
 import '../stylesheets/reset.css'
 
@@ -26,7 +27,8 @@ const App = () => (
       <Route exact path="/companies" component={CompanyIndex} />
       <Route exact path="/companies/:companyId" component={CompanyShow} />
       <Route exact path="/users/:userId" component={Profile} />
-      <Route exact path='/todos' component ={ToDos} />
+      <Route exact path="/todos" component={ToDos} />
+      <Route path="/search" component={SearchResult} />
     </Switch>
   </div>
 );

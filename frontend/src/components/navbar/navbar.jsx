@@ -2,18 +2,16 @@ import React from "react"
 import { connect } from "react-redux"
 import { Link, useHistory } from "react-router-dom"
 import { logout } from "../../actions/session_actions"
-import SearchBarContainer from './searchbar';
+import SearchBarContainer from './searchbar'
 import "../../stylesheets/navbar.css"
 
 const NavBar = ({ loggedIn, logout }) => {
 
-    const pushHistory = useHistory()
-    const handleLogout = () => {
-        // Dispatch (call) logout prop
-        logout()
-        // Route to root page ("/")
-        pushHistory.push("/")
-    }
+	const pushHistory = useHistory()
+	const handleLogout = () => {
+		logout()
+		pushHistory.push("/")
+	}
 
     // Selectively render links dependent on whether the user is logged in
     const getLinks = () => {
@@ -58,23 +56,27 @@ const NavBar = ({ loggedIn, logout }) => {
         }
     }
 
-    return (
-        <div className="NavBar">
-            <span className="left-container"> JobieWalkie</span>
-            <SearchBarContainer />
-            <span className="right-container"> {getLinks()} </span>
-        </div>
-    )
+	return (
+    <div className="NavBar">
+      <Link to="/">
+        <span className="left-container"> JobieWalkie</span>
+      </Link>
+      <SearchBarContainer />
+      <span className="right-container"> {getLinks()} </span>
+    </div>
+  );
 }
 
 const mapSTP = (state) => {
-    return {
-    loggedIn: state.session.isAuthenticated
-}}
+	return {
+		loggedIn: state.session.isAuthenticated
+	}
+}
 
 const mapDTP = (dispatch) => {
-    return {
-        logout: () => dispatch(logout())
-}}
+	return {
+		logout: () => dispatch(logout())
+	}
+}
 
 export default connect(mapSTP, mapDTP)(NavBar)

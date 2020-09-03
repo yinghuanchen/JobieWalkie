@@ -4,9 +4,13 @@ export const fetchAllDebriefs = () => {
     return axios.get(`/api/debriefs`)
 }
 
-export const fetchAllCompanyDebriefs = (companyId) => {
-  return axios.get(`/api/companies/${companyId}/debriefs`);
-};
+export const fetchCompanyDebriefs = (companyId) => {
+  return axios.get(`/api/companies/${companyId}/debriefs`)
+}
+
+export const fetchUserDebriefs = () => {
+    return axios.get(`/api/users/current/debriefs`)
+}
 
 export const fetchDebrief = (debriefId) => {
     return axios.get(`/api/debriefs/${debriefId}`)
@@ -17,6 +21,7 @@ export const createDebrief = (debrief) => {
 }
 
 export const updateDebrief = (debrief) => {
+    debugger
     return axios.post(`/api/debriefs/${debrief._id}`, debrief)
 }
 
