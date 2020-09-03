@@ -47,6 +47,7 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorite,
 const mapSTP = (state) => {
     return {
         favorite: state.favorites.data ? state.favorites.data : [],
+        // Clint-TODO: This is returning jobListings, not favorites. Look at the state and the data.
     }
 }
 

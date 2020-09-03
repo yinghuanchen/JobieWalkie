@@ -8,6 +8,7 @@ const DebriefIndex = ({ debriefs, fetchAllDebriefs }) => {
     useEffect(() => {
         fetchAllDebriefs()
     }, [fetchAllDebriefs])
+    
     return (
         <div>
             <h1>Debriefs</h1>

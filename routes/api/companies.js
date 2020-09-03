@@ -50,7 +50,6 @@ router.get(
   "/:id/debriefs",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-
     Debrief.find({ company: req.params.id })
       .then((debriefs) => {
         return res.json(debriefs)

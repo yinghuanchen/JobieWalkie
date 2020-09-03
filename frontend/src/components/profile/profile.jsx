@@ -1,15 +1,16 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-// import { fetchAllDebriefs } from "../../actions/debrief_actions"
+import { fetchAllFavorites } from "../../actions/favorite_actions" // JW-TODO: Should change this to UserFavorites
 import { fetchAllJobListings } from "../../actions/job_listing_actions"
-import { fetchAllFavorites } from "../../actions/favorite_actions"
+import { fetchUserDebriefs } from "../../actions/debrief_actions"
+import DebriefList from "../debriefs/debrief_list"
 
-const Profile = ({ currentUser, favorite, jobListings, fetchAllJobListings, fetchAllFavorites, match }) => {
+const Profile = ({ currentUser, debriefs, favorite, fetchAllFavorites, fetchAllJobListings, fetchUserDebriefs, jobListings, match }) => {
     // let favoriteId = match.params.favoriteId
 
     // useEffect(() => {
-    //   fetchAllDebriefs()
-    // }, [fetchAllDebriefs])
+    //   fetchUserDebriefs(userId)
+    // }, [fetchUserDebriefs, userId])
 
     useEffect(() => {
         fetchAllFavorites()
@@ -19,19 +20,14 @@ const Profile = ({ currentUser, favorite, jobListings, fetchAllJobListings, fetc
         fetchAllJobListings()
     }, [fetchAllJobListings])
 
-    // const favoriteJobListings = jobListings.filter((jobListing) => {
-    //   jobListing.favorite_id === favoriteId
-    // })
-
-    // const userDebriefs = debriefs.filter(debrief => debrief.author_id === currentUser._id)
+    // const favoriteJobListings = jobListings.filter((jobListing) => {jobListing.user === userId})
+    // const userDebriefs = debriefs.filter(debrief => debrief.author_id === currentUser._id) // Clint-TODO: Watch out for the parameter after the period. Check the state. May not need this because of fetchUserDebrief
 
     return (
         <div>
-            <h1>{currentUser.handle}</h1>
+            <h1>Hi {currentUser.handle}</h1>
             {/* <JobListingList jobListings={jobListings} favorites={favoriteJobListings} /> */}
-            {/* <JobListingList jobListings={jobListings} /> */}
-            {/* <DebriefItem debriefs={userDebriefs} /> */}
-            <p>HI</p>
+            <DebriefList debriefs={debriefs} />
         </div>
     )
 }
@@ -39,17 +35,17 @@ const Profile = ({ currentUser, favorite, jobListings, fetchAllJobListings, fetc
 const mapSTP = (state) => {
     return {
         currentUser: state.session.user,
-        // debriefs: state.debriefs.data ? state.debriefs.data : [],
+        debriefs: state.debriefs.data || [],
         favorite: state.favorites.data,
-        jobListings: state.jobListings.data ? state.jobListings.data : []
+        jobListings: state.jobListings.data || []
     }
 }
 
 const mapDTP = (dispatch) => {
     return {
-        // fetchAllDebriefs: () => dispatch(fetchAllDebriefs()),
+        fetchAllFavorites: () => dispatch(fetchAllFavorites()), // JW-TODO: Fix backend route. Should rename this to fetchUserFavorites
         fetchAllJobListings: () => dispatch(fetchAllJobListings()),
-        fetchAllFavorites: () => dispatch(fetchAllFavorites())
+        fetchUserDebriefs: (userId) => dispatch(fetchUserDebriefs(userId)) // JW-TODO: Create backend route
     }
 }
 

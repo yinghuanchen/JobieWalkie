@@ -38,6 +38,7 @@ const mapDTP = (dispatch) => {
     return {
         fetchAllJobListings: () => dispatch(fetchAllJobListings()),
         fetchAllFavorites: () => dispatch(fetchAllFavorites())
+        // Clint-TODO: Should rename this to fetchUserFavorites 
     }
 }
 
