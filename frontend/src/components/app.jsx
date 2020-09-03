@@ -12,6 +12,7 @@ import CompanyIndex from "./companies/company_index"
 import CompanyShow from "./companies/company_show"
 import ToDos from './todos/todo_item'
 import SearchResult from './search_result/search_result'
+import DebriefCreate from "../components/debriefs/debrief_create"
 
 import '../stylesheets/reset.css'
 
@@ -23,6 +24,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/debriefs" component={DebriefIndex} />
+      <Route exact path="/debriefs/:companyId/create" component={DebriefCreate} />
       <Route exact path="/jobListings" component={JobListingIndex} />
       <Route exact path="/companies" component={CompanyIndex} />
       <Route exact path="/companies/:companyId" component={CompanyShow} />
