@@ -17,7 +17,7 @@ export const createDebrief = (debrief) => {
 }
 
 export const updateDebrief = (debrief) => {
-    return axios.patch(`/api/debriefs/${debrief.id}`, debrief)
+    return axios.post(`/api/debriefs/${debrief._id}`, debrief)
 }
 
 export const deleteDebrief = (debriefId) => {

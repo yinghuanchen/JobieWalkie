@@ -6,29 +6,30 @@ import LoginFormContainer from "./session/login_form_container"
 import SignupFormContainer from "./session/signup_form_container"
 import NavBar from "../components/navbar/navbar"
 import Profile from "../components/profile/profile"
-// import debriefIndex from "./debriefs/debrief_index"
-import jobListingIndex from "./job_listings/job_listing_index"
-import companyIndex from "./companies/company_index"
-import companyShow from "./companies/company_show"
+import DebriefIndex from "./debriefs/debrief_index"
+import JobListingIndex from "./job_listings/job_listing_index"
+import CompanyIndex from "./companies/company_index"
+import CompanyShow from "./companies/company_show"
+import ToDos from './todos/todo_item'
 
-//import css reset
 import '../stylesheets/reset.css'
 
 const App = () => (
-    <div>
-        <NavBar />
-        <Switch>
-            <AuthRoute exact path="/" component={MainPage} />
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            {/* <Route exact path="/api/debriefs" component={debriefIndex} /> */}
-            <Route exact path="/jobListings" component={jobListingIndex} />
-            <Route exact path="/companies" component={companyIndex} />
-            <Route exact path="/companies/:companyId" component={companyShow} />
-            <Route exact path="/users/:userId" component={Profile} />
-        </Switch>
-    </div>
-)
+  <div>
+    <NavBar />
+    <Switch>
+      <AuthRoute exact path="/" component={MainPage} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/debriefs" component={DebriefIndex} />
+      <Route exact path="/jobListings" component={JobListingIndex} />
+      <Route exact path="/companies" component={CompanyIndex} />
+      <Route exact path="/companies/:companyId" component={CompanyShow} />
+      <Route exact path="/users/:userId" component={Profile} />
+      <Route exact path='/todos' component ={ToDos} />
+    </Switch>
+  </div>
+);
 
 export default App
 

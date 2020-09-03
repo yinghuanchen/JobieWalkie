@@ -5,7 +5,6 @@ export const fetchAllFavorites = () => {
 }
 
 export const createFavorite = (favorite) => {
-  debugger
   return axios.post(`/api/favorites`, favorite)
 }
 

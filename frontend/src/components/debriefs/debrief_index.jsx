@@ -1,18 +1,18 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { fetchAllDebriefs } from "../../actions/debrief_actions"
-import DebriefItem from "./debrief_item"
+import DebriefList from "./debrief_list"
 
 const DebriefIndex = ({ debriefs, fetchAllDebriefs }) => {
 
     useEffect(() => {
         fetchAllDebriefs()
     }, [fetchAllDebriefs])
-
     return (
-        <>
-            <DebriefItem debriefs={debriefs}/>
-        </>        
+        <div>
+            <h1>Debriefs</h1>
+            <DebriefList debriefs={debriefs}/>
+        </div>        
     )
 }
 

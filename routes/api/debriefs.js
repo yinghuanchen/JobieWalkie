@@ -1,9 +1,20 @@
-const express = require("express");
-const router = express.Router();
-const passport = require("passport");
-const keys = require("../../config/keys");
-const Debrief = require("../../models/Debrief");  
+const express = require("express")
+const router = express.Router()
+const passport = require("passport")
+const keys = require("../../config/keys")
+const Debrief = require("../../models/Debrief")
 
+// Index
+router.get("/", (req, res) => {
+    Debrief.find()
+      .sort({ createdAt: -1 })
+      .then((debriefs) => {
+        return res.json(debriefs);
+      })
+      .catch((err) =>
+        res.status(404).json({ noDebriefsFound: "No debriefs found" })
+      )
+})
 
 router.post(
   "/",
@@ -18,12 +29,12 @@ router.post(
       interviewSummary: req.body.interviewSummary,
       difficulty: req.body.difficulty,
       comments: req.body.comments,
-    });
-    newDebrief.save().then((newDebrief) => res.json(newDebrief));
+    })
+    newDebrief.save().then((newDebrief) => res.json(newDebrief))
   }
-);
+)
 
-// show
+// Show
 router.get(
   "/:id",
   (req, res) => {
@@ -31,9 +42,9 @@ router.get(
       .then((debrief) => res.json(debrief))
       .catch((err) =>
         res.status(404).json({ nodebrieffound: "No debrief found with that ID" })
-      );
+      )
   }
-);
+)
 
 router.post(
   "/:id", 
@@ -49,12 +60,12 @@ router.post(
       difficulty: req.body.difficulty,
       comments: req.body.comments,
     };
-    Debrief.findByIdAndUpdate(req.params.id, newDebrief, function (err, debrief){
+    Debrief.findByIdAndUpdate(req.params.id, newDebrief, function(err, debrief) {
         if (err) { res.send(err); }
         res.json(debrief);
-    });
+    })
   }
-);
+)
 
 router.delete(
   "/:id",

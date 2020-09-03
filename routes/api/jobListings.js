@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
       return res.send(jobListings);
     })
     .catch((err) =>
-      res.status(404).json({ nojobListingsfound: "No jobListings found" })
+      res.status(404).json({ noJobListingsfound: "No jobListings found" })
     );
 });
    
@@ -27,7 +27,7 @@ router.get("/:id", (req, res) => {
     .catch((err) =>
       res
         .status(404)
-        .json({ nojobListingfound: "No jobListing found with that ID" })
+        .json({ noJobListingfound: "No jobListing found with that ID" })
     );
 });
 

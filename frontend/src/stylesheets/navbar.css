@@ -1,4 +1,4 @@
-.NavBar {
+/* .NavBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,8 +11,8 @@
     color: white;
     letter-spacing: 1px;
     padding-left: 50px;
-    /* padding-right: 50px; */ 
-}
+    padding-right: 50px; 
+} */
 
 /* .NavBar button {
     height: 20px;

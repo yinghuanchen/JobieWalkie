@@ -1,6 +1,7 @@
 import axios from "axios"
 
 export const fetchAllCompanies = () => {
+  debugger
     return axios.get(`/api/companies`)
 }
 

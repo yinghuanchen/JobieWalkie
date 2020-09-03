@@ -3,7 +3,7 @@ import '../../stylesheets/main.css'
 const MainPage = () => {
     return (
       <div className='main'>
-        <div> An exclusive social networking app for software engineers. </div>
+        <div> An Exclusive Social Networking App For Software Engineers </div>
       </div>
     );
 }

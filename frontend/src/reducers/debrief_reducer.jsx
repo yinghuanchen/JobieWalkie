@@ -10,9 +10,9 @@ const debriefReducer = (oldState = {}, action) => {
     
     switch (action.type) {
         case RECEIVE_ALL_DEBRIEFS:
-            return Object.assign({}, oldState, action.debriefs)
+            return action.debriefs
         case RECEIVE_DEBRIEF:
-            return Object.assign({}, oldState, {[action.debrief._id]: action.debrief })
+            return action.debrief
         case DELETE_DEBRIEF:
             delete nextState[action.debriefId]
             return nextState
