@@ -25,6 +25,12 @@ export const fetchAllJobListings = () => (dispatch) => {
     .catch((err) => console.log(err))
 }
 
+export const fetchUserJobListings = () => (dispatch) => {
+    return JobListingAPIUtil.fetchUserJobListings()
+        .then((debriefs) => { dispatch(receiveAllJobListings(debriefs)) })
+        .catch((err) => console.log(err))
+}
+
 export const fetchJobListing = (jobListingId) => (dispatch) => {
     return JobListingAPIUtil.fetchJobListing(jobListingId)
     .then((jobListing) => { dispatch(receiveJobListing(jobListing)) })

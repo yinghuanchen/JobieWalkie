@@ -31,7 +31,7 @@ const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, ma
 
 const mapSTP = (state) => {
     return {
-        company: state.companies.data,
+        company: state.companies,
         debriefs: state.debriefs.data || []
     }
 }
@@ -46,4 +46,3 @@ const mapDTP = (dispatch) => {
 export default connect(mapSTP, mapDTP)(CompanyShow)
 
 // JW-TODO: Use useParams to replace "match"
-// Clint-TODO: 

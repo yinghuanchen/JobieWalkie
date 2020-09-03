@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import { fetchAllJobListings } from "../../actions/job_listing_actions"
 import { fetchUserFavoriteJobListingIds } from "../../actions/favorite_actions";
@@ -14,16 +14,19 @@ const JobListingIndex = ({ favorites, jobListings, fetchUserFavoriteJobListingId
     useEffect(() => {
       fetchUserFavoriteJobListingIds();
     }, []);
+    // useEffect(() => {
+    //     fetchAllFavorites()
+    // }, [fetchAllFavorites])
 
     return (
       <ul className="joblisting-index">
         {jobListings.map((jobListing) => {
-          return (
-            <JobListingItem key={jobListing._id} jobListing={jobListing} />
-          );
+            return (
+                <JobListingItem key={jobListing._id} jobListing={jobListing} />
+            )
         })}
       </ul>
-    );
+    )
 }
 
 const mapSTP = (state) => {

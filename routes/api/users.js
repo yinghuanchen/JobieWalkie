@@ -68,8 +68,7 @@ router.get(
        return res.json(listings.map((ele) => ele.jobListing));
      });
   }
-);
-// JW-TODO: This route is retrieving jobListing information rather than favorites information
+)
 
 
 router.get(
