@@ -46,4 +46,3 @@ const mapDTP = (dispatch) => {
 export default connect(mapSTP, mapDTP)(CompanyShow)
 
 // JW-TODO: Use useParams to replace "match"
-// Clint-TODO: 
