@@ -5,36 +5,35 @@ import "../../stylesheets/job_listings.css"
 
 const CompanyIndex = ({ companies, fetchAllCompanies }) => {
 
-  useEffect(() => {
-    fetchAllCompanies()
-  }, [fetchAllCompanies])
+    useEffect(() => {
+        fetchAllCompanies()
+    }, [fetchAllCompanies])
 
-  return (
-    <ul>
-      {
-        companies.map((company) => {
-          return (
-            <li>
-              {company.name}
-            </li>
-          )
-        })
-      }
-    </ul>
-  )
+    return (
+        <ul>
+            {
+                companies.map((company, idx) => {
+                    return (
+                        <li key={idx}>
+                            {company.name}
+                        </li>
+                    )
+                })
+            }
+        </ul>
+    )
 }
 
 const mapSTP = (state) => {
-
-  return {
-    companies: state.companies.data ? state.companies.data : []
-  }
+    return {
+        companies: state.companies.data ? state.companies.data : []
+    }
 }
 
 const mapDTP = (dispatch) => {
-  return {
-    fetchAllCompanies: () => dispatch(fetchAllCompanies())
-  }
+    return {
+        fetchAllCompanies: () => dispatch(fetchAllCompanies())
+    }
 }
 
 export default connect(mapSTP, mapDTP)(CompanyIndex)
