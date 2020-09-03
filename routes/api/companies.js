@@ -17,10 +17,12 @@ router.post("/", (req, res) => {
         return res.json(companies);
       })
       .catch((err) =>
-        res.status(404).json({ noCompaniesFound: "No companies found" })
+        res.json([])
+        //res.status(404).json({ noCompaniesFound: "No companies found" })
       )
   } else {
-    res.json({ noCompaniesFound: "No companies found" });
+    res.json([]);
+    //res.json({ noCompaniesFound: "No companies found" });
   }
 })
 

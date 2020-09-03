@@ -16,16 +16,14 @@ const JobListingIndex = ({ jobListings, fetchAllFavorites, fetchAllJobListings }
     }, [fetchAllFavorites])
 
     return (
-        <ul>
-            {
-                jobListings.map((jobListing) => {
-                    return (
-                        <JobListingItem key={jobListing._id} jobListing={jobListing} />
-                    )
-                })
-            }
-        </ul>
-    )
+      <ul className="joblisting-index">
+        {jobListings.map((jobListing) => {
+          return (
+            <JobListingItem key={jobListing._id} jobListing={jobListing} />
+          );
+        })}
+      </ul>
+    );
 }
 
 const mapSTP = (state) => {

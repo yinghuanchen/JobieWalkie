@@ -4,4 +4,28 @@
     font-size: 50px;
     height: 30px;
     width: 90px;
+    
+}
+
+.main-img {
+    margin-top: 50px;
+    object-fit: scale-down;
+    width: 1450px;
+}
+
+.main-text-1 {
+    position: absolute;
+    z-index: 2;
+    top: 90px;
+    left: 170px;
+    font-size: 50px;
+    font-family: Verdana;
+}
+.main-text-2 {
+    position:  absolute;
+    z-index: 2;
+    top: 170px;
+    left: 370px;
+    font-size: 50px;
+    font-family: Verdana;
 }
