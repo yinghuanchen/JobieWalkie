@@ -50,3 +50,8 @@
     cursor:pointer;
 }
 
+.joblisting-index {
+   padding-top:60px;
+   max-width: 750px; 
+}
+

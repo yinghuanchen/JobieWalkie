@@ -8,8 +8,8 @@ import '../../stylesheets/job_listings.css'
 const JobListingIndex = ({ jobListings, fetchAllFavorites, fetchAllJobListings }) => {
 
   useEffect(() => {
-      fetchAllJobListings()
-  }, [fetchAllJobListings])
+    fetchAllJobListings();
+  }, [fetchAllJobListings]);
 
   useEffect(() => {
     fetchAllFavorites()
@@ -25,8 +25,8 @@ const JobListingIndex = ({ jobListings, fetchAllFavorites, fetchAllJobListings }
         })
       }
     </ul>
-  )
-}
+  );
+};
 
 const mapSTP = (state) => {
   return {
@@ -41,4 +41,4 @@ const mapDTP = (dispatch) => {
   }
 }
 
-export default connect(mapSTP, mapDTP)(JobListingIndex)
+export default connect(mapSTP, mapDTP)(JobListingIndex);

@@ -11,6 +11,7 @@ const DebriefSchema = new Schema(
     company: {
       type: Schema.Types.ObjectId,
       ref: "companies",
+      required: true,
     },
     jobTitle: {
       type: String,
