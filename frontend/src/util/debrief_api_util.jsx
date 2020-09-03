@@ -4,9 +4,13 @@ export const fetchAllDebriefs = () => {
     return axios.get(`/api/debriefs`)
 }
 
-export const fetchAllCompanyDebriefs = (companyId) => {
-  return axios.get(`/api/companies/${companyId}/debriefs`);
-};
+export const fetchCompanyDebriefs = (companyId) => {
+  return axios.get(`/api/companies/${companyId}/debriefs`)
+}
+
+export const fetchUserDebriefs = (userId) => {
+    return axios.get(`/api/users/${userId}/debriefs`)
+}
 
 export const fetchDebrief = (debriefId) => {
     return axios.get(`/api/debriefs/${debriefId}`)

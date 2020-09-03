@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { fetchAllCompanyDebriefs } from "../../actions/debrief_actions"
+import { fetchCompanyDebriefs } from "../../actions/debrief_actions"
 import { fetchCompany } from "../../actions/company_actions"
 import DebriefList from "../debriefs/debrief_list"
 
-const CompanyShow = ({ company, debriefs, fetchAllCompanyDebriefs, fetchCompany, match }) => {
+const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, match }) => {
 
     let companyId = match.params.companyId
 
@@ -13,10 +13,10 @@ const CompanyShow = ({ company, debriefs, fetchAllCompanyDebriefs, fetchCompany,
     }, [fetchCompany, companyId])
 
     useEffect(() => {
-        fetchAllCompanyDebriefs(companyId)
-    }, [fetchAllCompanyDebriefs, companyId])
+        fetchCompanyDebriefs(companyId)
+    }, [fetchCompanyDebriefs, companyId])
 
-    // const companyDebriefs = debriefs.filter(debrief => debrief.company === companyId)
+    // const companyDebriefs = debriefs.filter(debrief => debrief.company === companyId) // Don't need this. Can delete because of "fetchCompanyDebriefs"
     if (!company) return null // This is important. The "fetch" is the asynchronous call that dictates why this line is important.
 
     return (
@@ -38,11 +38,12 @@ const mapSTP = (state) => {
 
 const mapDTP = (dispatch) => {
     return {
-        fetchAllCompanyDebriefs: (companyId) => dispatch(fetchAllCompanyDebriefs(companyId)),
+        fetchCompanyDebriefs: (companyId) => dispatch(fetchCompanyDebriefs(companyId)),
         fetchCompany: (companyId) => dispatch(fetchCompany(companyId)),
     }
 }
 
 export default connect(mapSTP, mapDTP)(CompanyShow)
 
-// JW-TODO: Clint, use useParams to replace "match"
+// JW-TODO: Use useParams to replace "match"
+// Clint-TODO: 

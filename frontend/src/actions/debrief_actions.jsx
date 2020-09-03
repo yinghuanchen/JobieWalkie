@@ -28,10 +28,16 @@ export const fetchAllDebriefs = () => (dispatch) => {
     .catch((err) => console.log(err))
 }
 
-export const fetchAllCompanyDebriefs = (companyId) => (dispatch) => {
-    return DebriefAPIUtil.fetchAllCompanyDebriefs(companyId)
+export const fetchCompanyDebriefs = (companyId) => (dispatch) => {
+    return DebriefAPIUtil.fetchCompanyDebriefs(companyId)
     .then((debriefs) => {dispatch(receiveAllDebriefs(debriefs))})
     .catch((err) => console.log(err))
+}
+
+export const fetchUserDebriefs = (userId) => (dispatch) => {
+    return DebriefAPIUtil.fetchUserDebriefs(userId)
+        .then((debriefs) => { dispatch(receiveAllDebriefs(debriefs)) })
+        .catch((err) => console.log(err))
 }
 
 export const fetchDebrief = (debriefId) => (dispatch) => {
