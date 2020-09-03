@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { fetchAllCompanies } from "../../actions/company_actions"
-// import CompanyItem from "./company_item"
 import "../../stylesheets/job_listings.css"
 
 const CompanyIndex = ({ companies, fetchAllCompanies }) => {

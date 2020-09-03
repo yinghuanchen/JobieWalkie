@@ -7,38 +7,38 @@ import '../../stylesheets/job_listings.css'
 
 const JobListingIndex = ({ jobListings, fetchAllFavorites, fetchAllJobListings }) => {
 
-  useEffect(() => {
-    fetchAllJobListings();
-  }, [fetchAllJobListings]);
+    useEffect(() => {
+        fetchAllJobListings()
+    }, [fetchAllJobListings])
 
-  useEffect(() => {
-    fetchAllFavorites()
-  }, [fetchAllFavorites])
+    useEffect(() => {
+        fetchAllFavorites()
+    }, [fetchAllFavorites])
 
-  return (
-    <ul>
-      {
-        jobListings.map((jobListing) => {
-          return (
-            <JobListingItem key={jobListing._id} jobListing={jobListing}/>
-          )
-        })
-      }
-    </ul>
-  );
-};
+    return (
+        <ul>
+            {
+                jobListings.map((jobListing) => {
+                    return (
+                        <JobListingItem key={jobListing._id} jobListing={jobListing} />
+                    )
+                })
+            }
+        </ul>
+    )
+}
 
 const mapSTP = (state) => {
-  return {
-    jobListings: state.jobListings.data ? state.jobListings.data : []
-  }
+    return {
+        jobListings: state.jobListings.data ? state.jobListings.data : []
+    }
 }
 
 const mapDTP = (dispatch) => {
-  return {
-    fetchAllJobListings: () => dispatch(fetchAllJobListings()),
-    fetchAllFavorites: () => dispatch(fetchAllFavorites())
-  }
+    return {
+        fetchAllJobListings: () => dispatch(fetchAllJobListings()),
+        fetchAllFavorites: () => dispatch(fetchAllFavorites())
+    }
 }
 
 export default connect(mapSTP, mapDTP)(JobListingIndex);
