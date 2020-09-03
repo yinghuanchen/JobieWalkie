@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { Link, useHistory } from "react-router-dom"
 import { logout } from "../../actions/session_actions"
+import SearchBarContainer from './searchbar';
 import "../../stylesheets/navbar.css"
 
 const NavBar = ({ loggedIn, logout }) => {
@@ -18,14 +19,35 @@ const NavBar = ({ loggedIn, logout }) => {
     const getLinks = () => {
         if (loggedIn) {
             return (
-                <div className="nav-index">
-                    <button >Debriefs</button>
-                    <button >Job Listings</button>
-                    <button >Companies</button>
-                    <button >Profile</button>
-                    <button onClick={handleLogout}>Logout</button>
+              // <div className="nav-index">
+              //     <button >Debriefs</button>
+              //     <button >Job Listings</button>
+              //     <button >Companies</button>
+              //     <button >Profile</button>
+              //     <button onClick={handleLogout}>Logout</button>
+              // </div>
+              <div>
+                <div className="profile-dropdown-container fas fa-angle-down">
+                  <ul className="profile-dropdown-content">
+                    <Link to="/" className="dropdown-btn">
+                      Debriefs
+                    </Link>
+                    <Link to="/" className="dropdown-btn">
+                      Job Listings
+                    </Link>
+                    <Link to="/" className="dropdown-btn">
+                      Companies
+                    </Link>
+                    <Link to="/" className="dropdown-btn">
+                      Profile
+                    </Link>
+                    <div className="dropdown-btn" onClick={handleLogout}>
+                      Logout
+                    </div>
+                  </ul>
                 </div>
-            )
+              </div>
+            );
         } else {
             return (
                 <div className="login-signup-link">
@@ -39,6 +61,7 @@ const NavBar = ({ loggedIn, logout }) => {
     return (
         <div className="NavBar">
             <span className="left-container"> JobieWalkie</span>
+            <SearchBarContainer />
             <span className="right-container"> {getLinks()} </span>
         </div>
     )

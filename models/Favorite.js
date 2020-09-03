@@ -10,6 +10,7 @@ const FavoriteSchema = new Schema(
     jobListing: {
       type: Schema.Types.ObjectId,
       ref: "joblistings",
+      required: true,
     },
   },
   {

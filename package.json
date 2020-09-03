@@ -13,7 +13,9 @@
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "validator": "^13.1.1"
+    "react-icons": "^3.11.0",
+    "validator": "^13.1.1", 
+    "linkedin-jobs-scraper": "^2.2.0"
   },
   "devDependencies": {},
   "scripts": {

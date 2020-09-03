@@ -1,0 +1,158 @@
+.form-container {
+  padding-top: 200px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+  display: relative;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.session-form-btn {
+  justify-content: center;
+  background-color: #80ff80;
+  padding: 10px;
+  color: white;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.session-form-btn:hover {
+  background-color: #00cc00;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.session-form input {
+  box-sizing: border-box;
+  border: lightgray 1px solid;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.session-form input:focus {
+  background-color: white;
+}
+
+.errors-list {
+  color: red
+}
+
+.birthdate-inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.birthdate-inputs select {
+  border: lightgray 1px solid;
+  padding: 10px;
+  font-size: 16px;
+  color: gray;
+  width: 31%;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  margin-bottom: 5px;
+}
+
+.birthdate-inputs select:focus {
+  background-color: white;
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: gray;
+  left: 54%;
+}
+
+.nav-link:hover {
+  transition-duration: 0.6s;
+  color: #333333;
+}
+
+.gender-inputs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.gender-inputs label {
+  color: gray;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border: lightgray 1px solid;
+  width: 44%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.fa-check {
+  padding-right: 15px;
+}
+
+input[type="radio"]:checked + span { 
+  color: lightgreen;
+  font-weight: bold;  
+} 
+
+.demo-user-btn:hover {
+  background-color: #2b406e;
+  transition-duration: 0.2s;
+}
+
+.demo-user-btn {
+  background-color: #3b5998;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.fa-user-alt {
+  color: white;
+  padding-right: 20px;
+}
+
+.divider-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  color: #a6a6a6;
+  font-size: 12px;
+}
+
+.divider-text {
+  padding-top: 2px;
+}
+
+.divider {
+  display: block;
+  width: 40%;
+  height: 1px;
+  padding-top: 7px;
+  border-bottom: 1px #a6a6a6 solid;
+}

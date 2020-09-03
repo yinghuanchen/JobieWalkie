@@ -5,7 +5,7 @@
 
 // const FavoriteItem = ({ jobListing, favorite, currentUser, createFavorite, deleteFavorite }) => {
 //     const isFavorited = !!favorite
-  
+
 //     const handleCreateFavorite = () => {
 //         createFavorite({
 //             user: currentUser,

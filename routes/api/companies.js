@@ -6,13 +6,14 @@ const Company = require("../../models/Company");
 const Debrief = require("../../models/Debrief");
 
 
+
 //var matches = aString.match(new RegExp(pattern));
 
 // Index
-router.get("/", (req, res) => {
-  const queryName = new RegExp(req.body.name); //{name: querysting}
+router.post("/", (req, res) => {
+  const queryName = req.body.name; //{name: querysting}
   if (queryName) {
-    Company.find({ name: queryName })
+    Company.find({ name: { $regex: queryName, $options: "i" } })
       //might need to change the date string to date object
       .then((companies) => {
         return res.json(companies);
@@ -21,19 +22,23 @@ router.get("/", (req, res) => {
         res.status(404).json({ noCompaniesFound: "No companies found" })
       );
   } else {
+    res.json({ noCompaniesFound: "No companies found" });
+  }
+});
+
+// Index
+router.get("/", (res, req) => {
     Company.find()
-      //might need to change the date string to date object
+      .sort({ name: 1 })
       .then((companies) => {
         return res.json(companies);
       })
       .catch((err) =>
         res.status(404).json({ noCompaniesFound: "No companies found" })
       );
-  }
-});
+})
 
-
-// Show
+// show
 router.get("/:id", (req, res) => {
   Company.findById(req.params.id)
     .then((company) => res.json(company))

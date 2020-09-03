@@ -15,7 +15,6 @@ mongoose
   .catch((err) => console.log(err));
 
 const JobListing = require("./models/JobListing");
-  
 
 (async () => {
   // Each scraper instance is associated with one browser.
@@ -23,7 +22,7 @@ const JobListing = require("./models/JobListing");
   const scraper = new LinkedinScraper({
     headless: true,
     slowMo: 10,
-  })
+  });
 
   // // Add listeners for scraper events
   scraper.on(events.scraper.data, (data) => {
@@ -55,8 +54,7 @@ const JobListing = require("./models/JobListing");
       employmentType: data.employmentType,
     });
 
-    newJobListing.save().then(()=>console.log('success'));
-
+    newJobListing.save().then(() => console.log("success"));
   });
 
   scraper.on(events.scraper.error, (err) => {
@@ -76,7 +74,7 @@ const JobListing = require("./models/JobListing");
   const descriptionProcessor = () =>
     document
       .querySelector(".description__text")
-      .innerText//.replace(/[\s\n\r]+/g, " ")
+      .innerText //.replace(/[\s\n\r]+/g, " ")
       .trim();
 
   // Run queries concurrently
