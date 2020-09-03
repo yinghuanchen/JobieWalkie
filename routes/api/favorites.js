@@ -1,10 +1,10 @@
-const express = require("express");
-const router = express.Router();
-const passport = require("passport");
-const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
-const Favorite = require("../../models/Favorite");
-const User = require("../../models/User");
+const express = require("express")
+const router = express.Router()
+const passport = require("passport")
+const jwt = require("jsonwebtoken")
+const keys = require("../../config/keys")
+const Favorite = require("../../models/Favorite")
+const User = require("../../models/User")
 
 router.post(
   "/",
@@ -22,21 +22,24 @@ router.post(
     });
     newFavorite.save().then((newFavorite) => res.json(newFavorite));
   }
-);
+)
 
 router.delete(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const favorite = Favorite.findOne({
-      jobListing: req.body.jobListingId,
+    Favorite.findOne({
+      jobListing: req.body.jobListing,
       user: req.user.id,
-    });
-    const user = User.findById(req.body.userId);
-    Favorite.findByIdAndRemove(favorite.id)
-      .then(() => res.json({ msg: "favorite removed" }))
-      .catch((errs) => console.log(err));
+    })
+    .then((favorite) => {
+      Favorite.findByIdAndRemove(favorite)
+        .then(() => res.json({ msg: "favorite removed" }))
+        .catch((errs) => console.log(errs))
+    })
+    .catch((err) => res.json(err))
+    
   }
-);
+)
 
 module.exports = router;

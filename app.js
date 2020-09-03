@@ -7,7 +7,8 @@ const passport = require("passport")
 const users = require("./routes/api/users")
 const jobListings = require('./routes/api/jobListings')
 const companies = require("./routes/api/companies");
-const favorites = require("./routes/api/favorites")
+const favorites = require("./routes/api/favorites");
+const debriefs = require("./routes/api/debriefs");
 const path = require("path")
 
 if (process.env.NODE_ENV === "production") {
@@ -18,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose
-    .connect(db, { useNewUrlParser: true })
+    .connect(db, { useNewUrlParser: true, useFindAndModify: false })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch((err) => console.log(err))
 
@@ -36,6 +37,7 @@ app.use("/api/users", users)
 app.use("/api/jobListings", jobListings);
 app.use("/api/favorites", favorites);
 app.use("/api/companies", companies);
+app.use("/api/debriefs", debriefs);
 
 const port = process.env.PORT || 5000
 app.listen(port, () => console.log(`Server is running on port ${port}`))

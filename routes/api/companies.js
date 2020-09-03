@@ -3,16 +3,15 @@ const router = express.Router();
 const passport = require("passport");
 const keys = require("../../config/keys");
 const Company = require("../../models/Company");
-const e = require("express");
+const Debrief = require("../../models/Debrief");
+
 
 
 //var matches = aString.match(new RegExp(pattern));
 
-// Search 
+// Index
 router.post("/", (req, res) => {
-  // debugger; 
-  //const queryName = new RegExp(req.body.name);
-  const queryName = req.body.name;
+  const queryName = req.body.name; //{name: querysting}
   if (queryName) {
     Company.find({ name: { $regex: queryName, $options: "i" } })
       //might need to change the date string to date object
@@ -39,12 +38,7 @@ router.get("/", (res, req) => {
       );
 })
 
-// Hi I would like to go to another breakout room but I think we can
-// 't 
-// me toooo
-// I solve the case sensitivity problem we can work on css so my search bar wont disappear
-// nice. yeah the search bar still flies away And the position for dropdown is so weird 
-// Show
+// show
 router.get("/:id", (req, res) => {
   Company.findById(req.params.id)
     .then((company) => res.json(company))
@@ -52,5 +46,20 @@ router.get("/:id", (req, res) => {
       res.status(404).json({ noCompanyFound: "No company found with that ID" })
     );
 });
+
+// show debriefs 
+router.get(
+  "/:id/debriefs",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+
+    Debrief.find({ company: req.params.id })
+      .then((debriefs) => {
+        return res.json(debriefs);
+      })
+      .catch((err) => res.json(err));
+  }
+);
+
 
 module.exports = router;

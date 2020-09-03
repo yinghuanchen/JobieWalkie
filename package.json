@@ -14,7 +14,8 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-icons": "^3.11.0",
-    "validator": "^13.1.1"
+    "validator": "^13.1.1", 
+    "linkedin-jobs-scraper": "^2.2.0"
   },
   "devDependencies": {},
   "scripts": {

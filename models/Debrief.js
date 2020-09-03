@@ -18,7 +18,7 @@ const DebriefSchema = new Schema(
       required: true,
     },
     interviewDate: {
-      type: String,
+      type: Date,
       required: true,
     },
     interviewStage: {
@@ -30,7 +30,7 @@ const DebriefSchema = new Schema(
       required: true,
     },
     difficulty: {
-      type: String,
+      type: Number,
       required: true,
     },
     comments: {
