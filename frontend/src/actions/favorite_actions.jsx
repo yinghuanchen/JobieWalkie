@@ -24,9 +24,7 @@ export const removeFavorite = (favoriteId) => ({
 // Thunk Action Creator
 export const fetchAllFavorites = () => (dispatch) => {
     return FavoriteAPIUtil.fetchAllFavorites()
-    .then((favorites) => {
-        dispatch(receiveAllFavorites(favorites))
-    })
+    .then((favorites) => {dispatch(receiveAllFavorites(favorites))})
     .catch((err) => console.log(err))
 }
 
@@ -40,16 +38,12 @@ export const fetchAllFavorites = () => (dispatch) => {
 
 export const createFavorite = (favorite) => (dispatch) => {
     return FavoriteAPIUtil.createFavorite(favorite)
-    .then((favorite) => {
-        dispatch(receiveFavorite(favorite))
-    })
+    .then((favorite) => {dispatch(receiveFavorite(favorite))})
     .catch((err) => console.log(err))
 }
 
 export const deleteFavorite = (favoriteId) => (dispatch) => {
     return FavoriteAPIUtil.deleteFavorite(favoriteId)
-    .then((favorite) => {
-        dispatch(receiveFavorite(favorite))
-    })
+    .then((favorite) => {dispatch(receiveFavorite(favorite))})
     .catch((err) => console.log(err))
 }

@@ -15,20 +15,20 @@ import ToDos from './todos/todo_item'
 import '../stylesheets/reset.css'
 
 const App = () => (
-  <div>
-    <NavBar />
-    <Switch>
-      <AuthRoute exact path="/" component={MainPage} />
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route exact path="/debriefs" component={DebriefIndex} />
-      <Route exact path="/jobListings" component={JobListingIndex} />
-      <Route exact path="/companies" component={CompanyIndex} />
-      <Route exact path="/companies/:companyId" component={CompanyShow} />
-      <Route exact path="/users/:userId" component={Profile} />
-      <Route exact path='/todos' component ={ToDos} />
-    </Switch>
-  </div>
+    <div>
+        <NavBar />
+        <Switch>
+            <AuthRoute exact path="/" component={MainPage} />
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <Route exact path="/debriefs" component={DebriefIndex} />
+            <Route exact path="/jobListings" component={JobListingIndex} />
+            <Route exact path="/companies" component={CompanyIndex} />
+            <Route exact path="/companies/:companyId" component={CompanyShow} />
+            <Route exact path="/users/:userId" component={Profile} />
+            <Route exact path='/todos' component={ToDos} />
+        </Switch>
+    </div>
 );
 
 export default App

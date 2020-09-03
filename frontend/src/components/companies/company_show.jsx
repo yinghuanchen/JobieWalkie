@@ -10,7 +10,7 @@ import { fetchCompany } from "../../actions/company_actions"
 // }
 
 const CompanyShow = ({ company, debriefs, fetchAllDebriefs, fetchCompany, match }) => {
-    
+
     let companyId = match.params.companyId
 
     useEffect(() => {
@@ -26,25 +26,32 @@ const CompanyShow = ({ company, debriefs, fetchAllDebriefs, fetchCompany, match 
 
     return (
         <>
-        <div>
-            <p>{company.name}</p>
-            {/* <DebriefItem debriefs={companyDebriefs}/> */}
-        </div>
+            <div>
+                <p>Nav in the way</p>
+                <p>Nav in the way</p>
+                <p>Nav in the way</p>
+                <p>Nav in the way</p>
+                <p>Nav in the way</p>
+                <p>Nav in the way</p>
+                <p>Nav in the way</p>
+                <p>{company.name}</p>
+                {/* <DebriefItem debriefs={companyDebriefs}/> */}
+            </div>
         </>
     )
 }
 
 const mapSTP = (state) => {
-return {
-    company: state.companies.data,
-    // debriefs: state.debriefs.data ? state.debriefs.data : []
+    return {
+        company: state.companies.data,
+        // debriefs: state.debriefs.data ? state.debriefs.data : []
     }
 }
 
 const mapDTP = (dispatch) => {
-return {
-    // fetchAllDebriefs: () => dispatch(fetchAllDebriefs()),
-    fetchCompany: (companyId) => dispatch(fetchCompany(companyId)),
+    return {
+        // fetchAllDebriefs: () => dispatch(fetchAllDebriefs()),
+        fetchCompany: (companyId) => dispatch(fetchCompany(companyId)),
     }
 }
 

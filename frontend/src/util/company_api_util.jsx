@@ -1,21 +1,21 @@
 import axios from "axios"
 
 export const fetchAllCompanies = () => {
-  debugger
+    debugger
     return axios.get(`/api/companies`)
 }
 
 export const searchCompany = (query) => {
-  // var bodyFormData = new FormData();
-  // bodyFormData.append("name", query.name);
-  // return axios.get(`/api/companies/`, { body: query});
-  return axios({
-    method: "post",
-    url: "/api/companies",
-    data: query,
-    //headers: { "Content-Type":"application/json" },
-  });
-};
+    // var bodyFormData = new FormData();
+    // bodyFormData.append("name", query.name);
+    // return axios.get(`/api/companies/`, { body: query});
+    return axios({
+        method: "post",
+        url: "/api/companies",
+        data: query,
+        //headers: { "Content-Type":"application/json" },
+    })
+}
 
 export const fetchCompany = (companyId) => {
     return axios.get(`/api/companies/${companyId}`)
