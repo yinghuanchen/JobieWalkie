@@ -4,8 +4,7 @@ import { FaExternalLinkAlt } from "react-icons/fa"
 import { createFavorite, deleteFavorite } from "../../actions/favorite_actions"
 
 const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorite, jobListing }) => {
-  const isFavorited = !!favorite
-
+  
   const handleCreateFavorite = () => {
     createFavorite({
       user: currentUser,
@@ -14,10 +13,12 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorite,
   }
 
   const handleDeleteFavorite = () => {
-    deleteFavorite(favorite)
+    return deleteFavorite(favorite._id)
   }
 
-  const placeFavorite = isFavorited ? (
+  const favoriteJobListing = favorite.jobListing === jobListing._id
+
+  const placeFavorite = favoriteJobListing  ? (
     <button onClick={handleDeleteFavorite}>Favorited</button>
     ) : (
     <button onClick={handleCreateFavorite}>Not Favorited</button>     
@@ -52,8 +53,8 @@ const mapSTP = (state) => {
 const mapDTP = (dispatch) => {
   return {
     createFavorite: (favorite) => dispatch(createFavorite(favorite)),
-    deleteFavorite: (favorite) => dispatch(deleteFavorite(favorite._id)),
-  };
-};
+    deleteFavorite: (favorite) => dispatch(deleteFavorite(favorite)),
+  }
+}
 
 export default connect(mapSTP, mapDTP)(JobListingItem);
