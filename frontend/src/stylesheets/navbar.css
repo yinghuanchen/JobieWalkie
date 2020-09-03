@@ -12,6 +12,7 @@
     letter-spacing: 1px;
     padding-left: 50px;
     padding-right: 50px; 
+    z-index: 2;
 }
 
 /* .NavBar button {
