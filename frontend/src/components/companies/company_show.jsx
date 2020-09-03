@@ -1,15 +1,10 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-// import { fetchAllDebriefs } from "../../actions/debrief_actions"
+import { fetchAllCompanyDebriefs } from "../../actions/debrief_actions"
 import { fetchCompany } from "../../actions/company_actions"
+import DebriefList from "../debriefs/debrief_list"
 
-// const addDebrief = () => {
-//     const [writeDebrief, setWriteDebrief] = useState([
-
-//     ])
-// }
-
-const CompanyShow = ({ company, debriefs, fetchAllDebriefs, fetchCompany, match }) => {
+const CompanyShow = ({ company, debriefs, fetchAllCompanyDebriefs, fetchCompany, match }) => {
 
     let companyId = match.params.companyId
 
@@ -17,25 +12,18 @@ const CompanyShow = ({ company, debriefs, fetchAllDebriefs, fetchCompany, match 
         fetchCompany(companyId)
     }, [fetchCompany, companyId])
 
-    // useEffect(() => {
-    //     fetchAllDebriefs()
-    // }, [fetchAllDebriefs])
+    useEffect(() => {
+        fetchAllCompanyDebriefs(companyId)
+    }, [fetchAllCompanyDebriefs, companyId])
 
-    // const companyDebriefs = debriefs.filter(debrief => debrief.company_id === companyId)
-    if (!company) return null
+    // const companyDebriefs = debriefs.filter(debrief => debrief.company === companyId)
+    if (!company) return null // This is important. The "fetch" is the asynchronous call that dictates why this line is important.
 
     return (
         <>
             <div>
-                <p>Nav in the way</p>
-                <p>Nav in the way</p>
-                <p>Nav in the way</p>
-                <p>Nav in the way</p>
-                <p>Nav in the way</p>
-                <p>Nav in the way</p>
-                <p>Nav in the way</p>
                 <p>{company.name}</p>
-                {/* <DebriefItem debriefs={companyDebriefs}/> */}
+                <DebriefList debriefs={debriefs}/>
             </div>
         </>
     )
@@ -44,15 +32,17 @@ const CompanyShow = ({ company, debriefs, fetchAllDebriefs, fetchCompany, match 
 const mapSTP = (state) => {
     return {
         company: state.companies.data,
-        // debriefs: state.debriefs.data ? state.debriefs.data : []
+        debriefs: state.debriefs.data || []
     }
 }
 
 const mapDTP = (dispatch) => {
     return {
-        // fetchAllDebriefs: () => dispatch(fetchAllDebriefs()),
+        fetchAllCompanyDebriefs: (companyId) => dispatch(fetchAllCompanyDebriefs(companyId)),
         fetchCompany: (companyId) => dispatch(fetchCompany(companyId)),
     }
 }
 
 export default connect(mapSTP, mapDTP)(CompanyShow)
+
+// JW-TODO: Clint, use useParams to replace "match"

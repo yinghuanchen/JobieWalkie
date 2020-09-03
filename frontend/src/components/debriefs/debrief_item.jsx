@@ -33,8 +33,6 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => 
         </>
     )
 
-
-
     return (
         <li>
             <p>{debrief.company}</p>

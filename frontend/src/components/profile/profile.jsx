@@ -32,6 +32,12 @@ const Profile = ({ currentUser, favorite, jobListings, fetchAllJobListings, fetc
             {/* <JobListingList jobListings={jobListings} /> */}
             {/* <DebriefItem debriefs={userDebriefs} /> */}
             <p>HI</p>
+            <p>NavBar</p>
+            <p>NavBar</p>
+            <p>NavBar</p>
+            <p>NavBar</p>
+            <p>NavBar</p>
+            <p>NavBar</p>
         </div>
     )
 }
