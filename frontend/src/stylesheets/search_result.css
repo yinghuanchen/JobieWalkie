@@ -1,0 +1,17 @@
+.search-result {
+    padding-top: 60px;
+    margin-left: 490px;
+}
+.search-result-item {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    align-items: center;
+    font-size: 24px;
+
+}
+
+.search-result-item #img {
+    height: 60px;
+    width: 60px;
+}

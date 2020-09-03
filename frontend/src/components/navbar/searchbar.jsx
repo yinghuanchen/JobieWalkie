@@ -1,21 +1,22 @@
 import { searchCompany } from "../../actions/company_actions"
 import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom";
 import '../../stylesheets/search_bar.css'
 
 const SearchBar = ({ searchCompany, searchResults }) => {
     const [inputStr, setinputStr] = useState("")
     const [isDropdownOpen, setisDropdownOpen] = useState(false)
-    const pushHistory = useHistory()
+    const pushHistory = useHistory();
+
 
     // useEffect(() => {
     //   searchCompany(inputStr.trim());
     // });
 
     const handleUpdate = (e) => {
-        // console.log(e.target.value);
-        // console.log(e.target.value.trim());
+        //console.log(e.target.value);
+        console.log(e.target.value.trim());
         setinputStr(e.target.value);
         if (e.target.value.trim()) {
             searchCompany({ name: e.target.value.trim() });
@@ -30,7 +31,7 @@ const SearchBar = ({ searchCompany, searchResults }) => {
         if (inputStr.trim()) {
             setinputStr("");
             setisDropdownOpen(false);
-            //pushHistory.push(`/search?companyName=${inputStr.trim()}`);
+            pushHistory.replace(`/search?companyName=${inputStr.trim()}`);
         }
     }
 
@@ -40,21 +41,24 @@ const SearchBar = ({ searchCompany, searchResults }) => {
                 <ul>
                     {searchResults.slice(0, 20).map((company, idx) => {
                         return (
-                            <li key={idx} className="search-bar-item">
-                                <div className="search-bar-img-container">
-                                    <Link to={`/companies/${company._id}`}>
-                                        <img
-                                            src={company.companyImg}
-                                            alt=""
-                                            id="img"
-                                            className="img"
-                                        />
-                                    </Link>
-                                </div>
-                                <Link className="search-bar-text-container" to={`/companies/${company._id}`}>
-                                    {company.name}
-                                </Link>
-                            </li>
+                          <li key={idx} className="search-bar-item">
+                            <div className="search-bar-img-container">
+                              <Link to={`/companies/${company._id}`}>
+                                <img
+                                  src={company.companyImg}
+                                  alt=""
+                                  id="img"
+                                  className="img"
+                                />
+                              </Link>
+                            </div>
+                            <Link
+                              className="search-bar-text-container"
+                              to={`/companies/${company._id}`}
+                            >
+                              {company.name}
+                            </Link>
+                          </li>
                         );
                     })}
                 </ul>

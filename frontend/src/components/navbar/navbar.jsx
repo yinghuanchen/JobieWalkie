@@ -57,12 +57,14 @@ const NavBar = ({ loggedIn, logout }) => {
 	}
 
 	return (
-		<div className="NavBar">
-			<span className="left-container"> JobieWalkie</span>
-			<SearchBarContainer />
-			<span className="right-container"> {getLinks()} </span>
-		</div>
-	)
+    <div className="NavBar">
+      <Link to="/">
+        <span className="left-container"> JobieWalkie</span>
+      </Link>
+      <SearchBarContainer />
+      <span className="right-container"> {getLinks()} </span>
+    </div>
+  );
 }
 
 const mapSTP = (state) => {
