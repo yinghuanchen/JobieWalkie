@@ -58,36 +58,37 @@ class SignupForm extends React.Component {
        
     return (
       <div className="form-container">
-        <button className="demo-user-btn" onClick={this.handleDemoSubmit}>
-          <span className="fas fa-user-alt"></span>SIGN IN WITH DEMO USER
-        </button>
-        <div className="divider-container">
-          <span className="divider"></span>
-          <span className="divider-text">OR</span>
-          <span className="divider"></span>
-        </div>
         <form onSubmit={this.handleSubmit} className="session-form">
-          <input
-            type="text"
-            onChange={this.update("handle")}
-            value={this.state.handle}
-            placeholder="Handle"
-            className="session-form-inputs"
-          />
-          <input
-            type="text"
-            onChange={this.update("email")}
-            value={this.state.email}
-            placeholder="Email"
-            className="session-form-inputs"
-          />
-          <input
-            type="password"
-            onChange={this.update("password")}
-            value={this.state.password}
-            placeholder="Password"
-            className="session-form-inputs"
-          />
+          <div>
+            <input
+              type="text"
+              onChange={this.update("handle")}
+              value={this.state.handle}
+              // className="session-form-inputs"
+              required
+            />
+            <label>Handle</label>
+          </div>
+          <div>
+            <input
+              type="text"
+              onChange={this.update("email")}
+              value={this.state.email}
+              // className="session-form-inputs"
+              required
+            />
+            <label>Email</label>
+          </div>
+          <div>
+            <input
+              type="password"
+              onChange={this.update("password")}
+              value={this.state.password}
+              // className="session-form-inputs"
+              required
+            />
+            <label>Password</label>
+          </div>
           <button className="session-form-btn">SIGN UP</button>
           {this.renderErrors()}
         </form>

@@ -26,7 +26,7 @@ const NavBar = ({ loggedIn, logout }) => {
               //     <button >Profile</button>
               //     <button onClick={handleLogout}>Logout</button>
               // </div>
-              <div>
+              <div className="right-container-div">
                 <div className="profile-dropdown-container fas fa-angle-down">
                   <ul className="profile-dropdown-content">
                     <Link to="/" className="dropdown-btn">

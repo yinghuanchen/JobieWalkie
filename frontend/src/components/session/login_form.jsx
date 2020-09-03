@@ -52,50 +52,31 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    // return (
-    //     <div>
-    //         <form onSubmit={this.handleSubmit}>
-    //             <div>
-    //                 <br />
-    //                 <input
-    //                     type="text"
-    //                     value={this.state.email}
-    //                     onChange={this.update("email")}
-    //                     placeholder="Email"
-    //                 />
-    //                 <br />
-    //                 <input
-    //                     type="password"
-    //                     value={this.state.password}
-    //                     onChange={this.update("password")}
-    //                     placeholder="Password"
-    //                 />
-    //                 <br />
-    //                 <input type="submit" value="Submit" />
-    //                 {this.renderErrors()}
-    //             </div>
-    //         </form>
-    //     </div>
-    // )
     return (
       <div className="form-container">
-        <button className='demo-user-btn' onClick={this.handleDemoSubmit}><span className="fas fa-user-alt"></span>SIGN IN WITH DEMO USER</button>
-        <div className='divider-container'>
+        {/* <button className='demo-user-btn' onClick={this.handleDemoSubmit}><span className="fas fa-user-alt"></span>SIGN IN WITH DEMO USER</button> */}
+        {/* <div className='divider-container'>
           <span className='divider'></span><span className='divider-text'>OR</span><span className='divider'></span>
-        </div>
+        </div> */}
         <form onSubmit={this.handleSubmit} className="session-form">
+          <div>
             <input
                 type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
-                placeholder="Email"
+                required
             />
+            <label>Email</label>
+          </div>
+          <div>
             <input
                 type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
-                placeholder="Password"
+                required
             />
+            <label>Password</label>
+          </div>
           <button className="session-form-btn">LOG IN</button>
           {this.renderErrors()}
         </form>

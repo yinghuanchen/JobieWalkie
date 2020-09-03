@@ -20,6 +20,7 @@ time, mark, audio, video,text {
 	text-decoration: none;
 	vertical-align: baseline;
 	pointer-events: auto;
+	background-color: #181818;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

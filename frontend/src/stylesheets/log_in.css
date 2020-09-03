@@ -15,57 +15,55 @@
 
 .session-form-btn {
   justify-content: center;
-  background-color: #80ff80;
+  background-color: #20a896;
   padding: 10px;
-  color: white;
+  color: #2c213b;
   border-radius: 3px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .session-form-btn:hover {
-  background-color: #00cc00;
-  transition-duration: 0.3s;
+  background-color: #53ddcb;
+  transition-duration: 0.2s;
   cursor: pointer;
 }
 
 .session-form input {
+  outline: none;
+  color: white;
   box-sizing: border-box;
-  border: lightgray 1px solid;
-  margin-bottom: 15px;
-  padding: 10px;
+  border-bottom: #333333 1px solid;
+  margin-bottom: 25px;
+  padding: 10px 0 10px 0;
   width: 100%;
-  background-color: #f2f2f2;
 }
 
 .session-form input:focus {
-  background-color: white;
+  border-bottom: white 2px solid;
+}
+
+.session-form input:focus ~ label, 
+.session-form input:valid ~ label {
+  font-size: 14px;
+  top: -12px;
 }
 
 .errors-list {
   color: red
 }
 
-.birthdate-inputs {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 10px;
+.form-container div {
+  position: relative;
 }
 
-.birthdate-inputs select {
-  border: lightgray 1px solid;
-  padding: 10px;
-  font-size: 16px;
-  color: gray;
-  width: 31%;
-  cursor: pointer;
-  background-color: #f2f2f2;
-  margin-bottom: 5px;
-}
-
-.birthdate-inputs select:focus {
-  background-color: white;
+.form-container label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: #757575;
+  transition: 0.5s;
+  pointer-events: none;
 }
 
 .nav-link {
@@ -81,34 +79,9 @@
   color: #333333;
 }
 
-.gender-inputs {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding-bottom: 10px;
-  margin-bottom: 5px;
-}
-
-.gender-inputs label {
-  color: gray;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  border: lightgray 1px solid;
-  width: 44%;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
 .fa-check {
   padding-right: 15px;
 }
-
-input[type="radio"]:checked + span { 
-  color: lightgreen;
-  font-weight: bold;  
-} 
 
 .demo-user-btn:hover {
   background-color: #2b406e;
@@ -135,24 +108,3 @@ input[type="radio"]:checked + span {
   padding-right: 20px;
 }
 
-.divider-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 15px;
-  color: #a6a6a6;
-  font-size: 12px;
-}
-
-.divider-text {
-  padding-top: 2px;
-}
-
-.divider {
-  display: block;
-  width: 40%;
-  height: 1px;
-  padding-top: 7px;
-  border-bottom: 1px #a6a6a6 solid;
-}
