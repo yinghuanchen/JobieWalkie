@@ -4,40 +4,34 @@ import { fetchAllJobListings } from "../../actions/job_listing_actions"
 import { fetchUserDebriefs } from "../../actions/debrief_actions"
 import { fetchUserFavoriteJobListingIds } from "../../actions/favorite_actions"
 import DebriefList from "../debriefs/debrief_list"
+import { fetchAllFavorites } from "../../actions/favorite_actions"
 import JobListingItem from "../job_listings/job_listing_item"
-import '../../stylesheets/profile.css'
 
-const Profile = ({ currentUser, debriefs, favoriteJobListingID, fetchAllJobListings, fetchUserDebriefs, fetchUserFavoriteJobListingIds, jobListings, match }) => {
-
-    // useEffect(() => {
-    //     fetchAllJobListings()
-    // }, [fetchAllJobListings])
+const Profile = ({ currentUser, debriefs, jobListings, fetchUserDebriefs, fetchAllFavorites, match }) => {
 
     useEffect(() => {
-        fetchUserDebriefs()
-    }, [fetchUserDebriefs])
+      fetchUserDebriefs()
+    }, [])
 
     useEffect(() => {
-        fetchUserFavoriteJobListingIds()
-    }, [fetchUserFavoriteJobListingIds])
-
-    // debugger
-    // const favoriteJobListings = jobListings.filter(jobListing => favoriteJobListingID.includes(jobListing._id) ? jobListing._id : null)
+      fetchAllFavorites()
+    }, [])
     
+    // const userDebriefs = debriefs.filter(debrief => debrief.author_id === currentUser._id) // Clint-TODO: Watch out for the parameter after the period. Check the state. May not need this because of fetchUserDebrief
     return (
-        <div className='main-profile'>
-            {/* <ul className="joblisting-index">
-                {jobListings.map((jobListing) => {
-                    return (
-                        <JobListingItem key={jobListing._id} jobListing={favoriteJobListings} />
-                    )
-                })}
-            </ul> */}
-            <p>{currentUser.handle}</p>
-            <DebriefList debriefs={debriefs} className='debrief'/>
+        <div>
+            <h1>Hi {currentUser.handle}</h1>
+            <DebriefList debriefs={debriefs} />
+            {
+                jobListings.map(jobListing => <JobListingItem jobListing={jobListing}/>)
+                // JW-TODO: Used fetchAllFavorites to grab all of user's favorites and used receiveAllJobListings
+                // to get the jobListing objects. Mapped through them and passed them into JobListingItem
+            }
         </div>
     )
 }
+
+
 
 const mapSTP = (state) => {
     return {
@@ -50,9 +44,8 @@ const mapSTP = (state) => {
 
 const mapDTP = (dispatch) => {
     return {
-        // fetchAllJobListings: () => dispatch(fetchAllJobListings()),
         fetchUserDebriefs: () => dispatch(fetchUserDebriefs()),
-        fetchUserFavoriteJobListingIds: () => dispatch(fetchUserFavoriteJobListingIds())
+        fetchAllFavorites: () => dispatch(fetchAllFavorites())
     }
 }
 
