@@ -22,14 +22,15 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites
         console.log("5f503ecf58fd92214b5ec124");
         console.log(favorites);
     }
-    const isFavorite = favorites.includes(jobListing._id);
+
+    const isFavorite = favorites.includes(jobListing._id)
 
     const placeFavorite = isFavorite ? (
       <button onClick={handleDeleteFavorite}>Favorited</button>
     ) : (
       <button onClick={handleCreateFavorite}>Not Favorited</button>
-    );
-    // debugger;
+    )
+
     return (
         <div className="main-listings">
             <div className="invidiual-job-listings">

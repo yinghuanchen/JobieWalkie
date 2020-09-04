@@ -47,7 +47,6 @@ export const fetchDebrief = (debriefId) => (dispatch) => {
 }
 
 export const createDebrief = (debrief) => (dispatch) => {
-    debugger
     return DebriefAPIUtil.createDebrief(debrief)
     .then((debrief) => {dispatch(receiveDebrief(debrief))})
     .catch((err) => console.log(err))

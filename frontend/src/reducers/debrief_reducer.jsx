@@ -12,7 +12,8 @@ const debriefReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_DEBRIEFS:
             return action.debriefs
         case RECEIVE_DEBRIEF:
-            return action.debrief
+            nextState.data.push(action.debrief.data)
+            return nextState
         case DELETE_DEBRIEF:
             delete nextState[action.debriefId]
             return nextState

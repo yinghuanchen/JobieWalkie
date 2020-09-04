@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import { connect } from "react-redux"
 import { withRouter, useHistory } from 'react-router-dom'
-import { createDebrief, fetchCompanyDebriefs } from "../../actions/debrief_actions"
+import { createDebrief } from "../../actions/debrief_actions"
 
-const DebriefCreate = ({ currentUser, companyId, createDebrief, fetchCompanyDebriefs }) => {
+const DebriefCreate = ({ currentUser, companyId, createDebrief }) => {
 
     const [debriefIntJobTitle, setDebriefIntJobTitle] = useState("")
     const [debriefIntDifficulty, setDebriefIntDifficulty] = useState("")
@@ -15,7 +15,6 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief, fetchCompanyDebr
     const history = useHistory()
     
     const handleSubmit = () => {
-        debugger
         createDebrief({
           user: currentUser.id,
           company: companyId,
@@ -25,8 +24,7 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief, fetchCompanyDebr
           interviewStage: debriefIntStage,
           interviewSummary: debriefIntSummary,
           comments: debriefIntComments,
-        }).then(() => fetchCompanyDebriefs(companyId));
-        history.replace(`/companies/${companyId}`)
+        }).then(() => history.push(`/companies/${companyId}`))
     }
 
     return (
@@ -52,7 +50,6 @@ const mapSTP = (state, ownProps) => {
 const mapDTP = (dispatch) => {
     return {
         createDebrief: (debrief) => dispatch(createDebrief(debrief)),
-        fetchCompanyDebriefs: (companyId) => dispatch(fetchCompanyDebriefs(companyId))
     }
 }
 
