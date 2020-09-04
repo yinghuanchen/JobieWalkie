@@ -12,11 +12,8 @@ const JobListingIndex = ({ favorites, jobListings, fetchUserFavoriteJobListingId
     }, [fetchAllJobListings])
 
     useEffect(() => {
-      fetchUserFavoriteJobListingIds();
-    }, []);
-    // useEffect(() => {
-    //     fetchAllFavorites()
-    // }, [fetchAllFavorites])
+      fetchUserFavoriteJobListingIds()
+    }, [])
 
     return (
       <ul className="joblisting-index">
@@ -39,10 +36,8 @@ const mapSTP = (state) => {
 const mapDTP = (dispatch) => {
     return {
       fetchAllJobListings: () => dispatch(fetchAllJobListings()),
-      fetchUserFavoriteJobListingIds: () =>
-        dispatch(fetchUserFavoriteJobListingIds()),
-      // Clint-TODO: Should rename this to fetchUserFavorites
-    };
+      fetchUserFavoriteJobListingIds: () => dispatch(fetchUserFavoriteJobListingIds())
+    }
 }
 
 export default connect(mapSTP, mapDTP)(JobListingIndex);

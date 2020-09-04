@@ -1,20 +1,40 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
+import { fetchAllJobListings } from "../../actions/job_listing_actions"
 import { fetchUserDebriefs } from "../../actions/debrief_actions"
+import { fetchUserFavoriteJobListingIds } from "../../actions/favorite_actions"
 import DebriefList from "../debriefs/debrief_list"
+import JobListingItem from "../job_listings/job_listing_item"
+import '../../stylesheets/profile.css'
 
-const Profile = ({ currentUser, debriefs, fetchUserDebriefs, match }) => {
+const Profile = ({ currentUser, debriefs, favoriteJobListingID, fetchAllJobListings, fetchUserDebriefs, fetchUserFavoriteJobListingIds, jobListings, match }) => {
+
+    // useEffect(() => {
+    //     fetchAllJobListings()
+    // }, [fetchAllJobListings])
 
     useEffect(() => {
-      fetchUserDebriefs()
+        fetchUserDebriefs()
     }, [fetchUserDebriefs])
 
-    // const userDebriefs = debriefs.filter(debrief => debrief.author_id === currentUser._id) // Clint-TODO: Watch out for the parameter after the period. Check the state. May not need this because of fetchUserDebrief
+    useEffect(() => {
+        fetchUserFavoriteJobListingIds()
+    }, [fetchUserFavoriteJobListingIds])
 
+    // debugger
+    // const favoriteJobListings = jobListings.filter(jobListing => favoriteJobListingID.includes(jobListing._id) ? jobListing._id : null)
+    
     return (
-        <div>
-            <h1>Hi {currentUser.handle}</h1>
-            <DebriefList debriefs={debriefs} />
+        <div className='main-profile'>
+            {/* <ul className="joblisting-index">
+                {jobListings.map((jobListing) => {
+                    return (
+                        <JobListingItem key={jobListing._id} jobListing={favoriteJobListings} />
+                    )
+                })}
+            </ul> */}
+            <p>{currentUser.handle}</p>
+            <DebriefList debriefs={debriefs} className='debrief'/>
         </div>
     )
 }
@@ -22,13 +42,17 @@ const Profile = ({ currentUser, debriefs, fetchUserDebriefs, match }) => {
 const mapSTP = (state) => {
     return {
         currentUser: state.session.user,
-        debriefs: state.debriefs.data || []
+        debriefs: state.debriefs.data || [],
+        favoriteJobListingID: state.favorites,
+        jobListings: state.jobListings.data ? state.jobListings.data : [],
     }
 }
 
 const mapDTP = (dispatch) => {
     return {
-        fetchUserDebriefs: () => dispatch(fetchUserDebriefs())
+        // fetchAllJobListings: () => dispatch(fetchAllJobListings()),
+        fetchUserDebriefs: () => dispatch(fetchUserDebriefs()),
+        fetchUserFavoriteJobListingIds: () => dispatch(fetchUserFavoriteJobListingIds())
     }
 }
 

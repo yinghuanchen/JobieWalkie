@@ -58,7 +58,7 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => 
             </span>
             <span>
                 <p className='firstItem' >Interview Stage: </p> 
-                <p> {debrief.InterviewStage} </p>
+                <p> {debrief.interviewStage} </p>
             </span>
             <span>
                 <p className='firstItem' >Interview Difficulty:</p> 

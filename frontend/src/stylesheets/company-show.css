@@ -1,0 +1,32 @@
+.company-main {
+    padding-top: 64px;
+}
+
+.company-info {
+    position: relative;
+    margin-right: 20px;
+}
+.company-info .companyImg {
+    height: auto;
+    width: auto;
+    position: absolute;
+    margin-top: 10px;
+    margin-right: 150px;
+}
+
+.company-main > .company-info{
+    display: flex;
+    flex-direction: row-reverse;
+    color: white;
+    /* flex-direction:; */
+}
+
+.create-form{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.company-name{
+    font-size: 40px;
+    color:red;
+}
