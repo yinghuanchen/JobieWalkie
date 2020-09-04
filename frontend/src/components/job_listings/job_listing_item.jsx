@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { FaExternalLinkAlt } from "react-icons/fa"
 import { createFavorite, deleteFavorite } from "../../actions/favorite_actions";
 import {fetchUserFavoriteJobListingIds} from '../../actions/favorite_actions';
-// import {Link} from 'react-router-dom';
+;// import {Link} from 'react-router-dom';
 
 const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites, jobListing, fetchUserFavoriteJobListingIds }) => {
 
@@ -53,15 +53,14 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites
             <FaExternalLinkAlt className="link-logo" />{" "}
           </a>
           {placeFavorite}
-        </div>
       </div>
+    </div>
     );
 }
 
 const mapSTP = (state) => {
     return {
         favorites: state.favorites ? state.favorites : [],
-        // Clint-TODO: This is returning jobListings, not favorites. Look at the state and the data.
     }
 }
 

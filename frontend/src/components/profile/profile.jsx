@@ -1,6 +1,8 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
+import { fetchAllJobListings } from "../../actions/job_listing_actions"
 import { fetchUserDebriefs } from "../../actions/debrief_actions"
+import { fetchUserFavoriteJobListingIds } from "../../actions/favorite_actions"
 import DebriefList from "../debriefs/debrief_list"
 import { fetchAllFavorites } from "../../actions/favorite_actions"
 import JobListingItem from "../job_listings/job_listing_item"
@@ -16,7 +18,6 @@ const Profile = ({ currentUser, debriefs, jobListings, fetchUserDebriefs, fetchA
     }, [])
     
     // const userDebriefs = debriefs.filter(debrief => debrief.author_id === currentUser._id) // Clint-TODO: Watch out for the parameter after the period. Check the state. May not need this because of fetchUserDebrief
-    debugger
     return (
         <div>
             <h1>Hi {currentUser.handle}</h1>
@@ -36,7 +37,8 @@ const mapSTP = (state) => {
     return {
         currentUser: state.session.user,
         debriefs: state.debriefs.data || [],
-        jobListings: state.jobListings.data || []
+        favoriteJobListingID: state.favorites,
+        jobListings: state.jobListings.data ? state.jobListings.data : [],
     }
 }
 

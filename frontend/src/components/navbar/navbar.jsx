@@ -25,7 +25,7 @@ const NavBar = ({ loggedIn, logout, currentUser }) => {
 							<Link to="/jobListings" className="dropdown-btn">
 								Job Listings
 									</Link>
-							<Link to={`/users/${currentUser}`} className="dropdown-btn">
+							<Link to={`/users/${currentUser.id}`} className="dropdown-btn">
 								Profile
 									</Link>
 							<div className="dropdown-btn" onClick={handleLogout}>
@@ -60,7 +60,7 @@ const NavBar = ({ loggedIn, logout, currentUser }) => {
 const mapSTP = (state) => {
 	return {
 		loggedIn: state.session.isAuthenticated,
-		currentUser: state.session.user.id
+		currentUser: state.session.user
 	}
 }
 

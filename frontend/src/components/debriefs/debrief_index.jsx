@@ -11,7 +11,7 @@ const DebriefIndex = ({ currentUser, debriefs, fetchAllDebriefs }) => {
     }, [fetchAllDebriefs])
     
     return (
-        <div>
+        <div className='main-debrief'>
             <h1>Debriefs</h1>
             <DebriefList currentUser={currentUser} debriefs={debriefs}/>
         </div>        
