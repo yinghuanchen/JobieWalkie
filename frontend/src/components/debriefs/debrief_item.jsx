@@ -31,15 +31,27 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => 
     const debriefUser = (debrief.user === currentUser.id)
 
     const debriefButtons = isEditing ? (
-        <>
-            <button onClick={() => setIsEditing(false)}>Close Button</button>
-            <input type="text" value={debriefIntJobTitle} onChange={(event) => setDebriefIntJobTitle(event.target.value)} />
-            <input type="integer" value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)} />
-            <input type="date" value={debriefIntDate} onChange={(event) => setDebriefIntDate(event.target.value)} />
-            <input type="text" value={debriefIntStage} onChange={(event) => setDebriefIntStage(event.target.value)} />
-            <input type="text" value={debriefIntSummary} onChange={(event) => setDebriefIntSummary(event.target.value)}/>
-            <input type="text" value={debriefIntComments} onChange={(event) => setDebriefIntComments(event.target.value)} />
-            <button onClick={handleSubmit}>Submit</button>
+        <>  <div>
+                <div>
+                    <button onClick={() => setIsEditing(false)}>Close Button</button>
+                    <input type="text" value={debriefIntJobTitle} onChange={(event) => setDebriefIntJobTitle(event.target.value)} />
+
+                    <div className='radio-buttons' value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)}>
+                        <label> Difficulty </label>
+                        <span> 1 <input type="radio" value={1} /> </span>
+                        <span> 2 <input type="radio" value={2} /> </span>
+                        <span> 3 <input type="radio" value={3} /> </span>
+                        <span> 4 <input type="radio" value={4} /> </span>
+                        <span> 5 <input type="radio" value={5} /> </span>
+                    </div>
+
+                    <input type="date" value={debriefIntDate} onChange={(event) => setDebriefIntDate(event.target.value)} />
+                    <input type="text" value={debriefIntStage} onChange={(event) => setDebriefIntStage(event.target.value)} />
+                    <input type="text" value={debriefIntSummary} onChange={(event) => setDebriefIntSummary(event.target.value)}/>
+                    <input type="text" value={debriefIntComments} onChange={(event) => setDebriefIntComments(event.target.value)} />
+                    <button onClick={handleSubmit}>Submit</button>
+                </div>
+            </div>
         </>
     ) : (
             <div className="debrief-btn-container">
