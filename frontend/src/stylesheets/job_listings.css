@@ -10,13 +10,15 @@
     border: #343536 1px solid;
     border-radius: 4px;
     background-color: #1a1a1b;
+    cursor: pointer;
 }
 
 .main-listings:hover {
     border: #e4edf0 1px solid;
-    width: 710px;
-    height: 110px;
+    width: 690px;
+    /* height: 105px; */
     padding-right: 15px;
+    transition: 0.3s;
 }
 
 .invidiual-job-listings{

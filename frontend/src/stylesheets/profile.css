@@ -9,8 +9,8 @@
 
 .profile-tabs {
     position: relative;
-    left: 3px;
-    max-width: 695px;
+    left: 0px;
+    max-width: 690px;
     margin: 0 auto;
     background-color: #1a1a1b;
     height: 50px;
@@ -43,6 +43,15 @@
 
 .jobListing-tab.active {
     border-bottom: white 2px solid;
+    color: #e4edf0;
+}
+
+
+.debriefs-tab:hover {
+    color: #e4edf0;
+}
+
+.jobListing-tab:hover {
     color: #e4edf0;
 }
 

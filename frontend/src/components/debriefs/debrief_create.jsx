@@ -89,9 +89,8 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief }) => {
               value={debriefIntStage}
               onChange={(event) => setDebriefIntStage(event.target.value)}
             />
-            <input
+            <textarea
               className="summary"
-              type="text"
               placeholder="Interview Summary"
               value={debriefIntSummary}
               onChange={(event) => setDebriefIntSummary(event.target.value)}

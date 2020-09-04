@@ -34,6 +34,7 @@ const JobListingItem = ({
       receivePlace(jobListing.place); 
   }
 
+
   const isFavorite = favorites.includes(jobListing._id);
 
   const placeFavorite = isFavorite ? (
@@ -72,6 +73,7 @@ const JobListingItem = ({
     </div>
   );
 };
+
 
 const mapSTP = (state) => {
     return {
