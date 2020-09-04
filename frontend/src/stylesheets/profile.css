@@ -9,8 +9,8 @@
 
 .profile-tabs {
     position: relative;
-    left: 3px;
-    max-width: 695px;
+    left: 0px;
+    max-width: 690px;
     margin: 0 auto;
     background-color: #1a1a1b;
     height: 50px;
@@ -46,11 +46,20 @@
     color: #e4edf0;
 }
 
+
+.debriefs-tab:hover {
+    color: #e4edf0;
+}
+
+.jobListing-tab:hover {
+    color: #e4edf0;
+}
+
 .profile-div-for-margin {
     padding-top: 100px;
 }
 
-.joblisting-index.profile-page {
+.joblisting-profile.profile-page {
     padding-top: 20px;
     display: none;
 }
@@ -60,7 +69,7 @@
     display: none;
 }
 
-.joblisting-index.profile-page.active {
+.joblisting-profile.profile-page.active {
     display: block;
     padding-top: 20px;
 }
@@ -68,4 +77,10 @@
 .list-all-debriefs.profile-page.active {
     display: block;
     padding-top: 20px;
+}
+
+.joblisting-profile {
+   margin: 0 auto;
+   padding-top:60px;
+   max-width: 700px; 
 }

@@ -32,7 +32,7 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites
         )
     return (
         <div className="main-listings">
-            <div className="invidiual-job-listings">
+            <a href={`${jobListing.jobLink}`} target="_blank" className="invidiual-job-listings">
                 <div className="listings-item listings-title">
                     {jobListing.jobTitle}
                 </div>
@@ -45,16 +45,40 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites
                 <div className="listings-item" id="listings-date-posted">
                     {jobListing.datePosted.toString().slice(0, 10)}
                 </div>
-            </div>
+            </a>
 
             <div className="link-listings">
-                <a href={`${jobListing.jobLink}`}>
+                <a target="_blank" href={`${jobListing.jobLink}`}>
                     {" "}
                     <FaExternalLinkAlt className="link-logo" />{" "}
                 </a>
                 {placeFavorite}
             </div>
         </div>
+        // <div className="main-listings">
+        //     <div className="invidiual-job-listings">
+        //         <div className="listings-item listings-title">
+        //             {jobListing.jobTitle}
+        //         </div>
+        //         <div className="listings-item" id="listings-company-name">
+        //             {jobListing.companyName}
+        //         </div>
+        //         <div className="listings-item" id="listings-place">
+        //             {jobListing.place}
+        //         </div>
+        //         <div className="listings-item" id="listings-date-posted">
+        //             {jobListing.datePosted.toString().slice(0, 10)}
+        //         </div>
+        //     </div>
+
+        //     <div className="link-listings">
+        //         <a href={`${jobListing.jobLink}`}>
+        //             {" "}
+        //             <FaExternalLinkAlt className="link-logo" />{" "}
+        //         </a>
+        //         {placeFavorite}
+        //     </div>
+        // </div>
     )
 }
 
