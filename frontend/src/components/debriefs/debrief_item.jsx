@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import { connect } from "react-redux"
 import { deleteDebrief, updateDebrief } from "../../actions/debrief_actions"
+import { fetchAllDebriefs } from "../../util/debrief_api_util"
 
-const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => {
+const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetchAllDebriefs }) => {
 
     const [isEditing, setIsEditing] = useState(false)
     const [debriefIntJobTitle, setDebriefIntJobTitle] = useState(debrief.jobTitle)
@@ -27,6 +28,10 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => 
         })
     }
 
+  const handleDelete = () => {
+    deleteDebrief(debrief._id)
+      // .then(() => fetchAllDebriefs())
+  }
     const debriefUser = (debrief.user === currentUser.id)
 
     const debriefButtons = isEditing ? (
@@ -104,7 +109,7 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => 
         </button>
         <button
           className="debrief-btn"
-          onClick={() => deleteDebrief(debrief._id)}
+          onClick={handleDelete}
         >
           Delete
         </button>
@@ -149,6 +154,7 @@ const mapSTP = (state) => {
 
 const mapDTP = (dispatch) => {
     return {
+        fetchAllDebriefs: () => dispatch(fetchAllDebriefs()),
         deleteDebrief: (debrief) => dispatch(deleteDebrief(debrief)),
         updateDebrief: (debrief) => dispatch(updateDebrief(debrief))
     }

@@ -38,7 +38,6 @@
    position: relative;
    height: 100%;
    border-bottom: 1px solid black;
-
    /* text-align: center; */
 }
 
@@ -65,12 +64,11 @@
 }
 
 .modal-body > label {
-   padding-left: 10px ;
+   padding-left: 20px ;
    background-color: white;
    color: black;
    margin-top: 5px;
    display: inline-block;
-   
 }
 
 .modal-body > .radio-buttons {
@@ -78,6 +76,7 @@
    color: black;
    font-size: 14px;
    padding: 16px;
+   font-weight: normal;
 }
 
 .modal-body > .radio-buttons > span {
