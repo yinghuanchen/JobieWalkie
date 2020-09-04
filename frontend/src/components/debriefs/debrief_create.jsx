@@ -32,33 +32,34 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief }) => {
     }
 
     return (
-        <>
-            <div className="modal">
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <span className="closeBtn" onClick={() => setIsEditing(false)}>Cancel</span>
+        
+        <div className="modal">
+            <div className="modal-content">
+                
+                <div className="modal-header">
+                    <span className="closeBtn" onClick={() => setIsEditing(false)}>Cancel</span>
+                </div>
+
+                <div className="modal-body">
+                    <input type="text" placeholder="Job Title" value={debriefIntJobTitle} onChange={(event) => setDebriefIntJobTitle(event.target.value)} />
+                    <div value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)}>
+                        {/* <input type="radio" value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)} /> */}
+                        <input type="radio" value={1} /> 1
+                        <input type="radio" value={2} /> 2
+                        <input type="radio" value={3} /> 3
+                        <input type="radio" value={4} /> 4
+                        <input type="radio" value={5} /> 5
                     </div>
-                    <div className="modal-body">
-                        <div className= "modal-inputs">
-                            <input type="text" placeholder="Job Title" value={debriefIntJobTitle} onChange={(event) => setDebriefIntJobTitle(event.target.value)} />
-                            <div value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)}>
-                                {/* <input type="radio" value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)} /> */}
-                                <input type="radio" value={1} /> 1
-                                <input type="radio" value={2} /> 2
-                                <input type="radio" value={3} /> 3
-                                <input type="radio" value={4} /> 4
-                                <input type="radio" value={5} /> 5
-                            </div>
-                            <input type="date" value={debriefIntDate} onChange={(event) => setDebriefIntDate(event.target.value)} />
-                            <input type="text" placeholder="Interview Stage" value={debriefIntStage} onChange={(event) => setDebriefIntStage(event.target.value)} />
-                            <input type="text" placeholder="Interview Summary" value={debriefIntSummary} onChange={(event) => setDebriefIntSummary(event.target.value)} />
-                            <input type="text" placeholder="Comments" value={debriefIntComments} onChange={(event) => setDebriefIntComments(event.target.value)} />
-                            <button onClick={handleSubmit}>Submit</button>
-                        </div>
-                    </div>
+
+                    <input type="date" value={debriefIntDate} onChange={(event) => setDebriefIntDate(event.target.value)} />
+                    <input type="text" placeholder="Interview Stage" value={debriefIntStage} onChange={(event) => setDebriefIntStage(event.target.value)} />
+                    <input type="text" placeholder="Interview Summary" value={debriefIntSummary} onChange={(event) => setDebriefIntSummary(event.target.value)} />
+                    <input type="text" placeholder="Comments" value={debriefIntComments} onChange={(event) => setDebriefIntComments(event.target.value)} />
+                    <button onClick={handleSubmit}>Submit</button>
                 </div>
             </div>
-        </>
+        </div>
+    
     )
 }
 
