@@ -3,8 +3,7 @@ import DebriefItem from "./debrief_item"
 
 const DebriefList = ({ debriefs }) => {
 
-    if (!debriefs) return null;
-    debugger
+    if (!debriefs) return null
     return (
         <ul>
             {

@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { fetchAllDebriefs } from "../../actions/debrief_actions"
 import DebriefList from "./debrief_list"
 
-const DebriefIndex = ({ debriefs, fetchAllDebriefs }) => {
+const DebriefIndex = ({ currentUser, debriefs, fetchAllDebriefs }) => {
 
     useEffect(() => {
         fetchAllDebriefs()
@@ -12,13 +12,14 @@ const DebriefIndex = ({ debriefs, fetchAllDebriefs }) => {
     return (
         <div>
             <h1>Debriefs</h1>
-            <DebriefList debriefs={debriefs}/>
+            <DebriefList currentUser={currentUser} debriefs={debriefs}/>
         </div>        
     )
 }
 
 const mapSTP = (state) => {
     return {
+        currentUser: state.session.user,
         debriefs: state.debriefs.data ? state.debriefs.data : []
     }
 }
