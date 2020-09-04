@@ -13,17 +13,6 @@ const NavBar = ({ loggedIn, logout }) => {
 		pushHistory.replace("/")
 	}
 
-	const handleClick = (e) => {
-		const dropdown = document.getElementsByClassName('profile-dropdown-content');
-		if (Array.from(dropdown).includes('dropdown-close')) {
-			dropdown.classList.remove('dropdown-close')
-			dropdown.classList.add('dropdown-open')
-		} else {
-			dropdown.classList.remove("dropdown-open");
-			dropdown.classList.add("dropdown-close");
-		}
-	}
-
 	// Selectively render links dependent on whether the user is logged in
 	const getLinks = () => {
 		if (loggedIn) {
@@ -35,7 +24,7 @@ const NavBar = ({ loggedIn, logout }) => {
 				//     <button >Profile</button>
 				//     <button onClick={handleLogout}>Logout</button>
 				// </div>
-					<div className="profile-dropdown-container fas fa-angle-down" onClick={handleClick}>
+					<div className="profile-dropdown-container fas fa-angle-down">
 						<ul className="profile-dropdown-content">
 							<Link to="/" className="dropdown-btn">
 								Debriefs

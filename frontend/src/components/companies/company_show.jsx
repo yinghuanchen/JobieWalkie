@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { fetchCompanyDebriefs } from "../../actions/debrief_actions"
 import { fetchCompany } from "../../actions/company_actions"
 import DebriefList from "../debriefs/debrief_list"
+import '../../stylesheets/company-show.css'
 
 const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, match }) => {
 
@@ -21,9 +22,15 @@ const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, ma
     if (!company) return null // This is important. The "fetch" is the asynchronous call that dictates why this line is important.
 
     return (
-      <div>
-        {/* <p>{company.name}</p> */}
-        <Link to={`/debriefs/${companyId}/create`}>Create Debrief</Link>
+      <div className='company-main'>
+
+          <div className='company-info'>
+            <span className='company-name'> {company.name}</span>
+            <Link to={`/debriefs/${companyId}/create`}>Create Debrief</Link>
+            <img src={company.companyImg} className='companyImg' alt= {company.name}/>
+          </div>
+          
+        <p>{company.link}</p>
         <DebriefList debriefs={debriefs} />
       </div>
     )
@@ -31,7 +38,7 @@ const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, ma
 
 const mapSTP = (state) => {
     return {
-        company: state.companies,
+        company: state.companies.data || [],
         debriefs: state.debriefs.data || []
     }
 }

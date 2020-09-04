@@ -1,0 +1,8 @@
+.main-profile {
+    padding-top: 64px;
+}
+
+.main-profile > p {
+    font-size: 80px;
+    color: red;
+}
