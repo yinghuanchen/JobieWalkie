@@ -51,7 +51,7 @@ class SignupForm extends React.Component {
           <li key={`error-${i}`}>{this.state.errors[error]}</li>
         ))}
       </ul>
-    );
+    )
   }
 
   render() {  
