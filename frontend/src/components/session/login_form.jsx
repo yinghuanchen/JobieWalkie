@@ -17,7 +17,7 @@ class LoginForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
-            this.props.history.push("/tweets"); // JW-TODO: Needs to be changed
+            this.props.history.replace("/jobListings"); // JW-TODO: Needs to be changed
         }
 
         this.setState({ errors: nextProps.errors })

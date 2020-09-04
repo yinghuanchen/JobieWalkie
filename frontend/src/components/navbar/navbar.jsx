@@ -30,7 +30,7 @@ const NavBar = ({ loggedIn, logout, currentUser }) => {
 									</Link>
 							<div className="dropdown-btn" onClick={handleLogout}>
 								Logout
-									</div>
+							</div>
 						</ul>
 					</div>
 			)
@@ -48,7 +48,7 @@ const NavBar = ({ loggedIn, logout, currentUser }) => {
 
 	return (
     <div className="NavBar">
-      <Link to="/">
+		<Link to="/jobListings/">
         <span className="left-container"> JobieWalkie</span>
       </Link>
       {SearchBar}

@@ -1,5 +1,5 @@
 import React from "react"
-import { AuthRoute } from "../util/route_util"
+import { AuthRoute, ProtectedRoute } from "../util/route_util"
 import { Route, Switch } from "react-router-dom"
 import MainPage from "./main/main_page"
 import LoginFormContainer from "./session/login_form_container"
@@ -23,14 +23,14 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route exact path="/debriefs" component={DebriefIndex} />
-      <Route exact path="/debriefs/:companyId/create" component={DebriefCreate} />
-      <Route exact path="/jobListings" component={JobListingIndex} />
-      <Route exact path="/companies" component={CompanyIndex} />
-      <Route exact path="/companies/:companyId" component={CompanyShow} />
-      <Route exact path="/users/:userId" component={Profile} />
-      <Route exact path="/todos" component={ToDos} />
-      <Route path="/search" component={SearchResult} />
+      <ProtectedRoute exact path="/debriefs" component={DebriefIndex} />
+      <ProtectedRoute exact path="/debriefs/:companyId/create" component={DebriefCreate} />
+      <ProtectedRoute exact path="/jobListings" component={JobListingIndex} />
+      <ProtectedRoute exact path="/companies" component={CompanyIndex} />
+      <ProtectedRoute exact path="/companies/:companyId" component={CompanyShow} />
+      <ProtectedRoute exact path="/users/:userId" component={Profile} />
+      <ProtectedRoute exact path="/todos" component={ToDos} />
+      <ProtectedRoute path="/search" component={SearchResult} />
     </Switch>
   </div>
 );
