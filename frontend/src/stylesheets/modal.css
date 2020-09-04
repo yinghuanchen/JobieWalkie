@@ -11,10 +11,10 @@
 }
 
 .modal-content {
-   background-color: #eeeeee;
-   margin: 20% auto;
+   background-color: #888c89;
+   margin: 10% auto;
    width: 50%;
-   height: 60%;
+   height:80%;
    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rba(0, 0, 0, 0.17);
    animation-name: modalopen;
    animation-duration: 0.5s;
@@ -25,11 +25,9 @@
    flex-direction: column;
    font-size: 14px;
    font-weight: 600;
-   margin-block-start: 1em;
-   margin-block-end: 1em;
    padding: 20px;
-   text-align: left;
-   /* color: black; */
+   text-align: right;
+   color: black;
 }
 
 .modal-body {
@@ -51,6 +49,16 @@
    width: 80%;
    
 }
+
+.modal-body > label {
+   padding-left: 10px ;
+   background-color: white;
+   color: black;
+   margin-top: 5px;
+   display: inline-block;
+   
+}
+
 .modal-body > .radio-buttons {
    background-color: white;
    color: black;
@@ -59,7 +67,6 @@
 }
 
 .modal-body > .radio-buttons > span {
-   margin-right: 10px;
    background-color: white;
    color: black;
 }
@@ -68,8 +75,9 @@
    background-color: white;
    color: black;
    font-size: 14px;
-   padding: 16px;
+   padding: 10px;
 }
+
 
 .modal-body > button {
    background-color: black;
