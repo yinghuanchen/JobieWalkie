@@ -5,14 +5,15 @@ import companyReducer from "./company_reducer"
 import debriefReducer from "./debrief_reducer"
 import favoriteReducer from "./favorite_reducer"
 import jobListingReducer from "./job_listing_reducer"
-
+import placeReducer from './place_reducer';
 const rootReducer = combineReducers({
-    errors: errorsReducer,
-    companies: companyReducer,
-    debriefs: debriefReducer,
-    favorites: favoriteReducer,
-    jobListings: jobListingReducer,
-    session: sessionReducer,
-})
+  errors: errorsReducer,
+  companies: companyReducer,
+  debriefs: debriefReducer,
+  favorites: favoriteReducer,
+  jobListings: jobListingReducer,
+  session: sessionReducer,
+  place: placeReducer,
+});
 
 export default rootReducer
