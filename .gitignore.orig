@@ -1,8 +1,0 @@
-/config/keys_dev.js
-/node_modules
-/frontend/node_modules
-/userData
-/company_scrap.js
-/company_seed.js
-/job_scrap.js
-/package-lock.json

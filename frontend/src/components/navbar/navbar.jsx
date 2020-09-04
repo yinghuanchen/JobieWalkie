@@ -17,14 +17,7 @@ const NavBar = ({ loggedIn, logout }) => {
 	const getLinks = () => {
 		if (loggedIn) {
 			return (
-				// <div className="nav-index">
-				//     <button >Debriefs</button>
-				//     <button >Job Listings</button>
-				//     <button >Companies</button>
-				//     <button >Profile</button>
-				//     <button onClick={handleLogout}>Logout</button>
-				// </div>
-					<div className="profile-dropdown-container fas fa-angle-down">
+					<div className="profile-dropdown-container fas fa-angle-down" >
 						<ul className="profile-dropdown-content">
 							<Link to="/" className="dropdown-btn">
 								Debriefs
@@ -51,12 +44,14 @@ const NavBar = ({ loggedIn, logout }) => {
 		}
 	}
 
+	const SearchBar = loggedIn ? <SearchBarContainer /> : null
+
 	return (
     <div className="NavBar">
       <Link to="/">
         <span className="left-container"> JobieWalkie</span>
       </Link>
-      <SearchBarContainer />
+      {SearchBar}
       <span className="right-container"> {getLinks()} </span>
     </div>
   );

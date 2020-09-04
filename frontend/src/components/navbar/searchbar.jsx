@@ -63,7 +63,7 @@ const SearchBar = ({ searchCompany, searchResults, path }) => {
         </ul>
       </div>
     ) : null;
-
+    
   return (
     <div id="search-bar-container">
       <div className="search-bar-input">
@@ -72,6 +72,7 @@ const SearchBar = ({ searchCompany, searchResults, path }) => {
           type="text"
           value={inputStr}
           onChange={handleUpdate}
+          placeholder='Search'
         />
         <button className="search-bar-input-btn" onClick={handleClick}>
           <i className="fas fa-search fa-lg search-bar-input-icon"></i>

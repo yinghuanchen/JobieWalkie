@@ -43,7 +43,7 @@ class SignupForm extends React.Component {
 
     this.props.signup(user, this.props.history);
   }
-
+       
   renderErrors() {
     return (
       <ul>
@@ -54,47 +54,7 @@ class SignupForm extends React.Component {
     );
   }
 
-  // render() {
-
-  //     return (
-  //         <div className="form-container">
-  //             <button className="demo-user-btn" onClick={this.handleDemoSubmit}>
-  //                 <span className="fas fa-user-alt"></span>SIGN IN WITH DEMO USER
-  //     </button>
-  //             <div className="divider-container">
-  //                 <span className="divider"></span>
-  //                 <span className="divider-text">OR</span>
-  //                 <span className="divider"></span>
-  //             </div>
-  //             <form onSubmit={this.handleSubmit} className="session-form">
-  //                 <input
-  //                     type="text"
-  //                     onChange={this.update("handle")}
-  //                     value={this.state.handle}
-  //                     placeholder="Handle"
-  //                     className="session-form-inputs"
-  //                 />
-  //                 <input
-  //                     type="text"
-  //                     onChange={this.update("email")}
-  //                     value={this.state.email}
-  //                     placeholder="Email"
-  //                     className="session-form-inputs"
-  //                 />
-  //                 <input
-  //                     type="password"
-  //                     onChange={this.update("password")}
-  //                     value={this.state.password}
-  //                     placeholder="Password"
-  //                     className="session-form-inputs"
-  //                 />
-  //                 <button className="session-form-btn">SIGN UP</button>
-  //                 {this.renderErrors()}
-  //             </form>
-  //         </div>
-  //     )
-  // }
-  render() {
+  render() {  
     return (
       <div className="form-container">
         <form onSubmit={this.handleSubmit} className="session-form">
