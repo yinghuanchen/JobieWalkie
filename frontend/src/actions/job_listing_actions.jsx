@@ -4,6 +4,7 @@ import * as JobListingAPIUtil from "../util/job_listing_api_util"
 // Action Constants
 export const RECEIVE_ALL_JOB_LISTINGS = "RECEIVE_ALL_JOB_LISTINGS"
 export const RECEIVE_JOB_LISTING = "RECEIVE_JOB_LISTING"
+export const CLEAR_JOB_LISTINGS = "CLEAR_JOB_LISTINGS"
 
 
 // Regular Action Creators
@@ -15,6 +16,10 @@ export const receiveAllJobListings = (jobListings) => ({
 export const receiveJobListing = (jobListing) => ({
     type: RECEIVE_JOB_LISTING,
     jobListing
+})
+
+export const clearJobListings = () => ({
+    type: CLEAR_JOB_LISTINGS
 })
 
 

@@ -5,7 +5,7 @@ import { logout } from "../../actions/session_actions"
 import SearchBarContainer from './searchbar'
 import "../../stylesheets/navbar.css"
 
-const NavBar = ({ loggedIn, logout }) => {
+const NavBar = ({ loggedIn, logout, currentUser }) => {
 
 	const pushHistory = useHistory()
 	const handleLogout = () => {
@@ -25,7 +25,7 @@ const NavBar = ({ loggedIn, logout }) => {
 							<Link to="/jobListings" className="dropdown-btn">
 								Job Listings
 									</Link>
-							<Link to="/" className="dropdown-btn">
+							<Link to={`/users/${currentUser}`} className="dropdown-btn">
 								Profile
 									</Link>
 							<div className="dropdown-btn" onClick={handleLogout}>
@@ -59,7 +59,8 @@ const NavBar = ({ loggedIn, logout }) => {
 
 const mapSTP = (state) => {
 	return {
-		loggedIn: state.session.isAuthenticated
+		loggedIn: state.session.isAuthenticated,
+		currentUser: state.session.user.id
 	}
 }
 

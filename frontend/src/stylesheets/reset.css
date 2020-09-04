@@ -21,6 +21,7 @@ time, mark, audio, video,text {
 	vertical-align: baseline;
 	pointer-events: auto;
 	background-color: black;
+	color: #e5edf1;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

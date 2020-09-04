@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const fetchAllFavorites = () => {
-    return axios.get(`/api/users/current/favorites`)
+    return axios.get(`/api/users/current/jobListings`)
 }
 
 export const fetchUserFavoriteJobListingIds = () => {

@@ -19,20 +19,15 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites
           () => fetchUserFavoriteJobListingIds()); 
     }
 
-    if (jobListing._id === "5f503ecf58fd92214b5ec124") {
-        console.log("5f503ecf58fd92214b5ec124");
-        console.log(favorites);
-    }
-
     const isFavorite = favorites.includes(jobListing._id)
 
     const placeFavorite = isFavorite ? (
       <button className="favorite-btn" onClick={handleDeleteFavorite}>
-        <i class="fas fa-star fa-lg favorite"></i>
+        <i className="fas fa-star fa-lg favorite"></i>
       </button>
     ) : (
       <button className="favorite-btn" onClick={handleCreateFavorite}>
-        <i class="fas fa-star fa-lg unfavorite"></i>
+        <i className="fas fa-star fa-lg unfavorite"></i>
       </button>
     );
     return (
