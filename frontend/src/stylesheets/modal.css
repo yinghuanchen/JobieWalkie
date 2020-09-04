@@ -7,48 +7,84 @@
    top: 0;
    width: 100%;
    z-index: 300;
+   
 }
 
 .modal-content {
    background-color: #eeeeee;
    margin: 20% auto;
-   width: 70%;
+   width: 50%;
+   height: 60%;
    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rba(0, 0, 0, 0.17);
    animation-name: modalopen;
    animation-duration: 0.5s;
 }
 
 .modal-header {
-   /* background: #222; */
-   /* box-sizing: border-box; */
-   /* color: rgb(168, 158, 158); */
-   font-size: 1.1em;
+   display: flex;
+   flex-direction: column;
+   font-size: 14px;
    font-weight: 600;
-   line-height: 1;
    margin-block-start: 1em;
    margin-block-end: 1em;
    padding: 20px;
    text-align: left;
+   /* color: black; */
 }
 
 .modal-body {
    background-color:white;
    display: block;
-   line-height: 1;
-   padding: 16px 16px;
+   padding-left: 10px;
+   padding-bottom: 10px;
    position: relative;
-   text-align: center;
+   height: 100%;
+   /* text-align: center; */
 }
 
 .modal-body > input {
+   padding: 10px;
    background-color: white;
+   border: 1px solid black;
+   color: black;
+   margin: 10px;
+   width: 80%;
+   
 }
-.modal-body > div {
+.modal-body > .radio-buttons {
    background-color: white;
+   color: black;
+   font-size: 14px;
+   padding: 16px;
+}
+
+.modal-body > .radio-buttons > span {
+   margin-right: 10px;
+   background-color: white;
+   color: black;
+}
+
+.modal-body > div > label {
+   background-color: white;
+   color: black;
+   font-size: 14px;
+   padding: 16px;
 }
 
 .modal-body > button {
    background-color: white;
+   color: black;
+   margin-top: 40px;
+   width: 80%;
+   /* border: 1px solid black; */
+   align-items: center;
+}
+
+.modal-body > .summary {
+   padding-bottom: 80px;
+}
+.modal-body > .comments {
+   padding-bottom: 20px;
 }
 
 
@@ -56,11 +92,11 @@
 .closeBtn  {
    cursor: pointer;
    display: block;
-   float: right;
    font-size: 100%;
    height: 16px;
    width: 16px;
-   color: white;
+   display: flex;
+   flex-direction: column-reverse;
 }
 
 @keyframes modalopen{
