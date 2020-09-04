@@ -12,6 +12,13 @@
     background-color: #1a1a1b;
 }
 
+.main-listings:hover {
+    border: #e4edf0 1px solid;
+    width: 710px;
+    height: 110px;
+    padding-right: 15px;
+}
+
 .invidiual-job-listings{
     flex:.8;
     padding-top: 8px;
@@ -57,10 +64,12 @@
 }
 
 .joblisting-index {
-    margin: 0 auto;
+ /*   margin: 0 auto; */
+   margin: 0 0 0 50px; 
    padding-top:60px;
    max-width: 700px; 
 }
+
 #listings-company-name {
     color: rgba(78,201,176,1);
 }
@@ -97,9 +106,21 @@
 .map-container {
     background: white;
     z-index: 2;
+    position: fixed;
+    left: 800px;
+    top: 100px;
 }
 
 .map-container div {
-    background: white;
+    background: transparent;
     z-index: 2;
+    /* border: red 1px solid; */
 }
+.map-container span {
+    background: transparent;
+}
+
+.map-container a, .map-container img {
+    background: transparent;
+}
+

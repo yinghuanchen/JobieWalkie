@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import { fetchAllJobListings } from "../../actions/job_listing_actions"
 import { fetchUserFavoriteJobListingIds } from "../../actions/favorite_actions";
-import JobListingItem from "./job_listing_item"
-import MapContainer from '../map/map'; 
-import '../../stylesheets/job_listings.css'
+import JobListingItem from "./job_listing_item"; 
+import MapContainer from '../map/map';
+import '../../stylesheets/job_listings.css';
 
 const JobListingIndex = ({ favorites, jobListings, fetchUserFavoriteJobListingIds, fetchAllJobListings }) => {
 
@@ -17,15 +17,17 @@ const JobListingIndex = ({ favorites, jobListings, fetchUserFavoriteJobListingId
     }, [])
 
     return (
-      <div>
+      <div className="joblisting-index-map">
+        <div className="map-container">
+          <MapContainer />
+        </div>
         <ul className="joblisting-index">
-          {jobListings.slice(0,101).map((jobListing) => {
+          {jobListings.slice(0, 101).map((jobListing) => {
             return (
               <JobListingItem key={jobListing._id} jobListing={jobListing} />
             );
           })}
-        </ul> 
-        {/* <MapContainer /> */}
+        </ul>
       </div>
     );
 }

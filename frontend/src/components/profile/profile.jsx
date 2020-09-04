@@ -9,7 +9,7 @@ import DebriefItem from "../debriefs/debrief_item"
 import JobListingItem from "../job_listings/job_listing_item"
 import '../../stylesheets/profile.css'
 
-const Profile = ({ favorites, currentUser, debriefs, jobListings, fetchUserDebriefs, fetchUserFavoriteJobListingIds, fetchAllFavorites, path }) => {
+const Profile = ({ favorites, currentUser, debriefs, jobListings, fetchUserDebriefs, fetchUserFavoriteJobListingIds, fetchAllFavorites }) => {
 
     useEffect(() => {
       fetchUserDebriefs()
@@ -24,7 +24,7 @@ const Profile = ({ favorites, currentUser, debriefs, jobListings, fetchUserDebri
     }, [])
 
     const handleJobListingsTab = e => {
-        const jobListingsElement = document.getElementsByClassName('joblisting-index')[0]
+        const jobListingsElement = document.getElementsByClassName('joblisting-profile')[0]
         const debriefsElement = document.getElementsByClassName('list-all-debriefs')[0]
         const debriefsTabElement = document.getElementsByClassName('debriefs-tab')[0]
         e.currentTarget.classList.add('active')
@@ -34,7 +34,7 @@ const Profile = ({ favorites, currentUser, debriefs, jobListings, fetchUserDebri
     }
 
     const handleDebriefsTab = e => {
-        const jobListingsElement = document.getElementsByClassName('joblisting-index')[0]
+        const jobListingsElement = document.getElementsByClassName('joblisting-profile')[0]
         const debriefsElement = document.getElementsByClassName('list-all-debriefs')[0]
         const jobListingsTabElement = document.getElementsByClassName('jobListing-tab')[0]
         e.currentTarget.classList.add('active')
@@ -51,7 +51,7 @@ const Profile = ({ favorites, currentUser, debriefs, jobListings, fetchUserDebri
                     <span className="debriefs-tab" onClick={handleDebriefsTab}>Your Debriefs</span>
                 </div>
             </div>
-            <ul className="joblisting-index profile-page active">
+            <ul className="joblisting-profile profile-page active">
                 {
                     jobListings.map(jobListing => <JobListingItem key={jobListing._id} jobListing={jobListing} />)
                     // Note: Used fetchAllFavorites to grab all of user's favorites and used receiveAllJobListings
@@ -73,7 +73,6 @@ const mapSTP = (state, ownProps) => {
         debriefs: state.debriefs.data || [],
         favorites: state.favorites ? state.favorites : [],
         jobListings: state.jobListings.data ? state.jobListings.data : [],
-        path: ownProps.match.path
     }
 }
 
