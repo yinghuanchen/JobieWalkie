@@ -4,9 +4,8 @@ import DebriefItem from "./debrief_item"
 const DebriefList = ({ debriefs }) => {
 
     if (!debriefs) return null;
-    debugger
     return (
-        <ul>
+        <ul className='list-all-debriefs'>
             {
                 debriefs.map((debrief) => {
                     return (

@@ -1,0 +1,57 @@
+.main-debrief{
+    padding-top: 64px;
+
+}
+
+.list-all-debriefs{
+    display : flex;
+    flex-direction: column;
+    color: #d7dadc;
+    align-items: start;
+    align-items: stretch;
+    margin-left: 30px;
+
+    
+}
+
+.debrief-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1f1f1f;
+    border: 1px solid #1f1f1f;
+    margin-bottom: 10px;
+    width: 90%;
+    
+    
+}
+
+.debrief-body:hover{
+    border: 1px solid white;
+}
+
+.debrief-body span{
+    display: flex;
+
+    padding: 8px;
+    background-color: #1f1f1f;
+}
+
+.debrief-body > span > p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f1f1f;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+
+}
+
+.debrief-body > span > .firstItem {
+    display: flex;
+    align-items: start;
+    color: lightgreen;
+    padding: 6px;
+}
+

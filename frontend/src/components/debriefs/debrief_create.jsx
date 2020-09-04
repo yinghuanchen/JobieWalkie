@@ -15,7 +15,6 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief, fetchCompanyDebr
     const history = useHistory()
     
     const handleSubmit = () => {
-        debugger
         createDebrief({
           user: currentUser.id,
           company: companyId,

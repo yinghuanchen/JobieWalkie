@@ -29,7 +29,6 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites
     ) : (
       <button onClick={handleCreateFavorite}>Not Favorited</button>
     );
-    // debugger;
     return (
       <div className="main-listings">
         <div className="invidiual-job-listings">
