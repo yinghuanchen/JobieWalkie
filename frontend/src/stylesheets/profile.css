@@ -6,3 +6,66 @@
     font-size: 80px;
     color: red;
 }
+
+.profile-tabs {
+    position: relative;
+    left: 3px;
+    max-width: 695px;
+    margin: 0 auto;
+    background-color: #1a1a1b;
+    height: 50px;
+    border-radius: 5px;
+    border: #343536 solid 1px;
+}
+
+.jobListing-tab {
+    display: inline-block;
+    background-color: #1a1a1b;
+    margin-left: 40px;
+    margin-top: 8px;
+    padding: 10px 5px;
+    color: #757879;
+    cursor: pointer;
+}
+
+.debriefs-tab {
+    background-color: #1a1a1b;
+    color: #757879;
+    margin-left: 50px;
+    padding: 10px 5px;
+    cursor: pointer;
+}
+
+.debriefs-tab.active {
+    border-bottom: white 2px solid;
+    color: #e4edf0;
+}
+
+.jobListing-tab.active {
+    border-bottom: white 2px solid;
+    color: #e4edf0;
+}
+
+.profile-div-for-margin {
+    padding-top: 100px;
+}
+
+.joblisting-index.profile-page {
+    padding-top: 20px;
+    display: none;
+}
+
+.list-all-debriefs.profile-page {
+    padding-top: 20px;
+    display: none;
+}
+
+.joblisting-index.profile-page.active {
+    display: block;
+    padding-top: 20px;
+}
+
+.list-all-debriefs.profile-page.active {
+    display: block;
+    padding-top: 20px;
+}

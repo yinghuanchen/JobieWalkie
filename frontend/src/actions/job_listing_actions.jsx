@@ -18,11 +18,6 @@ export const receiveJobListing = (jobListing) => ({
     jobListing
 })
 
-export const clearJobListings = () => ({
-    type: CLEAR_JOB_LISTINGS
-})
-
-
 // Thunk Action Creator
 export const fetchAllJobListings = () => (dispatch) => {
     return JobListingAPIUtil.fetchAllJobListings()

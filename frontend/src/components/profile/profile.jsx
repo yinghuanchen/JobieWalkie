@@ -6,8 +6,10 @@ import { fetchUserFavoriteJobListingIds } from "../../actions/favorite_actions"
 import DebriefList from "../debriefs/debrief_list"
 import { fetchAllFavorites } from "../../actions/favorite_actions"
 import JobListingItem from "../job_listings/job_listing_item"
+import DebriefItem from "../debriefs/debrief_item"
+import '../../stylesheets/profile.css'
 
-const Profile = ({ currentUser, debriefs, jobListings, fetchUserDebriefs, fetchAllFavorites, match }) => {
+const Profile = ({ favorites, currentUser, debriefs, jobListings, fetchUserDebriefs, fetchUserFavoriteJobListingIds, fetchAllFavorites, path }) => {
 
     useEffect(() => {
       fetchUserDebriefs()
@@ -15,37 +17,72 @@ const Profile = ({ currentUser, debriefs, jobListings, fetchUserDebriefs, fetchA
 
     useEffect(() => {
       fetchAllFavorites()
+    }, [favorites])
+
+    useEffect(() => {
+        fetchUserFavoriteJobListingIds()
     }, [])
-    
+
+    const handleJobListingsTab = e => {
+        const jobListingsElement = document.getElementsByClassName('joblisting-index')[0]
+        const debriefsElement = document.getElementsByClassName('list-all-debriefs')[0]
+        const debriefsTabElement = document.getElementsByClassName('debriefs-tab')[0]
+        e.currentTarget.classList.add('active')
+        debriefsTabElement.classList.remove('active')
+        jobListingsElement.classList.add('active')
+        debriefsElement.classList.remove('active')
+    }
+
+    const handleDebriefsTab = e => {
+        const jobListingsElement = document.getElementsByClassName('joblisting-index')[0]
+        const debriefsElement = document.getElementsByClassName('list-all-debriefs')[0]
+        const jobListingsTabElement = document.getElementsByClassName('jobListing-tab')[0]
+        e.currentTarget.classList.add('active')
+        jobListingsTabElement.classList.remove('active')
+        debriefsElement.classList.add('active')
+        jobListingsElement.classList.remove('active')
+    }
+
     // const userDebriefs = debriefs.filter(debrief => debrief.author_id === currentUser._id) // Clint-TODO: Watch out for the parameter after the period. Check the state. May not need this because of fetchUserDebrief
     return (
         <div>
-            <h1>Hi {currentUser.handle}</h1>
-            <DebriefList debriefs={debriefs} />
-            {
-                jobListings.map(jobListing => <JobListingItem jobListing={jobListing}/>)
-                // JW-TODO: Used fetchAllFavorites to grab all of user's favorites and used receiveAllJobListings
-                // to get the jobListing objects. Mapped through them and passed them into JobListingItem
-            }
+            <div className="profile-div-for-margin">
+                <div className="profile-tabs">
+                    <span className="jobListing-tab active" onClick={handleJobListingsTab}>Favorites</span>
+                    <span className="debriefs-tab" onClick={handleDebriefsTab}>Your Debriefs</span>
+                </div>
+            </div>
+            <ul className="joblisting-index profile-page active">
+                {
+                    jobListings.map(jobListing => <JobListingItem key={jobListing._id} jobListing={jobListing} />)
+                    // JW-TODO: Used fetchAllFavorites to grab all of user's favorites and used receiveAllJobListings
+                    // to get the jobListing objects. Mapped through them and passed them into JobListingItem
+                }
+            </ul>
+            <ul className="list-all-debriefs profile-page">
+                {
+                    debriefs.map(debrief => <DebriefItem key={debrief._id} debrief={debrief} />)
+                }
+            </ul>
         </div>
     )
 }
 
-
-
-const mapSTP = (state) => {
+const mapSTP = (state, ownProps) => {
     return {
         currentUser: state.session.user,
         debriefs: state.debriefs.data || [],
-        favoriteJobListingID: state.favorites,
+        favorites: state.favorites ? state.favorites : [],
         jobListings: state.jobListings.data ? state.jobListings.data : [],
+        path: ownProps.match.path
     }
 }
 
 const mapDTP = (dispatch) => {
     return {
         fetchUserDebriefs: () => dispatch(fetchUserDebriefs()),
-        fetchAllFavorites: () => dispatch(fetchAllFavorites())
+        fetchAllFavorites: () => dispatch(fetchAllFavorites()),
+        fetchUserFavoriteJobListingIds: () => dispatch(fetchUserFavoriteJobListingIds())
     }
 }
 
