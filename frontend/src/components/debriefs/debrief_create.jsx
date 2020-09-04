@@ -37,7 +37,10 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief }) => {
             <div className="modal-content">
                 
                 <div className="modal-header">
-                    <span className="closeBtn" onClick={() => setIsEditing(false)}>Cancel</span>
+                    <span className="closeBtn" onClick={() => {
+                        setIsEditing(false)
+                        history.push(`/companies/${companyId}`)
+                    }}>Cancel</span>
                 </div>
 
                 <div className="modal-body">
