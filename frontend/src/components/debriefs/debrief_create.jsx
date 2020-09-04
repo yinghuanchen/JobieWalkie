@@ -37,7 +37,10 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief }) => {
             <div className="modal-content">
                 
                 <div className="modal-header">
-                    <span className="closeBtn" onClick={() => setIsEditing(false)}>Cancel</span>
+                    <span className="closeBtn" onClick={() => {
+                        setIsEditing(false)
+                        history.push(`/companies/${companyId}`)
+                    }}>Cancel</span>
                 </div>
 
                 <div className="modal-body">
@@ -46,8 +49,7 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief }) => {
                     
                     <div className ='radio-buttons' value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)}>
                         <label> Difficulty </label>
-                        {/* <input type="radio" value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)} /> */}
-                        <span> 1 <input type="radio" value={1} />  </span>
+                        <span> 1 <input type="radio" value={1} /> </span>
                         <span> 2 <input type="radio" value={2} /> </span>
                         <span> 3 <input type="radio" value={3} /> </span>
                         <span> 4 <input type="radio" value={4} /> </span>

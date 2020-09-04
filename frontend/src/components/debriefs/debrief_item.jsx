@@ -28,16 +28,30 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => 
         })
     }
 
-    const editBody = isEditing ? (
-        <>
-            <button onClick={() => setIsEditing(false)}>Close Button</button>
-            <input type="text" value={debriefIntJobTitle} onChange={(event) => setDebriefIntJobTitle(event.target.value)} />
-            <input type="integer" value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)} />
-            <input type="date" value={debriefIntDate} onChange={(event) => setDebriefIntDate(event.target.value)} />
-            <input type="text" value={debriefIntStage} onChange={(event) => setDebriefIntStage(event.target.value)} />
-            <input type="text" value={debriefIntSummary} onChange={(event) => setDebriefIntSummary(event.target.value)}/>
-            <input type="text" value={debriefIntComments} onChange={(event) => setDebriefIntComments(event.target.value)} />
-            <button onClick={handleSubmit}>Submit</button>
+    const debriefUser = (debrief.user === currentUser.id)
+
+    const debriefButtons = isEditing ? (
+        <>  <div>
+                <div>
+                    <button onClick={() => setIsEditing(false)}>Close Button</button>
+                    <input type="text" value={debriefIntJobTitle} onChange={(event) => setDebriefIntJobTitle(event.target.value)} />
+
+                    <div className='radio-buttons' value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)}>
+                        <label> Difficulty </label>
+                        <span> 1 <input type="radio" value={1} /> </span>
+                        <span> 2 <input type="radio" value={2} /> </span>
+                        <span> 3 <input type="radio" value={3} /> </span>
+                        <span> 4 <input type="radio" value={4} /> </span>
+                        <span> 5 <input type="radio" value={5} /> </span>
+                    </div>
+
+                    <input type="date" value={debriefIntDate} onChange={(event) => setDebriefIntDate(event.target.value)} />
+                    <input type="text" value={debriefIntStage} onChange={(event) => setDebriefIntStage(event.target.value)} />
+                    <input type="text" value={debriefIntSummary} onChange={(event) => setDebriefIntSummary(event.target.value)}/>
+                    <input type="text" value={debriefIntComments} onChange={(event) => setDebriefIntComments(event.target.value)} />
+                    <button onClick={handleSubmit}>Submit</button>
+                </div>
+            </div>
         </>
     ) : (
             <div className="debrief-btn-container">
@@ -49,26 +63,32 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => 
     return (
         <div className = 'debrief-body'>
             <span>
-                <p className='firstItem debrief-title'>Position Interviewed:  {debrief.jobTitle} </p>
+                <p className='firstItem debrief-title'>Author: {debrief.user} </p>
+            </span>
+            <span>
+                <p className='firstItem debrief-title'>Company Debriefed: {debrief.company} </p>
+            </span>
+            <span>
+                <p className='firstItem debrief-title'>Position Interviewed: {debrief.jobTitle} </p>
             </span>
             <span>
                 <p className='firstItem debrief-date'>Interview Date: {debrief.interviewDate.toString().slice(0,10)}</p>
             </span>
             <span>
-                <p className='firstItem debrief-stage' >Interview Stage: {debrief.interviewStage}</p> 
+                <p className='firstItem debrief-stage'>Interview Stage: {debrief.interviewStage}</p> 
             </span>
             <span>
-                <p className='firstItem debrief-difficulty' >Interview Difficulty:  {debrief.difficulty}</p> 
+                <p className='firstItem debrief-difficulty'>Interview Difficulty: {debrief.difficulty}</p> 
             </span>
             <span>
-                <span className='firstItem debrief-summary-span' >Interview Summary:</span> 
+                <span className='firstItem debrief-summary-span'>Interview Summary:</span> 
             </span>
             <p className="debrief-summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{debrief.interviewSummary}</p>
             <span>
-                <p className='firstItem debrief-comment' >Comments: {debrief.comments}</p> 
+                <p className='firstItem debrief-comment'>Comments: {debrief.comments}</p> 
             </span>
             
-            {editBody}
+            {debriefUser ? debriefButtons : null}
         </div>
     )
 }

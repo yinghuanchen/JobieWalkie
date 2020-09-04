@@ -19,7 +19,7 @@ const NavBar = ({ loggedIn, logout, currentUser }) => {
 			return (
 					<div className="profile-dropdown-container fas fa-angle-down" >
 						<ul className="profile-dropdown-content">
-							<Link to="/" className="dropdown-btn">
+							<Link to="/debriefs" className="dropdown-btn">
 								Debriefs
 									</Link>
 							<Link to="/jobListings" className="dropdown-btn">

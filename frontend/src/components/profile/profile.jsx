@@ -1,12 +1,12 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { fetchAllJobListings } from "../../actions/job_listing_actions"
+import { fetchAllFavorites } from "../../actions/favorite_actions"
+// import { fetchAllJobListings } from "../../actions/job_listing_actions"
 import { fetchUserDebriefs } from "../../actions/debrief_actions"
 import { fetchUserFavoriteJobListingIds } from "../../actions/favorite_actions"
-import DebriefList from "../debriefs/debrief_list"
-import { fetchAllFavorites } from "../../actions/favorite_actions"
-import JobListingItem from "../job_listings/job_listing_item"
 import DebriefItem from "../debriefs/debrief_item"
+// import DebriefList from "../debriefs/debrief_list"
+import JobListingItem from "../job_listings/job_listing_item"
 import '../../stylesheets/profile.css'
 
 const Profile = ({ favorites, currentUser, debriefs, jobListings, fetchUserDebriefs, fetchUserFavoriteJobListingIds, fetchAllFavorites, path }) => {
@@ -43,7 +43,6 @@ const Profile = ({ favorites, currentUser, debriefs, jobListings, fetchUserDebri
         jobListingsElement.classList.remove('active')
     }
 
-    // const userDebriefs = debriefs.filter(debrief => debrief.author_id === currentUser._id) // Clint-TODO: Watch out for the parameter after the period. Check the state. May not need this because of fetchUserDebrief
     return (
         <div>
             <div className="profile-div-for-margin">
@@ -55,7 +54,7 @@ const Profile = ({ favorites, currentUser, debriefs, jobListings, fetchUserDebri
             <ul className="joblisting-index profile-page active">
                 {
                     jobListings.map(jobListing => <JobListingItem key={jobListing._id} jobListing={jobListing} />)
-                    // JW-TODO: Used fetchAllFavorites to grab all of user's favorites and used receiveAllJobListings
+                    // Note: Used fetchAllFavorites to grab all of user's favorites and used receiveAllJobListings
                     // to get the jobListing objects. Mapped through them and passed them into JobListingItem
                 }
             </ul>
