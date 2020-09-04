@@ -21,7 +21,6 @@ export const createDebrief = (debrief) => {
 }
 
 export const updateDebrief = (debrief) => {
-    //debugger
     return axios.post(`/api/debriefs/${debrief._id}`, debrief)
 }
 
