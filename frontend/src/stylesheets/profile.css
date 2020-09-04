@@ -50,7 +50,7 @@
     padding-top: 100px;
 }
 
-.joblisting-index.profile-page {
+.joblisting-profile.profile-page {
     padding-top: 20px;
     display: none;
 }
@@ -60,7 +60,7 @@
     display: none;
 }
 
-.joblisting-index.profile-page.active {
+.joblisting-profile.profile-page.active {
     display: block;
     padding-top: 20px;
 }
@@ -68,4 +68,10 @@
 .list-all-debriefs.profile-page.active {
     display: block;
     padding-top: 20px;
+}
+
+.joblisting-profile {
+   margin: 0 auto;
+   padding-top:60px;
+   max-width: 700px; 
 }

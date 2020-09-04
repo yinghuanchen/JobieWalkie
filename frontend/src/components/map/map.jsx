@@ -1,45 +1,41 @@
-import React from 'react';
-import {
-    GoogleMap, 
-    useLoadScript, 
-    Marker, 
-    InfoWindow, 
-} from '@react-google-maps/api';
-import mapStyles from "./mapStyle";
-const libraries  = ["places"];
-const mapContainerStyle = {
-    width: '400px',
-    height: '400px'
-};
-const center = {
-  lat: 37.76,
-  lng: -122.44,
-};
-const options = {
-    styles: mapStyles,
-    disableDefaultUI: true,
-    //zoomControl: true,
-}
-const Map = () => {
-    const { isLoaded, loadError } = useLoadScript({
-      googleMapsApiKey: "AIzaSyBMhBKWkTQc-kmQolE3en1V1Fm0Np4PJOg",
-      libraries,
-    });
+import React, { Component } from "react";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import {connect} from 'react-redux';
+import mapStyle from './mapStyle.js';
 
-    if (!isLoaded) return null; 
 
+const containerStyle = {
+  width: "600px",
+  height: "600px",
+};
+
+export class MapContainer extends Component {
+
+  // componentDidUpdate(prevProps) {
+  // }
+  
+  render() {
     return (
-      <div className="map-container">
-        <GoogleMap 
-            mapContainerStyle={mapContainerStyle} 
-            zoom={9}
-            center={center}
-            options={options}
-        >
-           {/* <Marker position={lat: marker.lat, lng: marker.lng}/> */}
-        </GoogleMap>
-      </div>
+      <Map
+        google={this.props.google}
+        zoom={8}
+        containerStyle={containerStyle}
+        //styles={mapStyle}
+        disableDefaultUI={true}
+        center={{
+          lat: 37.7758,
+          lng: -122.435,
+        }}
+        styles={mapStyle}
+      />
     );
-};
+  }
+}
 
-export default Map;
+const mSTP = (state) => ({
+  test: "testing"
+})
+
+export default connect(mSTP)(GoogleApiWrapper({
+  apiKey: "AIzaSyBMhBKWkTQc-kmQolE3en1V1Fm0Np4PJOg",
+})(MapContainer)); 
