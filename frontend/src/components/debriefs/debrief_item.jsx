@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { connect } from "react-redux"
 import { deleteDebrief, updateDebrief } from "../../actions/debrief_actions"
 
+
 const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => {
 
     const [isEditing, setIsEditing] = useState(false)
@@ -46,16 +47,34 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => 
     )
 
     return (
-        <li>
-            <p>Position Interviewed: {debrief.jobTitle}</p>
-            <p>Interview Date: {debrief.interviewDate}</p>
-            <p>Interview Stage: {debrief.InterviewStage}</p>
-            <p>Interview Difficulty: {debrief.difficulty}</p>
-            <p>Interview Summary: {debrief.interviewSummary}</p>
-            <p>Comments: {debrief.comments}</p>
+        <div className = 'debrief-body'>
+            <span>
+                <p className='firstItem'>Position Interviewed: </p>
+                <p>{debrief.jobTitle}</p>
+            </span>
+            <span>
+                <p className='firstItem'>Interview Date: </p>
+                <p>{debrief.interviewDate}</p>
+            </span>
+            <span>
+                <p className='firstItem' >Interview Stage: </p> 
+                <p> {debrief.InterviewStage} </p>
+            </span>
+            <span>
+                <p className='firstItem' >Interview Difficulty:</p> 
+                <p>{debrief.difficulty}</p>
+            </span>
+            <span>
+                <p className='firstItem' >Interview Summary:</p> 
+                <p>{debrief.interviewSummary}</p>
+            </span>
+            <span>
+                <p className='firstItem' >Comments: </p> 
+                <p>{debrief.comments}</p>
+            </span>
+            
             <p>{editBody}</p>
-            <br/>
-        </li>
+        </div>
     )
 }
 
