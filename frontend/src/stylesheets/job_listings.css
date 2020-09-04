@@ -10,6 +10,15 @@
     border: #343536 1px solid;
     border-radius: 4px;
     background-color: #1a1a1b;
+    cursor: pointer;
+}
+
+.main-listings:hover {
+    border: #e4edf0 1px solid;
+    width: 690px;
+    /* height: 105px; */
+    padding-right: 15px;
+    transition: 0.3s;
 }
 
 .invidiual-job-listings{
@@ -57,10 +66,12 @@
 }
 
 .joblisting-index {
-    margin: 0 auto;
+ /*   margin: 0 auto; */
+   margin: 0 0 0 50px; 
    padding-top:60px;
    max-width: 700px; 
 }
+
 #listings-company-name {
     color: rgba(78,201,176,1);
 }
@@ -93,3 +104,25 @@
 .favorite-btn {
     margin-top: 20px;
 }
+
+.map-container {
+    background: white;
+    z-index: 2;
+    position: fixed;
+    left: 800px;
+    top: 100px;
+}
+
+.map-container div {
+    background: transparent;
+    z-index: 2;
+    /* border: red 1px solid; */
+}
+.map-container span {
+    background: transparent;
+}
+
+.map-container a, .map-container img {
+    background: transparent;
+}
+

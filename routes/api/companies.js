@@ -53,10 +53,11 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Debrief.find({ company: req.params.id })
+      .sort({ createdAt: -1 })
       .then((debriefs) => {
-        return res.json(debriefs)
+        return res.json(debriefs);
       })
-      .catch((err) => res.json(err))
+      .catch((err) => res.json(err));
   }
 )
 

@@ -3,17 +3,20 @@ const router = express.Router()
 const passport = require("passport")
 const keys = require("../../config/keys")
 const Debrief = require("../../models/Debrief")
-
+const Company = require("../../models/Company");
 // Index
 router.get("/", (req, res) => {
     Debrief.find()
+      //.populate('company')
       .sort({ createdAt: -1 })
+      //.populate('company')
+      // .populate("user")
       .then((debriefs) => {
         return res.json(debriefs);
       })
       .catch((err) =>
         res.status(404).json({ noDebriefsFound: "No debriefs found" })
-      )
+      );
 })
 
 router.post(

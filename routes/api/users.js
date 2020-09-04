@@ -41,6 +41,16 @@ router.get(
   }
 );
 
+
+// show 
+router.get("/:id", (req, res) => {
+  User.findById(req.params.id)
+    .then((user) => res.json(user))
+    .catch((err) =>
+      res.status(404).json({ noUserFound: "No user found with that ID" })
+    );
+});
+
 // // Joblisting Index: return An array of Favorite object (which includes jobListing and user)
 router.get(
   "/current/favoriteJobListingId",

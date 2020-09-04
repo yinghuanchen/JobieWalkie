@@ -3,29 +3,34 @@
 }
 
 .list-all-debriefs{
-    display : flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #d7dadc;
-    /* align-items: start; */
-    align-items: stretch;
-    margin: auto 0;  
-}
-.list-all-debriefs.profile-page {
-    margin: auto;
-}
-
-.debrief-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: #d7dadc;
+    /* align-items: start;
+    align-items: stretch; */
+}
+.list-all-debriefs.profile-page {
+    /* margin-left: 27%; */
+    display: none;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.debrief-body {
+    margin: auto;
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
     background-color: #1f1f1f;
-    /* border: 1px solid #1f1f1f; */
+    border: 1px solid #343536;
     margin-bottom: 10px;
     /* width: 60%; */
-    max-width: 694px;
+    width: 100%;
+    max-width: 675px;
     padding: 7px;
      font-size: 18px;
+     border-radius: 4px;
 }
 
 .debrief-body:hover{
