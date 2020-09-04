@@ -22,7 +22,7 @@ router.post(
   (req, res) => {
     const newDebrief = new Debrief({
       user: req.user.id,
-      company: req.body.companyId,
+      company: req.body.company,
       jobTitle: req.body.jobTitle,
       interviewDate: req.body.interviewDate,
       interviewStage: req.body.interviewStage,
@@ -52,7 +52,7 @@ router.post(
   (req, res) => {
     const newDebrief = {
       user: req.user.id,
-      company: req.body.companyId,
+      company: req.body.company,
       jobTitle: req.body.jobTitle,
       interviewDate: req.body.interviewDate,
       interviewStage: req.body.interviewStage,

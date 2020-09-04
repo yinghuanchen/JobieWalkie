@@ -1,4 +1,4 @@
-.form-container {
+/* .form-container {
   padding-top: 200px;
   width: 300px;
   display: flex;
@@ -108,3 +108,134 @@
   padding-right: 20px;
 }
 
+.divider-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  color: #a6a6a6;
+  font-size: 12px;
+}
+
+.divider-text {
+  padding-top: 2px;
+}
+
+.divider {
+  display: block;
+  width: 40%;
+  height: 1px;
+  padding-top: 7px;
+  border-bottom: 1px #a6a6a6 solid;
+} */
+
+.form-container {
+  padding-top: 200px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+  display: relative;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.session-form-btn {
+  justify-content: center;
+  background-color: #20a896;
+  padding: 10px;
+  color: #2c213b;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.session-form-btn:hover {
+  background-color: #53ddcb;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.session-form input {
+  outline: none;
+  color: white;
+  box-sizing: border-box;
+  border-bottom: #333333 1px solid;
+  margin-bottom: 25px;
+  padding: 10px 0 10px 0;
+  width: 100%;
+}
+
+.session-form input:focus {
+  border-bottom: white 2px solid;
+}
+
+.session-form input:focus ~ label, 
+.session-form input:valid ~ label {
+  font-size: 14px;
+  top: -12px;
+}
+
+.errors-list {
+  color: red
+}
+
+.form-container div {
+  position: relative;
+}
+
+.form-container label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: #757575;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: gray;
+  left: 54%;
+}
+
+.nav-link:hover {
+  transition-duration: 0.6s;
+  color: #333333;
+}
+
+.fa-check {
+  padding-right: 15px;
+}
+
+.demo-user-btn:hover {
+  background-color: #2b406e;
+  transition-duration: 0.2s;
+}
+
+.demo-user-btn {
+  background-color: #3b5998;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.fa-user-alt {
+  color: white;
+  padding-right: 20px;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 import { fetchCompanyDebriefs } from "../../actions/debrief_actions"
 import { fetchCompany } from "../../actions/company_actions"
 import DebriefList from "../debriefs/debrief_list"
@@ -20,12 +21,11 @@ const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, ma
     if (!company) return null // This is important. The "fetch" is the asynchronous call that dictates why this line is important.
 
     return (
-        <>
-            <div>
-                <p>{company.name}</p>
-                <DebriefList debriefs={debriefs}/>
-            </div>
-        </>
+      <div>
+        {/* <p>{company.name}</p> */}
+        <Link to={`/debriefs/${companyId}/create`}>Create Debrief</Link>
+        <DebriefList debriefs={debriefs} />
+      </div>
     )
 }
 

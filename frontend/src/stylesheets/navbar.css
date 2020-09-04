@@ -16,9 +16,70 @@
     z-index: 5;
 }
 
-/* .NavBar button {
-    height: 20px;
-} */
+.profile-dropdown-container {
+  position: relative;
+  color: gray;
+  width: 20px;
+  height: 20px;
+  font-size: 30px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.profile-dropdown-container:hover .profile-dropdown-content {
+  display: block;
+}
+
+.profile-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 130px;
+  font-size: 13px;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2);
+  top: 30px;
+  right: -10px;
+  z-index: 3;
+}
+
+.dropdown-btn {
+  text-decoration: none;
+  display: block;
+  color: white;
+  border-bottom: #313131 1px solid;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  transition-duration: 0.3s;
+}
+
+.dropdown-btn:hover {
+  background-color: #313131;
+}
+
+.fa-angle-down {
+  background-color: #212121;
+  color: black;
+} 
+
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    font-size: 20px;
+    margin: 0 0 0 0;
+    /* background-color: #03254c; */
+    background-color: #212121;
+    color: #e2e2e2;
+    letter-spacing: 1px;
+    padding-left: 50px;
+    padding-right: 50px; 
+    z-index: 5;
+    border-bottom: #343536 1px solid;
+}
 
 .left-container{
     margin-left: 10px;
@@ -39,7 +100,7 @@
 .right-container {
     width: 15%;
     margin-right: 100px;
-    background-color: #212121;
+    background-color: transparent;
 }
 
 div.right-container-div {
@@ -105,30 +166,22 @@ nav-bar {
   margin-right: 30px;
 }
 
-/* .nav-logo {
-  margin-left: 30px;
-  display: block;
-  text-decoration: none;
-  padding-top: 10px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  cursor: pointer;
-  background-image: linear-gradient(to right, #0066cc, #66b3ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
-
 .profile-dropdown-container {
   position: relative;
   color: gray;
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 40px;
   font-size: 30px;
   margin-right: 40px;
   cursor: pointer;
+  padding-top: 10px;
+  background: transparent;
 }
 
 .profile-dropdown-container:hover .profile-dropdown-content {
+  display: block;
+}
+.dropdown-btn:hover .profile-dropdown-content {
   display: block;
 }
 
@@ -139,8 +192,8 @@ nav-bar {
   min-width: 130px;
   font-size: 13px;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2);
-  top: 30px;
-  right: -10px;
+  top: 50px;
+  right: 25px;
   z-index: 3;
 }
 
@@ -161,4 +214,18 @@ nav-bar {
 
 .fa-angle-down {
   background-color: #212121;
+}
+
+.left-container {
+  background: #212121;
+}
+.NavBar > a {
+  background: #212121;
+}
+
+.login-signup-link {
+  background: #212121;
+}
+.login-signup-link a {
+  background: transparent;
 }

@@ -58,15 +58,15 @@ router.get(
   }
 );
 
-// Joblisting Index: return An array of Favorite object (which includes jobListing and user)
+// // Joblisting Index: return An array of Favorite object (which includes jobListing and user)
 router.get(
-  "/current/favorites",
+  "/current/favoriteJobListingId",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Favorite.find({ user: req.user.id })
-      .then((listings) => {
-        return res.json(listings);
-      })
+   Favorite.find({ user: req.user.id })
+     .then((listings) => {
+       return res.json(listings.map((ele) => ele.jobListing));
+     });
   }
 )
 

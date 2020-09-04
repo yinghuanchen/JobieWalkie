@@ -63,7 +63,7 @@ const SearchBar = ({ searchCompany, searchResults, path }) => {
         </ul>
       </div>
     ) : null;
-
+    
   return (
     <div id="search-bar-container">
       <div className="search-bar-input">

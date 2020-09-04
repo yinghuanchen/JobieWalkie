@@ -10,58 +10,59 @@ const NavBar = ({ loggedIn, logout }) => {
 	const pushHistory = useHistory()
 	const handleLogout = () => {
 		logout()
-		pushHistory.push("/")
+		pushHistory.replace("/")
 	}
 
-    // Selectively render links dependent on whether the user is logged in
-    const getLinks = () => {
-        if (loggedIn) {
-            return (
-              // <div className="nav-index">
-              //     <button >Debriefs</button>
-              //     <button >Job Listings</button>
-              //     <button >Companies</button>
-              //     <button >Profile</button>
-              //     <button onClick={handleLogout}>Logout</button>
-              // </div>
-              <div className="right-container-div">
-                <div className="profile-dropdown-container fas fa-angle-down">
-                  <ul className="profile-dropdown-content">
-                    <Link to="/" className="dropdown-btn">
-                      Debriefs
-                    </Link>
-                    <Link to="/" className="dropdown-btn">
-                      Job Listings
-                    </Link>
-                    <Link to="/" className="dropdown-btn">
-                      Companies
-                    </Link>
-                    <Link to="/" className="dropdown-btn">
-                      Profile
-                    </Link>
-                    <div className="dropdown-btn" onClick={handleLogout}>
-                      Logout
-                    </div>
-                  </ul>
-                </div>
-              </div>
-            );
-        } else {
-            return (
-                <div className="login-signup-link">
-                    <Link to={"/signup"}>Signup</Link>
-                    <Link to={"/login"}>Login</Link>
-                </div>
-            )
-        }
-    }
+	const handleClick = (e) => {
+		const dropdown = document.getElementsByClassName('profile-dropdown-content');
+		if (Array.from(dropdown).includes('dropdown-close')) {
+			dropdown.classList.remove('dropdown-close')
+			dropdown.classList.add('dropdown-open')
+		} else {
+			dropdown.classList.remove("dropdown-open");
+			dropdown.classList.add("dropdown-close");
+		}
+	}
+
+	// Selectively render links dependent on whether the user is logged in
+	const getLinks = () => {
+		if (loggedIn) {
+			return (
+					<div className="profile-dropdown-container fas fa-angle-down" onClick={handleClick}>
+						<ul className="profile-dropdown-content">
+							<Link to="/" className="dropdown-btn">
+								Debriefs
+									</Link>
+							<Link to="/jobListings" className="dropdown-btn">
+								Job Listings
+									</Link>
+							<Link to="/" className="dropdown-btn">
+								Profile
+									</Link>
+							<div className="dropdown-btn" onClick={handleLogout}>
+								Logout
+									</div>
+						</ul>
+					</div>
+			)
+		} else {
+			return (
+				<div className="login-signup-link">
+					<Link to={"/signup"}>Signup</Link>
+					<Link to={"/login"}>Login</Link>
+				</div>
+			)
+		}
+	}
+
+	const SearchBar = loggedIn ? <SearchBarContainer /> : null
 
 	return (
     <div className="NavBar">
       <Link to="/">
         <span className="left-container"> JobieWalkie</span>
       </Link>
-      <SearchBarContainer />
+      {SearchBar}
       <span className="right-container"> {getLinks()} </span>
     </div>
   );

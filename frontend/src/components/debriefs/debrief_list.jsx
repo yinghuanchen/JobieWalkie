@@ -2,6 +2,8 @@ import React from "react"
 import DebriefItem from "./debrief_item"
 
 const DebriefList = ({ debriefs }) => {
+
+    if (!debriefs) return null
     return (
         <ul>
             {
