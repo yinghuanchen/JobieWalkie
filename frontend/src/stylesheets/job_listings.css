@@ -7,7 +7,9 @@
     margin-left: 4px;
     border: 1px solid;
     z-index: 100;
-    box-shadow: 3px 3px rgba(197,197,197,1);
+    border: #343536 1px solid;
+    border-radius: 4px;
+    background-color: #1a1a1b;
 }
 
 .invidiual-job-listings{
@@ -16,6 +18,7 @@
     padding-bottom:8px;
     font-family: sans-serif;
     padding-left: 20px;
+    background-color: #1a1a1b;
 }
 
 
@@ -23,12 +26,15 @@
     font-size: 18px;
     font-weight: 550;
     /* color: red; */
+    background-color: #1a1a1b;
     color:rgba(156,220,254,1);
 }
 
 .invidiual-job-listings > .listings-item {
     font-size: 16px;
     padding-top: 5px;
+    color:rgba(156,220,254,1);
+    background-color: #1a1a1b;
 }
 
 .link-listings {
@@ -51,16 +57,39 @@
 }
 
 .joblisting-index {
+    margin: 0 auto;
    padding-top:60px;
-   max-width: 750px; 
+   max-width: 700px; 
 }
-.listings-company-name {
+#listings-company-name {
     color: rgba(78,201,176,1);
 }
-.listings-place {
+#listings-place {
     color: rgba(206,145,120,1);
 }
-.listings-date-posted {
+#listings-date-posted {
     color: rgba(220,220,170,1);
 }
 
+.link-listings, .link-listings > a, .favorite-btn {
+    background: transparent;
+}
+
+.unfavorite {
+    color: gray;
+    cursor: pointer;
+    background: transparent;
+}
+.favorite {
+    color: yellow;
+    cursor: pointer;
+    background: transparent;
+}
+.link-logo {
+    color: gray;
+    background: transparent;
+    margin-bottom: 20px;
+}
+.favorite-btn {
+    margin-top: 20px;
+}
