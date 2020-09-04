@@ -35,7 +35,7 @@
 .modal-body {
    background-color:white;
    display: block;
-   padding-left: 10px;
+   padding-left: 40px;
    padding-bottom: 10px;
    position: relative;
    height: 100%;
@@ -72,12 +72,16 @@
 }
 
 .modal-body > button {
-   background-color: white;
-   color: black;
-   margin-top: 40px;
+   background-color: black;
+   color: white;
+   margin-top: 5px;
+   border-radius: 5px;
    width: 80%;
-   /* border: 1px solid black; */
+   border: 1px solid black;
    align-items: center;
+   font-size: 20px;
+   margin-left: 20px;
+   cursor: pointer;
 }
 
 .modal-body > .summary {

@@ -18,11 +18,11 @@
     flex-direction: column;
     justify-content: center;
     background-color: #1f1f1f;
-    border: 1px solid #1f1f1f;
+    /* border: 1px solid #1f1f1f; */
     margin-bottom: 10px;
     width: 60%;
-    
-    
+    padding: 7px;
+     font-size: 18px;
 }
 
 .debrief-body:hover{
@@ -50,7 +50,51 @@
 .debrief-body > span > .firstItem {
     display: flex;
     align-items: start;
-    color: lightgreen;
     padding: 6px;
+   
+}
+.debrief-title {
+    color: rgba(156,204,254,1);
 }
 
+.debrief-stage {
+    color: rgba(206,145,120,1);
+}   
+.debrief-date {
+    color: rgba(78,201,176,1);
+}
+.debrief-difficulty {
+    color: rgba(220,220,170,1);
+}
+.debrief-summary {
+    padding: 0px 15px;
+    /* color: rgba(79,183,241,1); */
+    background: #1f1f1f;
+}
+.debrief-summary-span, .debrief-summary {
+    color: #C0C0C0;
+}
+.debrief-comment {
+    color: rgba(79,183,241,1);
+}
+.debrief-btn {
+    background: transparent;
+    border: 2px solid #696969;
+    padding: 8px;
+    border-radius: 5px;
+    background:	#696969;
+    color: rgba(204,204,204,1);
+     cursor: pointer;
+     margin: 0px 10px;
+}
+
+.debrief-btn:hover {
+    color: black;
+    background: grey;
+    border: 2px solid  grey;
+}
+
+.debrief-btn-container {
+    background: #1f1f1f;
+    padding: 10px;
+}

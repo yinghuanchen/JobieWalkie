@@ -58,7 +58,7 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief }) => {
                     <input type="text" placeholder="Interview Stage" value={debriefIntStage} onChange={(event) => setDebriefIntStage(event.target.value)} />
                     <input className='summary' type="text" placeholder="Interview Summary" value={debriefIntSummary} onChange={(event) => setDebriefIntSummary(event.target.value)} />
                     <input className='comments' type="text" placeholder="Comments" value={debriefIntComments} onChange={(event) => setDebriefIntComments(event.target.value)} />
-                    <button onClick={handleSubmit}>Submit</button>
+                    <button className='submit-btn' onClick={handleSubmit}>Submit</button>
                 </div>
             </div>
         </div>
