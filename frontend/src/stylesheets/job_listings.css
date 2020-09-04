@@ -7,7 +7,7 @@
     margin-left: 4px;
     border: 1px solid;
     z-index: 100;
-    box-shadow: 3px 3px grey;
+    box-shadow: 3px 3px rgba(197,197,197,1);
 }
 
 .invidiual-job-listings{
@@ -15,7 +15,7 @@
     padding-top: 8px;
     padding-bottom:8px;
     font-family: sans-serif;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 
@@ -23,7 +23,7 @@
     font-size: 18px;
     font-weight: 550;
     /* color: red; */
-    color: #2D2D2D;
+    color:rgba(156,220,254,1);
 }
 
 .invidiual-job-listings > .listings-item {
@@ -54,6 +54,13 @@
    padding-top:60px;
    max-width: 750px; 
 }
-
-
+.listings-company-name {
+    color: rgba(78,201,176,1);
+}
+.listings-place {
+    color: rgba(206,145,120,1);
+}
+.listings-date-posted {
+    color: rgba(220,220,170,1);
+}
 

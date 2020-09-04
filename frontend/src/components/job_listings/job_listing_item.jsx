@@ -32,23 +32,29 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites
     )
 
     return (
-        <div className="main-listings">
-            <div className="invidiual-job-listings">
-                <div className="listings-title">{jobListing.jobTitle}</div>
-                <div className="listings-item">{jobListing.companyName}</div>
-                <div className="listings-item">{jobListing.place}</div>
-                <div className="listings-item">{jobListing.datePosted}</div>
-            </div>
-
-            <div className="link-listings">
-                <a href={`${jobListing.jobLink}`}>
-                    {" "}
-                    <FaExternalLinkAlt className="link-logo" />{" "}
-                </a>
-                {placeFavorite}
-            </div>
+      <div className="main-listings">
+        <div className="invidiual-job-listings">
+          <div className="listings-item listings-title">
+            {jobListing.jobTitle}
+          </div>
+          <div className="listings-item listings-company-name">
+            {jobListing.companyName}
+          </div>
+          <div className="listings-item listings-place">{jobListing.place}</div>
+          <div className="listings-item listings-date-posted">
+            {jobListing.datePosted}
+          </div>
         </div>
-    )
+
+        <div className="link-listings">
+          <a href={`${jobListing.jobLink}`}>
+            {" "}
+            <FaExternalLinkAlt className="link-logo" />{" "}
+          </a>
+          {placeFavorite}
+        </div>
+      </div>
+    );
 }
 
 const mapSTP = (state) => {
