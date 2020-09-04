@@ -4,21 +4,23 @@ import { fetchAllDebriefs } from "../../actions/debrief_actions"
 import DebriefList from "./debrief_list"
 import '../../stylesheets/debrief.css'
 
-const DebriefIndex = ({ debriefs, fetchAllDebriefs }) => {
+const DebriefIndex = ({ currentUser, debriefs, fetchAllDebriefs }) => {
 
     useEffect(() => {
         fetchAllDebriefs()
     }, [fetchAllDebriefs])
     
     return (
-        <div className='main-debrief'>
-            <DebriefList debriefs={debriefs}/>
+        <div>
+            <h1>Debriefs</h1>
+            <DebriefList currentUser={currentUser} debriefs={debriefs}/>
         </div>        
     )
 }
 
 const mapSTP = (state) => {
     return {
+        currentUser: state.session.user,
         debriefs: state.debriefs.data ? state.debriefs.data : []
     }
 }

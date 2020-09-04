@@ -168,6 +168,7 @@ nav.nav-bar {
     padding-left: 50px;
     padding-right: 50px; 
     z-index: 5;
+    border-bottom: #343536 1px solid;
 }
 
 /* .NavBar button {
@@ -193,7 +194,7 @@ nav.nav-bar {
 .right-container {
     width: 15%;
     margin-right: 100px;
-    background-color: #212121;
+    background-color: transparent;
 }
 
 div.right-container-div {
@@ -275,14 +276,19 @@ nav-bar {
 .profile-dropdown-container {
   position: relative;
   color: gray;
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 40px;
   font-size: 30px;
   margin-right: 40px;
   cursor: pointer;
+  padding-top: 10px;
+  background: transparent;
 }
 
 .profile-dropdown-container:hover .profile-dropdown-content {
+  display: block;
+}
+.dropdown-btn:hover .profile-dropdown-content {
   display: block;
 }
 
@@ -293,8 +299,8 @@ nav-bar {
   min-width: 130px;
   font-size: 13px;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2);
-  top: 30px;
-  right: -10px;
+  top: 50px;
+  right: 25px;
   z-index: 3;
 }
 
@@ -315,4 +321,18 @@ nav-bar {
 
 .fa-angle-down {
   background-color: #212121;
+}
+
+.left-container {
+  background: #212121;
+}
+.NavBar > a {
+  background: #212121;
+}
+
+.login-signup-link {
+  background: #212121;
+}
+.login-signup-link a {
+  background: transparent;
 }

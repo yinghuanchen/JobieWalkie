@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { FaExternalLinkAlt } from "react-icons/fa"
 import { createFavorite, deleteFavorite } from "../../actions/favorite_actions";
 import {fetchUserFavoriteJobListingIds} from '../../actions/favorite_actions';
+// import {Link} from 'react-router-dom';
 
 const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites, jobListing, fetchUserFavoriteJobListingIds }) => {
 
@@ -22,12 +23,17 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites
         console.log("5f503ecf58fd92214b5ec124");
         console.log(favorites);
     }
-    const isFavorite = favorites.includes(jobListing._id);
+
+    const isFavorite = favorites.includes(jobListing._id)
 
     const placeFavorite = isFavorite ? (
-      <button onClick={handleDeleteFavorite}>Favorited</button>
+      <button className="favorite-btn" onClick={handleDeleteFavorite}>
+        <i class="fas fa-star fa-lg favorite"></i>
+      </button>
     ) : (
-      <button onClick={handleCreateFavorite}>Not Favorited</button>
+      <button className="favorite-btn" onClick={handleCreateFavorite}>
+        <i class="fas fa-star fa-lg unfavorite"></i>
+      </button>
     );
     return (
       <div className="main-listings">
@@ -35,12 +41,14 @@ const JobListingItem = ({ currentUser, createFavorite, deleteFavorite, favorites
           <div className="listings-item listings-title">
             {jobListing.jobTitle}
           </div>
-          <div className="listings-item listings-company-name">
+          <div className="listings-item" id="listings-company-name">
             {jobListing.companyName}
           </div>
-          <div className="listings-item listings-place">{jobListing.place}</div>
-          <div className="listings-item listings-date-posted">
-            {jobListing.datePosted}
+          <div className="listings-item" id="listings-place">
+            {jobListing.place}
+          </div>
+          <div className="listings-item" id="listings-date-posted">
+            {jobListing.datePosted.toString().slice(0, 10)}
           </div>
         </div>
 
