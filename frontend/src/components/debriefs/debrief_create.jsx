@@ -32,40 +32,84 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief }) => {
     }
 
     return (
-        
-        <div className="modal">
-            <div className="modal-content">
-                
-                <div className="modal-header">
-                    <span className="closeBtn" onClick={() => {
-                        setIsEditing(false)
-                        history.push(`/companies/${companyId}`)
-                    }}>Cancel</span>
-                </div>
+      <div className="modal">
+        <div className="modal-content">
 
-                <div className="modal-body">
+          <div className="modal-header">
+            <span
+              className="closeBtn"
+              onClick={() => {
+                setIsEditing(false);
+                history.push(`/companies/${companyId}`);
+              }}
+            >
+              Cancel
+            </span>
+          </div>
 
-                    <input type="text" placeholder="Job Title" value={debriefIntJobTitle} onChange={(event) => setDebriefIntJobTitle(event.target.value)} />
-                    
-                    <div className ='radio-buttons' value={debriefIntDifficulty} onChange={(event) => setDebriefIntDifficulty(event.target.value)}>
-                        <label> Difficulty </label>
-                        <span> 1 <input type="radio" value={1} /> </span>
-                        <span> 2 <input type="radio" value={2} /> </span>
-                        <span> 3 <input type="radio" value={3} /> </span>
-                        <span> 4 <input type="radio" value={4} /> </span>
-                        <span> 5 <input type="radio" value={5} /> </span>
-                    </div>
+          <div className="modal-body">
+            <input
+              type="text"
+              placeholder="Job Title"
+              value={debriefIntJobTitle}
+              onChange={(event) => setDebriefIntJobTitle(event.target.value)}
+            />
 
-                    <input type="date" value={debriefIntDate} onChange={(event) => setDebriefIntDate(event.target.value)} />
-                    <input type="text" placeholder="Interview Stage" value={debriefIntStage} onChange={(event) => setDebriefIntStage(event.target.value)} />
-                    <input className='summary' type="text" placeholder="Interview Summary" value={debriefIntSummary} onChange={(event) => setDebriefIntSummary(event.target.value)} />
-                    <input className='comments' type="text" placeholder="Comments" value={debriefIntComments} onChange={(event) => setDebriefIntComments(event.target.value)} />
-                    <button className='submit-btn' onClick={handleSubmit}>Submit</button>
-                </div>
+            <div
+              className="radio-buttons"
+              value={debriefIntDifficulty}
+              onChange={(event) => setDebriefIntDifficulty(event.target.value)}
+            >
+              <label> Difficulty </label>
+              <span>
+                1 <input type="radio" name="selection" value={1} />{" "}
+              </span>
+              <span>
+                2 <input type="radio" name="selection" value={2} />{" "}
+              </span>
+              <span>
+                3 <input type="radio" name="selection" value={3} />{" "}
+              </span>
+              <span>
+                4 <input type="radio" name="selection" value={4} />{" "}
+              </span>
+              <span>
+                5 <input type="radio" name="selection" value={5} />{" "}
+              </span>
             </div>
+
+            <input
+              type="date"
+              value={debriefIntDate}
+              onChange={(event) => setDebriefIntDate(event.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Interview Stage"
+              value={debriefIntStage}
+              onChange={(event) => setDebriefIntStage(event.target.value)}
+            />
+            <input
+              className="summary"
+              type="text"
+              placeholder="Interview Summary"
+              value={debriefIntSummary}
+              onChange={(event) => setDebriefIntSummary(event.target.value)}
+            />
+            <input
+              className="comments"
+              type="text"
+              placeholder="Comments"
+              value={debriefIntComments}
+              onChange={(event) => setDebriefIntComments(event.target.value)}
+            />
+            <button className="submit-btn" onClick={handleSubmit}>
+              Submit
+            </button>
+          </div>
         </div>
-    
-    )
+      </div>
+    );
 }
 
 const mapSTP = (state, ownProps) => {

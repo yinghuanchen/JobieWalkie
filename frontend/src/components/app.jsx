@@ -42,7 +42,6 @@ export default App
 
 // JW-TODOs:
   // Debriefs: Convert userId to userHandle
-  // Debriefs: Convert companyID to companyName
   // Debriefs: Edit button content needs CSS
   // Debriefs: Sort most recent debrief to display first
 
