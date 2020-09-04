@@ -5,12 +5,14 @@
 .list-all-debriefs{
     display : flex;
     flex-direction: column;
+    justify-content: center;
     color: #d7dadc;
-    align-items: start;
+    /* align-items: start; */
     align-items: stretch;
-    margin-left: 25%;
-
-    
+    margin: auto 0;  
+}
+.list-all-debriefs.profile-page {
+    margin: auto;
 }
 
 .debrief-body {
@@ -20,7 +22,8 @@
     background-color: #1f1f1f;
     /* border: 1px solid #1f1f1f; */
     margin-bottom: 10px;
-    width: 60%;
+    /* width: 60%; */
+    max-width: 694px;
     padding: 7px;
      font-size: 18px;
 }
