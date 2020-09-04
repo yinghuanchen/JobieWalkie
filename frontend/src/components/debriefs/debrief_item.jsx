@@ -51,22 +51,19 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => 
             >
               <label> Difficulty </label>
               <span>
-                1 <input type="radio" name="selection" value={1} />
+                1 <input type="radio" name="selection" value={1} />{" "}
               </span>
               <span>
-                2 <input type="radio" name="selection" value={2} />
+                2 <input type="radio" name="selection" value={2} />{" "}
               </span>
               <span>
-   
-                3 <input type="radio" name="selection" value={3} />
+                3 <input type="radio" name="selection" value={3} />{" "}
               </span>
               <span>
-     
-                4 <input type="radio" name="selection" value={4} />
+                4 <input type="radio" name="selection" value={4} />{" "}
               </span>
               <span>
-    
-                5 <input type="radio" name="selection" value={5} />
+                5 <input type="radio" name="selection" value={5} />{" "}
               </span>
             </div>
 
@@ -78,8 +75,7 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief }) => 
             />
 
             <label> Interview Stage </label>
-            <input
-              type="text"
+            <textarea
               value={debriefIntStage}
               onChange={(event) => setDebriefIntStage(event.target.value)}
             />
