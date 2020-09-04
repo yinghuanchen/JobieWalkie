@@ -37,4 +37,4 @@ const App = () => (
 
 export default App
 
-// JW-TODO: How do we get rid of the missing favicon.ico error? (Delete favicon.ico to get the error in the terminal. Restart npm run dev.)
+// JW-TODO: Replace React icon in favicon.ico with a JobieWokie icon.

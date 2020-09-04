@@ -1,9 +1,10 @@
 import React from "react"
 import { withRouter } from "react-router-dom"
-import '../../stylesheets/log_in.css';
+import '../../stylesheets/log_in.css'
+
 class LoginForm extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             email: "",
@@ -11,13 +12,13 @@ class LoginForm extends React.Component {
             errors: {},
         };
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.renderErrors = this.renderErrors.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
-            this.props.history.replace("/jobListings"); // JW-TODO: Needs to be changed
+            this.props.history.replace("/jobListings")
         }
 
         this.setState({ errors: nextProps.errors })
@@ -79,7 +80,6 @@ class LoginForm extends React.Component {
             </div>
         )
     }
-    
 }
 
-export default withRouter(LoginForm);
+export default withRouter(LoginForm)

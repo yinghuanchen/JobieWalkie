@@ -18,7 +18,6 @@ const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, ma
         fetchCompanyDebriefs(companyId)
     }, [fetchCompanyDebriefs, companyId])
 
-    // const companyDebriefs = debriefs.filter(debrief => debrief.company === companyId) // Don't need this. Can delete because of "fetchCompanyDebriefs"
     if (!company) return null // This is important. The "fetch" is the asynchronous call that dictates why this line is important.
 
     return (
