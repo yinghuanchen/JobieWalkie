@@ -34,11 +34,11 @@ const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, ma
     )
 }
 
-const mapSTP = (state) => {
+const mapSTP = (state, ownProps) => {
     return {
-        company: state.companies.data || [],
-        debriefs: state.debriefs.data || []
-    }
+      company: state.companies[ownProps.match.params.companyId] || [],
+      debriefs: Object.values(state.debriefs) || [],
+    };
 }
 
 const mapDTP = (dispatch) => {

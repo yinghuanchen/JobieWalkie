@@ -31,7 +31,7 @@ const SearchResult = ({ companies, searchCompany }) => {
 
 const mapSTP = (state) => {
   return {
-    companies: state.companies.data ? state.companies.data : [],
+    companies: state.companies ? Object.values(state.companies): [],
   }
 }
 

@@ -18,14 +18,14 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetch
         updateDebrief({
           ...debrief,
           user: currentUser.id,
-          company: debrief.company,
+          company: debrief.company._id,
           jobTitle: debriefIntJobTitle,
           difficulty: debriefIntDifficulty,
           interviewDate: debriefIntDate,
           interviewStage: debriefIntStage,
           interviewSummary: debriefIntSummary,
           comments: debriefIntComments,
-        })
+        });
     }
 
   const handleDelete = () => {
@@ -119,7 +119,7 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetch
     return (
         <div className = 'debrief-body'>
             <span>
-                <p className='firstItem debrief-title'>Company: {debrief.company}</p>
+                <p className='firstItem debrief-company'>Company: {debrief.company.name}</p>
             </span>
             <span>
                 <p className='firstItem debrief-title'>Position Interviewed: {debrief.jobTitle} </p>
