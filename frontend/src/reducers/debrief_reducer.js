@@ -19,7 +19,7 @@ const debriefReducer = (oldState = {}, action) => {
             nextState[action.debrief.data._id] = action.debrief.data;
             return nextState; 
         case DELETE_DEBRIEF:
-            delete nextState[action.debriefId.data._id]
+            delete nextState[action.debriefId]
             return nextState
         default:
             return oldState

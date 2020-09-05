@@ -40,6 +40,7 @@ router.get(
   "/:id",
   (req, res) => {
     Debrief.findById(req.params.id)
+      .populate('company')
       .then((debrief) => res.json(debrief))
       .catch((err) =>
         res.status(404).json({ nodebrieffound: "No debrief found with that ID" })
@@ -61,10 +62,10 @@ router.post(
       difficulty: req.body.difficulty,
       comments: req.body.comments,
     };
-    Debrief.findByIdAndUpdate(req.params.id, newDebrief, function(err, debrief) {
-        if (err) { res.send(err); }
-        res.json(debrief);
-    })
+    Debrief.findByIdAndUpdate(req.params.id, newDebrief, { new: true })
+      .populate("company")
+      .then((debrief) => res.json(debrief))
+      .catch((err) => res.status(404).json(err));
   }
 )
 

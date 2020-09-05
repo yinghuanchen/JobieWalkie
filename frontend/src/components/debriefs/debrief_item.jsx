@@ -30,7 +30,6 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetch
 
   const handleDelete = () => {
     deleteDebrief(debrief._id)
-      // .then(() => fetchAllDebriefs())
   }
     const debriefUser = (debrief.user === currentUser.id)
 

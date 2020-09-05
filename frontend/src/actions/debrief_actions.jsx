@@ -60,6 +60,6 @@ export const updateDebrief = (debrief) => (dispatch) => {
 
 export const deleteDebrief = (debriefId) => (dispatch) => {
     return DebriefAPIUtil.deleteDebrief(debriefId)
-    .then(() => {dispatch(receiveDebrief(debriefId))})
+    .then(() => {dispatch(removeDebrief(debriefId));})
     .catch((err) => console.log(err))
 }

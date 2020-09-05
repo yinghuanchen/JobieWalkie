@@ -88,6 +88,16 @@ class SignupForm extends React.Component {
             />
             <label>Password</label>
           </div>
+          <div>
+            <input
+              type="password"
+              onChange={this.update("password2")}
+              value={this.state.password2}
+              // className="session-form-inputs"
+              required
+            />
+            <label>Please Enter Your Password Again</label>
+          </div>
           <button className="session-form-btn">SIGN UP</button>
           {this.renderErrors()}
         </form>

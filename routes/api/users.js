@@ -69,6 +69,7 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Debrief.find({ user: req.user.id })
+      .populate('company')
       .then((debriefs) => {
         return res.json(debriefs);
       })
