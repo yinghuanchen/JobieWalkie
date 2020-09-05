@@ -31,15 +31,6 @@ const favoriteReducer = (oldState = [], action) => {
             nextState.push(action.jobListingId.data);
             return nextState;
         case DELETE_FAVORITE:
-            // const idx = nextState.indexOf(action.favorite.data);
-            // //delete nextState[action.favoriteId]
-            //  nextState.splice(idx,1);
-            // action.favoriteId
-            // for(let i = 0; i < nextState.length; i++) {
-            //     if(nextState[i]._id === action.favoriteId) {
-            //          nextState.splice(i, 1);
-            //     }
-            // }
             return nextState
         default:
             return oldState

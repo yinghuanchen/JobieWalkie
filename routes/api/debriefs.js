@@ -7,10 +7,8 @@ const Company = require("../../models/Company");
 // Index
 router.get("/", (req, res) => {
     Debrief.find()
-      //.populate('company')
+      .populate('company')
       .sort({ createdAt: -1 })
-      //.populate('company')
-      // .populate("user")
       .then((debriefs) => {
         return res.json(debriefs);
       })

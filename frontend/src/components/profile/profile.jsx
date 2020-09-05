@@ -70,7 +70,7 @@ const Profile = ({ favorites, currentUser, debriefs, jobListings, fetchUserDebri
 const mapSTP = (state, ownProps) => {
     return {
         currentUser: state.session.user,
-        debriefs: state.debriefs.data || [],
+        debriefs: Object.values(state.debriefs) || [],
         favorites: state.favorites ? state.favorites : [],
         jobListings: state.jobListings.data ? state.jobListings.data : [],
     }

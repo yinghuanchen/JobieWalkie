@@ -11,6 +11,7 @@ const SearchBar = ({ searchCompany, searchResults, path }) => {
 
   useEffect(() => {
     setinputStr('');
+    setisDropdownOpen(false); 
   }, [path]);
 
   const handleUpdate = (e) => {
@@ -84,7 +85,7 @@ const SearchBar = ({ searchCompany, searchResults, path }) => {
 };
 
 const mapSTP = (state, ownProps) => ({
-  searchResults: state.companies.data,
+  searchResults: Object.values(state.companies),
   path: ownProps.location.pathname,
 });
 

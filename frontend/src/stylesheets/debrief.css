@@ -82,7 +82,7 @@
 .debrief-summary-span, .debrief-summary {
     color: #C0C0C0;
 }
-.debrief-comment {
+.debrief-comment, .debrief-company {
     color: rgba(79,183,241,1);
 }
 .debrief-btn {
