@@ -37,9 +37,49 @@
     border: 1px solid white;
 }
 
+#edit-modal-close {
+    display: inline-block;
+    background: transparent;
+    padding-right: 15px;
+    padding-top: 15px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#edit-difficulty-span {
+    color: #757575; 
+    margin-left: 29px;
+    font-size: 16px;
+    display: inline;
+    padding: 0;
+}
+
+#edit-selection-container span {
+    display: inline;
+    padding: 0;
+}
+
+#edit-date-input {
+    margin-left: 150px;
+}
+
+.edit-modal-title {
+    display: inline-block;
+    color: #e4edf0;
+    margin: auto;
+    padding-left: 25px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+#edit-selection-container {
+   display: inline-block;
+   margin: 0 10px;
+}
+
 .debrief-body span{
     display: flex;
-
     padding: 8px;
     background-color: #1f1f1f;
 }

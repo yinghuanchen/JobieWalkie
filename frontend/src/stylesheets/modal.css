@@ -1,127 +1,177 @@
 .modal {
-   background-color: rgba(253, 253, 253, 0.5);
+   background-color: rgba(33, 35, 43, 0.7);
    height: 100%;
    left: 0;
-   overflow: auto;
+   /* overflow: auto; */
    position: fixed;
    top: 0;
    width: 100%;
    z-index: 300;
-   
+}
+
+.modal .modal-content span {
+   background: black;
+}
+
+.fa-times-circle {
+   background: transparent;
+   padding-right: 15px;
+   padding-top: 15px;
+   font-size: 20px;
+   margin-bottom: 20px;
+   cursor: pointer;
+}
+
+.interview-date-container {
+   margin-top: 30px;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
 
 .modal-content {
    background-color: #888c89;
    margin: 10% auto;
+   overflow: auto;
    width: 50%;
-   height:80%;
-   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rba(0, 0, 0, 0.17);
+   height:60%;
    animation-name: modalopen;
    animation-duration: 0.5s;
+   border: 1px solid gray;
+   border-radius: 5px;
+}
+
+.modal-title {
+   display: inline-block;
+   color: #e4edf0;
+   margin: auto;
+   padding-left: 25px;
+   font-size: 20px;
+   letter-spacing: 1px;
 }
 
 .modal-header {
+   width: 100%;
    display: flex;
-   flex-direction: column;
+   justify-content: space-between;
    font-size: 14px;
    font-weight: 600;
-   padding: 20px;
+   color: black;
    text-align: right;
-   color: black;
+   z-index: 900;
 }
 
-.modal-body {
-   background-color:white;
-   display: block;
-   padding-left: 40px;
-   padding-bottom: 10px;
+.modal-body div {
    position: relative;
-   height: 100%;
-   border-bottom: 1px solid black;
-   /* text-align: center; */
+   margin-bottom: 10px;
 }
 
-.modal-body > input {
-   padding: 10px;
-   background-color: white;
-   border-bottom: 1px solid black;
-   color: black;
-   margin: 10px;
-   width: 80%;
-   font-size: 13px;
-   
-}
-.modal-body > textarea {
-   padding: 10px;
-   background-color: white;
-   border: none;
-   border-bottom: 1px solid black;
-   color: black;
-   margin: 10px;
-   width: 80%;
-   font-size: 14px;
-   font-family:sans-serif ;
+.modal input {
+  outline: none;
+  color: white;
+  box-sizing: border-box;
+  border: #333333 1px solid;
+  margin-bottom: 25px;
+  margin-left: 20px;
+  padding: 10px 0 10px 0;
+  width: 90%;
+  border-radius: 5px;
+  text-indent: 10px;
 }
 
-.modal-body > label {
-   padding-left: 20px ;
-   background-color: white;
-   color: black;
-   margin-top: 5px;
-   display: inline-block;
-}
-
-.modal-body > .radio-buttons {
-   background-color: white;
-   color: black;
-   font-size: 14px;
-   padding: 16px;
-   font-weight: normal;
-}
-
-.modal-body > .radio-buttons > span {
-   background-color: white;
-   color: black;
-}
-
-.modal-body > div > label {
-   background-color: white;
-   color: black;
-   font-size: 14px;
-   padding: 10px;
-   padding-bottom: 5px;
-}
-
-
-.modal-body > button {
-   background-color: black;
+.modal textarea {
+   outline: none;
    color: white;
-   margin-top: 5px;
-   border-radius: 5px;
-   width: 80%;
-   border: 1px solid black;
-   align-items: center;
-   font-size: 20px;
+   box-sizing: border-box;
+   border: #333333 1px solid;
+   margin-bottom: 25px;
    margin-left: 20px;
+   padding: 5px 0 10px 0;
+   width: 90%;
+   height: 200px;
+   border-radius: 5px;
+   padding: 10px;
+}
+
+#date-label {
+   position: absolute;
+   top: 25%;
+   font-size: 100%;
+}
+
+.modal-body label {
+   margin-left: 20px;
+   position: absolute;
+   top: 12px;
+   left: 10px;
+   color: #757575;
+   transition: 0.5s;
+   pointer-events: none;
+   background: transparent;
+}
+
+.modal input:focus {
+  border: white 2px solid;
+}
+
+.modal textarea:focus {
+  border: white 2px solid;
+}
+
+.modal input:focus ~ label, 
+.modal input:valid ~ label {
+  font-size: 14px;
+  top: -20px;
+  left: 10px;
+}
+
+.modal textarea:focus ~ label, 
+.modal textarea:valid ~ label {
+   font-size: 14px;
+   top: -22px;
+   left: 10px;
+}
+
+input[type="radio"] {
+   width: 20px;
+   margin: 0px;
+}
+
+input[type="date"] {
+   width: 40%;
+   margin: 0 0 25px 145px;
+   color: white;
+}
+
+.difficulty-span {
+   color: #757575;
+   margin-left: 30px;
+}
+
+.selection-container {
+   display: inline-block;
+   margin: 0 10px;
+}
+
+/* div > .summary-label {
+   left: 10px;
+} */
+
+.submit-btn {
+   color: #bebebe;
+   background: #696969;
+   padding: 5px 20px;
+   margin-left: 40%;
+   margin-bottom: 20px;
+   border-radius: 5px;
    cursor: pointer;
+   letter-spacing: 1px;
 }
 
-.modal-body > .summary {
-   padding-bottom: 80px;
-}
-.modal-body > .comments {
-   padding-bottom: 20px;
-}
-
-
-
-.closeBtn  {
-   cursor: pointer;
-   display: block;
-   height: 16px;
-   width: 16px;
-   display: flex;
-   flex-direction: column-reverse;
+.submit-btn:hover {
+   color: black;
+   background: grey;
 }
 
 @keyframes modalopen{

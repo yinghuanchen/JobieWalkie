@@ -36,72 +36,93 @@ const DebriefCreate = ({ currentUser, companyId, createDebrief }) => {
         <div className="modal-content">
 
           <div className="modal-header">
+            <span className="modal-title">CREATE DEBRIEF</span>
             <span
-              className="closeBtn"
+              className="fas fa-times-circle"
               onClick={() => {
                 setIsEditing(false);
                 history.push(`/companies/${companyId}`);
               }}
             >
-              Cancel
             </span>
           </div>
 
           <div className="modal-body">
-            <input
-              type="text"
-              placeholder="Job Title"
-              value={debriefIntJobTitle}
-              onChange={(event) => setDebriefIntJobTitle(event.target.value)}
-            />
+            <div className="job-title-input">
+              <input
+                type="text"
+                // placeholder="Job Title"
+                required
+                value={debriefIntJobTitle}
+                onChange={(event) => setDebriefIntJobTitle(event.target.value)}
+              />
+              <label>Job Title</label>
+            </div>
 
             <div
               className="radio-buttons"
               value={debriefIntDifficulty}
               onChange={(event) => setDebriefIntDifficulty(event.target.value)}
             >
-              <label> Difficulty </label>
-              <span>
-                1 <input type="radio" name="selection" value={1} />{" "}
-              </span>
-              <span>
-                2 <input type="radio" name="selection" value={2} />{" "}
-              </span>
-              <span>
-                3 <input type="radio" name="selection" value={3} />{" "}
-              </span>
-              <span>
-                4 <input type="radio" name="selection" value={4} />{" "}
-              </span>
-              <span>
-                5 <input type="radio" name="selection" value={5} />{" "}
-              </span>
+              <span className="difficulty-span"> Difficulty: </span>
+              <div className="selection-container">
+                <span>1</span>
+                <input type="radio" name="selection" value={1} />
+              </div>
+              <div className="selection-container">
+                <span>2</span>
+                <input type="radio" name="selection" value={2} />
+              </div>
+              <div className="selection-container">
+                <span>3</span>
+                <input type="radio" name="selection" value={3} />
+              </div>
+              <div className="selection-container">
+                <span>4</span>
+                <input type="radio" name="selection" value={4} />
+              </div>
+              <div className="selection-container">
+                <span>5</span>
+                <input type="radio" name="selection" value={5} />
+              </div>
             </div>
 
-            <input
-              type="date"
-              value={debriefIntDate}
-              onChange={(event) => setDebriefIntDate(event.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Interview Stage"
-              value={debriefIntStage}
-              onChange={(event) => setDebriefIntStage(event.target.value)}
-            />
-            <textarea
-              className="summary"
-              placeholder="Interview Summary"
-              value={debriefIntSummary}
-              onChange={(event) => setDebriefIntSummary(event.target.value)}
-            />
-            <input
-              className="comments"
-              type="text"
-              placeholder="Comments"
-              value={debriefIntComments}
-              onChange={(event) => setDebriefIntComments(event.target.value)}
-            />
+            <div className='interview-date-container'>
+              <input
+                type="date"
+                value={debriefIntDate}
+                onChange={(event) => setDebriefIntDate(event.target.value)}
+              />
+              <label id="date-label">Interview Date: </label>
+            </div>
+            <div>
+              <input
+                type="text"
+                value={debriefIntStage}
+                onChange={(event) => setDebriefIntStage(event.target.value)}
+                required
+              />
+              <label>Interview Stage</label>
+            </div>
+            <div>
+              <textarea
+                className="summary"
+                value={debriefIntSummary}
+                onChange={(event) => setDebriefIntSummary(event.target.value)}
+                required
+              />
+              <label className="summary-label">Interview Summary</label>
+            </div>
+            <div>
+              <input
+                className="comments"
+                type="text"
+                required
+                value={debriefIntComments}
+                onChange={(event) => setDebriefIntComments(event.target.value)}
+              />
+              <label>Comments</label>
+            </div>
             <button className="submit-btn" onClick={handleSubmit}>
               Submit
             </button>
