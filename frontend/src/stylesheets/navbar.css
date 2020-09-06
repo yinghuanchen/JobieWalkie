@@ -16,6 +16,10 @@
     z-index: 5;
 }
 
+.profile-dropdown-container.fa-github-alt {
+  color: #e4edf0;
+}
+
 .profile-dropdown-container {
   position: relative;
   color: gray;
@@ -24,6 +28,12 @@
   font-size: 30px;
   margin-right: 40px;
   cursor: pointer;
+}
+
+.fa-github-square {
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 5px;
 }
 
 .profile-dropdown-container:hover .profile-dropdown-content {
@@ -98,8 +108,9 @@
 }
 
 .right-container {
+    display: flex;
     width: 15%;
-    margin-right: 100px;
+    margin-right: 150px;
     background-color: transparent;
 }
 
@@ -116,6 +127,11 @@ nav-bar {
   justify-content: space-between;
   letter-spacing: 1px;
   background-color: whitesmoke;
+}
+
+.member-names {
+  background-color: transparent;
+  padding-left: 15px;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -195,6 +211,7 @@ nav-bar {
   top: 50px;
   right: 25px;
   z-index: 3;
+  border: #343536 solid 1px;
 }
 
 .dropdown-btn {
@@ -225,7 +242,14 @@ nav-bar {
 
 .login-signup-link {
   background: #212121;
+  margin-top: 10px;
 }
 .login-signup-link a {
   background: transparent;
+  padding: 5px;
+}
+
+.github-dropdown {
+  width: 200px;
+  right: -10px;
 }

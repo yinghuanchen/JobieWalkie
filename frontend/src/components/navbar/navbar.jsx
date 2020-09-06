@@ -44,6 +44,29 @@ const NavBar = ({ loggedIn, logout, currentUser }) => {
 		}
 	}
 
+	const githubLinks = () => (
+		<div className="profile-dropdown-container fab fa-github-alt" >
+			<ul className="profile-dropdown-content github-dropdown">
+				<a href="https://github.com/yinghuanchen" target="_blank" className="dropdown-btn">
+					<span class="fab fa-github-square"></span>
+					<span className="member-names">Emily Chen</span>
+				</a>
+				<a href="https://github.com/thomaslgrega" target="_blank" className="dropdown-btn">
+					<span class="fab fa-github-square"></span>
+					<span className="member-names">Thomas Grega</span>
+				</a>
+				<a href="https://github.com/sulizz" target="_blank" className="dropdown-btn">
+					<span class="fab fa-github-square"></span>
+					<span className="member-names">Suliz Basnet</span>
+				</a>
+				<a href="https://github.com/clint-chu" target="_blank" className="dropdown-btn">
+					<span class="fab fa-github-square"></span>
+					<span className="member-names">Clint Chu</span>
+				</a>
+			</ul>
+		</div>
+	)
+
 	const SearchBar = loggedIn ? <SearchBarContainer /> : null
 
 	return (
@@ -52,7 +75,10 @@ const NavBar = ({ loggedIn, logout, currentUser }) => {
         <span className="left-container"> JobieWalkie</span>
       </Link>
       {SearchBar}
-      <span className="right-container"> {getLinks()} </span>
+      <span className="right-container"> 
+				{githubLinks()}
+				{getLinks()} 
+			</span>
     </div>
   );
 }
