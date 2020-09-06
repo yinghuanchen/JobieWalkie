@@ -30,4 +30,20 @@ Packages
 - Node.js
 
 ## Features
-- Coming Soon
+- BCrypt encrypted user authentication.
+- Logged in users can access the Job Listings page 
+   * Software Engineering jobs scraped from Linkedin sorted by date.
+   * Users can click on job Listing to see the location on the map. 
+   * Users can favorite Job listings by clicking on Star
+      * Once favorited Job Listings can be accessed in users profile page
+   * Users can access the Linkedin page by clicking on external link icon
+- Logged in Users can access Debriefs page
+   * Users can access all the debriefs for all companies
+- Logged in Users can search for a company
+   * Once searched, Users are redirected to companies show page. 
+   * Users can create a debrief for that company. 
+   * Users can edit and delete the debriefs that they created.
+- Logged in Users can access their profile 
+   * Users can see all the jobs that they favroited. 
+   * Users can unfavorite the job Listing
+   * Users can view / edit / delete all the debriefs that they created
