@@ -1,9 +1,6 @@
 .company-main {
-    padding-top: 64px;
-    flex-direction: column;
-    align-items: flex-end;
+    padding-top: 24px;
     margin-right: 16px;
-    
 }
 
 .company-info {
@@ -11,38 +8,37 @@
     text-align: center;
     align-items: center;
     margin-bottom: 30px;
-    margin-left: 450px;
     z-index: 1;
-    /* box-shadow: 10px 10px 8px #888888; */
+    justify-content: space-between;
+    width: 690px;
+    margin: 0 auto;
+    padding-bottom: 20px;
 }
 
 .company-main .company-info .company-name{
     font-size: 64px;
     margin-right: 20px;
-    margin-bottom: 40px;
 }
 .company-info > img {
+    padding-top: 70px;
     height: 120px;
     width: 120px;
 }
 .company-name {
-    margin-left: 80px;
-    padding-top: 40px;
+    padding-right: 200px;
+    margin-top: 140px;
 }
 
 .create {
-    position: relative;
     border: 2px solid #696969;
+    margin-top: 150px;
     padding: 8px;
     z-index: 2;
-    left: 850px;
-    top: -30px;
     border-radius: 5px;
     background:	#696969;
     color: rgba(204,204,204,1);
 }
 .create:hover {
-    /* border: 2px solid white; */
     color: black;
     background: grey;
     border: 2px solid  grey;

@@ -129,75 +129,6 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetch
           </div>
         </div>
       </div>
-      // <div className="modal">
-      //   <div className="modal-content">
-      //     <div className="modal-header">
-      //       <button class="fas fa-times-circle" onClick={() => setIsEditing(false)}></button>
-      //     </div>
-
-      //     <div className="modal-body">
-      //       <div className="job-title-container">
-      //         <label> Job Title </label>
-      //         <input
-      //           type="text"
-      //           value={debriefIntJobTitle}
-      //           onChange={(event) => setDebriefIntJobTitle(event.target.value)}
-      //         />
-      //       </div>
-
-      //       <div
-      //         className="radio-buttons"
-      //         value={debriefIntDifficulty}
-      //         onChange={(event) => setDebriefIntDifficulty(event.target.value)}
-      //       >
-      //         <label> Difficulty </label>
-      //         <span>
-      //           1 <input type="radio" name="selection" value={1} />{" "}
-      //         </span>
-      //         <span>
-      //           2 <input type="radio" name="selection" value={2} />{" "}
-      //         </span>
-      //         <span>
-      //           3 <input type="radio" name="selection" value={3} />{" "}
-      //         </span>
-      //         <span>
-      //           4 <input type="radio" name="selection" value={4} />{" "}
-      //         </span>
-      //         <span>
-      //           5 <input type="radio" name="selection" value={5} />{" "}
-      //         </span>
-      //       </div>
-
-      //       <label> Interview Date </label>
-      //       <input
-      //         type="date"
-      //         value={debriefIntDate}
-      //         onChange={(event) => setDebriefIntDate(event.target.value)}
-      //       />
-
-      //       <label> Interview Stage </label>
-      //       <textarea
-      //         value={debriefIntStage}
-      //         onChange={(event) => setDebriefIntStage(event.target.value)}
-      //       />
-      //       <label> Summary </label>
-      //       <input
-      //         type="text"
-      //         className="summary"
-      //         value={debriefIntSummary}
-      //         onChange={(event) => setDebriefIntSummary(event.target.value)}
-      //       />
-      //       <label> Comments </label>
-      //       <input
-      //         type="text"
-      //         className="comments"
-      //         value={debriefIntComments}
-      //         onChange={(event) => setDebriefIntComments(event.target.value)}
-      //       />
-      //       <button onClick={handleSubmit}>Submit</button>
-      //     </div>
-      //   </div>
-      // </div>
     ) : (
       <div className="debrief-btn-container">
         <button className="debrief-btn" onClick={() => setIsEditing(true)}>
@@ -232,7 +163,7 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetch
             <span>
                 <span className='firstItem debrief-summary-span'>Interview Summary:</span> 
             </span>
-            <p className="debrief-summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{debrief.interviewSummary}</p>
+            <p className="debrief-summary">{debrief.interviewSummary}</p>
             <span>
                 <p className='firstItem debrief-comment'>Comments: {debrief.comments}</p> 
             </span>

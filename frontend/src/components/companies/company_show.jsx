@@ -25,8 +25,8 @@ const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, ma
           <div className='company-info'>
             <img src={company.companyImg} className='companyImg' alt={company.name} />
             <span className='company-name'> {company.name}</span>
+            <Link className='create' to={`/debriefs/${companyId}/create`}>Create Debrief</Link>
           </div>
-          <Link className='create' to={`/debriefs/${companyId}/create`}>Create Debrief</Link>
           
         <p>{company.link}</p>
         <DebriefList debriefs={debriefs} />
