@@ -6,7 +6,9 @@
    <br>
 </h1>
 
-<h3 align="center">An exclusive social networking app for software engineers. Created by Ying-Huan, Thomas Grega, Suliz Basnet, and Clint Chu.</h3>
+<h3 align="center">An exclusive social networking community for App Academy software engineers.</h3>
+
+Created by Ying-Huan, Thomas Grega, Suliz Basnet, and Clint Chu.
 
 <p align="center">
    <a href="#technologies">Technologies</a> •
