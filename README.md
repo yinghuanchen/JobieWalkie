@@ -31,9 +31,11 @@ JobieWalkie is collaborated effort to improve the job search process for softwar
 </p>
 
 <p align="center">
-   <a href="#technologies">Technologies</a> •
+   <a href="#design-and-technologies">Design and Technologies</a> •
    <a href="#features">Features</a> •
-   <a href="#features-in-progress">Features In-Progress</a>
+   <a href="#how-to-use-job-seekers">How to use (for job seekers)</a> •
+   <a href="#setup">Setup (for developers)</a> •
+   <a href="#features-coming-soon">Features Coming Soon</a>
 </p>
 
 ## Design and Technologies
