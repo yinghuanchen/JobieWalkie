@@ -6,7 +6,7 @@
    <br>
 </h1>
 
-<h2 align="center">An exclusive social networking community for App Academy software engineers.</h2> <h3 align="center">Created by Ying-Huan, Thomas Grega, Suliz Basnet, and Clint Chu.</h3>
+<h2 align="center">An exclusive social networking community for App Academy software engineers.</h2> <h3 align="center">Created by Ying-Huan Chen, Thomas Grega, Suliz Basnet, and Clint Chu.</h3>
 
 <p>
 JobieWalkie is collaborated effort to improve the job search process for software engineers, particularly App Academy job seekers. Job searching can be a tedious and/or disorganized task for any occupation where ambiguity in job titles, job descriptions, job requirements, and etc is rampant. The effort becomes more cumbersome as job postings can become old or newer job postings, prime listings, are buried in an ocean of links. JobieWalkie was designed reduce these issues by aggregating the latest job listings from LinkedIn, filtering job postings relevant to App Academy students' skillset, and providing a peer-to-peer community to assist fellow students in the search.
@@ -24,18 +24,35 @@ Primarily, built on a MERN stack (MongoDB, Express.js, React, and Node.js), the 
 
 Currently, the app provides the latest job postings on LinkedIn, narrowed down to software engineering positions that require tools and technologies such as Ruby, Rails, JavaScript, React, Express.js, Node.js, HTML/CSS, PostgresSQL, and MongoDB (these are the tools and technologies App Academy students know upon graduation).
 
-Frontend
-- React
-- Redux
-- JavaScript
-
-Backend
-- ExpressJS
-- MongoDB
-- Mongoose
-
-Packages
-- Node.js
-
 ## Features
-- Coming Soon
+1. Job Listings
+2. Debriefs
+3. Search (by company)
+4. Profile
+
+## How to use (for job seekers)
+- The Job Listings page is your primary source for the most recent job listings, on LinkedIn, and related to your skillset. The page is to provide a clean quick look of listings with only a link to the actual listing and a favorite feature. The link to the listing is where you'd go and apply. The "favorite" feature is for you to save to your profile for later viewing--listings can be favorited and unfavorited.
+
+- The Debrief page is your source of any debriefs as you should be familiar with at App Academy. Here you van view other students' provided debriefs by latest. This page can provide deeper insight to a company's interview process or greater knowledge of what to expect in general.
+
+- Company Page via Search is where you can view all debriefs related to a specific company. In addition to the above in Debriefs, here you can create your own debrief of your interview experience. The purpose here is for you to provide valuable feedback for your peers to help them better prepare or decide whether a position is the right fit for them.
+
+- The Profile page is where you can view your favorited job postings as well as any of your authored debriefs. You can easily find any of these items and make any changes.
+
+## Setup (for developers)
+For developers interested in using this application for learning purposes or creating a similar project using this as a skeleton, there are a few large packages that were ommitted from this repo in order to reduce the repo size. These are the packages required to be installed once this repo is cloned.
+
+1.
+2.
+3.
+4.
+
+## How to use
+
+## Features Coming Soon
+1. Database of job postings refreshed daily (automatically)
+2. Expanded database to include job postings from other job boards
+3. Comments or Questions feature
+4. Personal profile customization, such as profile picture, job seeking status, bio, contact, and etc.
+5. Friending feature
+6. "Like" feature for debriefs, to provide latest and more relevant debrief feed
