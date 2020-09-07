@@ -51,7 +51,7 @@ Currently, the app provides the latest job postings on LinkedIn, narrowed down t
 4. Profile
 
 ## How to use (for job seekers)
-- The Job Listings page is your primary source for the most recent job listings, on LinkedIn, and related to your skillset. The page is to provide a clean quick look of listings with only a link to the actual listing and a favorite feature. The link to the listing is where you'd go and apply. The "favorite" feature allows a user to save a job listing to their profile for later viewing--listings can be favorited and unfavorited.
+- The Job Listings page is the primary source for the most recent job listings, on LinkedIn, and related to your skillset. The page is to provide a clean quick look of listings with only a link to the actual listing and a favorite feature. The link to the listing is where you'd go and apply. The "favorite" feature allows a user to save a job listing to their profile for later viewing--listings can be favorited and unfavorited.
 
 - The Debrief page is the source for any debriefs. Users can view other students' authored debriefs sorted by most recent. This page can provide deeper insight to a company's interview process or greater knowledge of what to expect in general.
 
