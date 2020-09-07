@@ -11,25 +11,20 @@
 <h3 align="center">
    Created by
    <br>
-   Ying-Huan Chen
+   <a href="https://github.com/yinghuanchen">Ying Huan Chen</a>
    <br>
-   Thomas Grega
+   <a href="https://github.com/thomaslgrega">Thomas Grega</a>
    <br>
-   Suliz Basnet
+   <a href="https://github.com/sulizz">Suliz Basnet</a>
    <br>
-   Clint Chu.
+   <a href="https://github.com/clint-chu">Clint Chu</a>
    <br>
 </h3>
 
-[Ying Huan Chen]: https://github.com/yinghuanchen
-[clint_chu]: https://github.com/clint-chu
-[thomas_grega]: https://github.com/thomaslgrega
-[suliz_basnet]: https://github.com/sulizz
-
-[Ying Huan Chen](https://github.com/yinghuanchen)
+<!-- [Ying Huan Chen](https://github.com/yinghuanchen)
 [Thomas Grega](https://github.com/thomaslgrega)
 [Clint Chu](https://github.com/clint-chu)
-[Suliz Basnet](https://github.com/sulizz)
+[Suliz Basnet](https://github.com/sulizz) -->
 
 <p>
 JobieWalkie is collaborated effort to improve the job search process for software engineers, particularly App Academy job seekers. Job searching can be a tedious and/or disorganized task for any occupation where ambiguity in job titles, job descriptions, job requirements, and etc is rampant. The effort becomes more cumbersome as job postings can become old or newer job postings, prime listings, are buried in an ocean of links. JobieWalkie was designed reduce these issues by aggregating the latest job listings from LinkedIn, filtering job postings relevant to App Academy students' skillset, and providing a peer-to-peer community to assist fellow students in the search.
@@ -77,3 +72,10 @@ For developers interested in using this application for learning purposes or cre
 4. Personal profile customization, such as profile picture, job seeking status, bio, contact, and etc.
 5. Friending feature
 6. "Like" feature for debriefs, to provide latest and more relevant debrief feed
+
+
+
+[Ying Huan Chen]: https://github.com/yinghuanchen
+[clint_chu]: https://github.com/clint-chu
+[thomas_grega]: https://github.com/thomaslgrega
+[suliz_basnet]: https://github.com/sulizz
