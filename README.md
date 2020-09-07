@@ -27,7 +27,7 @@
 [Suliz Basnet](https://github.com/sulizz) -->
 
 <p>
-JobieWalkie is collaborated effort to improve the job search process for software engineers, particularly App Academy job seekers. Job searching can be a tedious and/or disorganized task for any occupation where ambiguity in job titles, job descriptions, job requirements, and etc is rampant. The effort becomes more cumbersome as job postings can become old or newer job postings, prime listings, are buried in an ocean of links. JobieWalkie was designed reduce these issues by aggregating the latest job listings from LinkedIn, filtering job postings relevant to App Academy students' skillset, and providing a peer-to-peer community to assist fellow students in the search.
+JobieWalkie is a collaborated effort to improve the job search process for software engineers, particularly App Academy job seekers. Job searching can be a tedious and/or disorganized task for any occupation where ambiguity in job titles, job descriptions, job requirements, and etc is rampant. The effort becomes more cumbersome as job postings become old or newer job postings, prime listings, are buried in an ocean of links. JobieWalkie is designed to minimize the impact of these issues by aggregating the latest job listings from LinkedIn, filtering job postings relevant to App Academy students' skillset, and providing a peer-to-peer community for networking.
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@ JobieWalkie is collaborated effort to improve the job search process for softwar
 
 ## Design and Technologies
 
-Primarily, built on a MERN stack (MongoDB, Express.js, React, and Node.js), the database is populated by the Puppeteer webscraper API, the interactive map is powered by the Google Maps API to provide the location of where the job is.
+Primarily, built on a MERN stack (MongoDB, Express.js, React, and Node.js), the database is populated by the Puppeteer webscraper API, and the interactive map is powered by the Google Maps API to provide the location of where jobs are located.
 
 Currently, the app provides the latest job postings on LinkedIn, narrowed down to software engineering positions that require tools and technologies such as Ruby, Rails, JavaScript, React, Express.js, Node.js, HTML/CSS, PostgresSQL, and MongoDB (these are the tools and technologies App Academy students know upon graduation).
 
@@ -51,13 +51,13 @@ Currently, the app provides the latest job postings on LinkedIn, narrowed down t
 4. Profile
 
 ## How to use (for job seekers)
-- The Job Listings page is your primary source for the most recent job listings, on LinkedIn, and related to your skillset. The page is to provide a clean quick look of listings with only a link to the actual listing and a favorite feature. The link to the listing is where you'd go and apply. The "favorite" feature is for you to save to your profile for later viewing--listings can be favorited and unfavorited.
+- The Job Listings page is your primary source for the most recent job listings, on LinkedIn, and related to your skillset. The page is to provide a clean quick look of listings with only a link to the actual listing and a favorite feature. The link to the listing is where you'd go and apply. The "favorite" feature allows a user to save a job listing to their profile for later viewing--listings can be favorited and unfavorited.
 
-- The Debrief page is your source of any debriefs as you should be familiar with at App Academy. Here you van view other students' provided debriefs by latest. This page can provide deeper insight to a company's interview process or greater knowledge of what to expect in general.
+- The Debrief page is the source for any debriefs. Users can view other students' authored debriefs sorted by most recent. This page can provide deeper insight to a company's interview process or greater knowledge of what to expect in general.
 
-- Company Page via Search is where you can view all debriefs related to a specific company. In addition to the above in Debriefs, here you can create your own debrief of your interview experience. The purpose here is for you to provide valuable feedback for your peers to help them better prepare or decide whether a position is the right fit for them.
+- Company Page via Search is where users can view all debriefs related to a specific company. In addition to the above in Debriefs, users can author new debriefs and provide feedback on their interview experience. The purpose here is for users to provide valuable feedback to help peers better prepare for an interview or the company itself.
 
-- The Profile page is where you can view your favorited job postings as well as any of your authored debriefs. You can easily find any of these items and make any changes.
+- The Profile page is where users can view favorited job postings as well as any authored debriefs. Users can easily navigate between these items and make any changes.
 
 ## Setup (for developers)
 For developers interested in using this application for learning purposes or for creating a similar project using this as a skeleton, there are a few large packages that were ommitted from this repo in order to reduce the repo size. These are the packages required to be installed once this repo is cloned.
