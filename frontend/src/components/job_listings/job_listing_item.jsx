@@ -64,9 +64,9 @@ const JobListingItem = ({
       </div>
 
       <div className="link-listings">
-        <a href={`${jobListing.jobLink}`}>
-          {" "}
-          <FaExternalLinkAlt className="link-logo" />{" "}
+        <a href={`${jobListing.jobLink}`} target="_blank">
+          
+          <FaExternalLinkAlt className="link-logo" />
         </a>
         {placeFavorite}
       </div>
