@@ -8,10 +8,10 @@
 
 <h2 align="center">An exclusive social networking community for App Academy software engineers.</h2> <h3 align="center">Created by Ying-Huan Chen, Thomas Grega, Suliz Basnet, and Clint Chu.</h3>
 
-[Ying-Huan Chen]: https://github.com/yinghuanchen
-[Clint Chu]: https://github.com/clint-chu
-[Thomas Grega]: https://github.com/thomaslgrega
-[Suliz Basnet]: https://github.com/sulizz
+[ying_hung_chen]: https://github.com/yinghuanchen
+[clint_chu]: https://github.com/clint-chu
+[thomas_grega]: https://github.com/thomaslgrega
+[suliz_basnet]: https://github.com/sulizz
 
 <p>
 JobieWalkie is collaborated effort to improve the job search process for software engineers, particularly App Academy job seekers. Job searching can be a tedious and/or disorganized task for any occupation where ambiguity in job titles, job descriptions, job requirements, and etc is rampant. The effort becomes more cumbersome as job postings can become old or newer job postings, prime listings, are buried in an ocean of links. JobieWalkie was designed reduce these issues by aggregating the latest job listings from LinkedIn, filtering job postings relevant to App Academy students' skillset, and providing a peer-to-peer community to assist fellow students in the search.
