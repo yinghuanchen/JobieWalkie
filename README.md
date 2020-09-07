@@ -33,9 +33,9 @@ JobieWalkie is collaborated effort to improve the job search process for softwar
 <p align="center">
    <a href="#design-and-technologies">Design and Technologies</a> •
    <a href="#features">Features</a> •
-   <a href="#how-to-use-job-seekers">How to use (for job seekers)</a> •
-   <a href="#setup">Setup (for developers)</a> •
-   <a href="#features-coming-soon">Features Coming Soon</a>
+   <a href="#how-to-use-job-seekers">How To Use</a> •
+   <a href="#setup">Setup</a> •
+   <a href="#features-coming-soon">Coming Soon</a>
 </p>
 
 ## Design and Technologies
@@ -60,7 +60,7 @@ Currently, the app provides the latest job postings on LinkedIn, narrowed down t
 - The Profile page is where you can view your favorited job postings as well as any of your authored debriefs. You can easily find any of these items and make any changes.
 
 ## Setup (for developers)
-For developers interested in using this application for learning purposes or creating a similar project using this as a skeleton, there are a few large packages that were ommitted from this repo in order to reduce the repo size. These are the packages required to be installed once this repo is cloned.
+For developers interested in using this application for learning purposes or for creating a similar project using this as a skeleton, there are a few large packages that were ommitted from this repo in order to reduce the repo size. These are the packages required to be installed once this repo is cloned.
 
 1.
 2.
