@@ -9,7 +9,7 @@
 <h2 align="center">A social networking community for App Academy software engineers.</h2>
 
 <p align="center">
-   ### Created by
+   Created by
    <br>
    <a href="https://github.com/yinghuanchen">Emily Chen</a>
    <br>
