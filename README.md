@@ -1,6 +1,6 @@
 <h1 align="center">
    <br>
-   <a href="https://jobiewalkie.herokuapp.com/#/"><img src="https://github.com/yinghuanchen/JobieWalkie/blob/master/images/jobiewalkie-icon.jpeg" alt="JobieWalkie" width="200"></a>
+   <a href="https://jobiewalkie.herokuapp.com/#/"><img src="https://github.com/yinghuanchen/JobieWalkie/blob/master/images/jobiewalkie-icon.jpeg" alt="JobieWalkie" width="200">
    <br>
    JobieWalkie</a>
    <br>
