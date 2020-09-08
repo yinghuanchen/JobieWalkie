@@ -1,6 +1,6 @@
 <h1 align="center">
    <br>
-   <a href="https://jobiewalkie.herokuapp.com/#/"><img src="https://github.com/yinghuanchen/JobieWalkie/blob/master/images/jobiewalkie-icon.jpeg" alt="JobieWalkie" width="200">
+   <a href="https://jobiewalkie.herokuapp.com/#/"><img src="https://github.com/yinghuanchen/JobieWalkie/blob/master/images/jobiewalkie-icon.jpeg" alt="JobieWalkie" width="200"></a>
    <br>
    JobieWalkie
    <br>
@@ -8,10 +8,10 @@
 
 <h2 align="center">An exclusive social networking community for App Academy software engineers.</h2>
 
-<h3 align="center">
+<p align="center">
    Created by
    <br>
-   <a href="https://github.com/yinghuanchen">Ying Huan Chen</a>
+   <a href="https://github.com/yinghuanchen">Emily Chen</a>
    <br>
    <a href="https://github.com/thomaslgrega">Thomas Grega</a>
    <br>
@@ -19,7 +19,7 @@
    <br>
    <a href="https://github.com/clint-chu">Clint Chu</a>
    <br>
-</h3>
+</p>
 
 <!-- [Ying Huan Chen](https://github.com/yinghuanchen)
 [Thomas Grega](https://github.com/thomaslgrega)
