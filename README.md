@@ -21,11 +21,6 @@
    <br>
 </p>
 
-<!-- [Ying Huan Chen](https://github.com/yinghuanchen)
-[Thomas Grega](https://github.com/thomaslgrega)
-[Clint Chu](https://github.com/clint-chu)
-[Suliz Basnet](https://github.com/sulizz) -->
-
 <p>
 JobieWalkie is a collaborated effort to improve the job search process for software engineers, particularly App Academy job seekers. Job searching can be a tedious and/or disorganized task for any occupation where ambiguity in job titles, job descriptions, job requirements, and etc is rampant. The effort becomes more cumbersome as job postings become old or newer job postings, prime listings, are buried in an ocean of links. JobieWalkie is designed to minimize the impact of these issues by aggregating the latest job listings from LinkedIn, filtering job postings relevant to App Academy students' skillset, and providing a peer-to-peer community for networking.
 </p>
@@ -45,10 +40,11 @@ Primarily, built on a MERN stack (MongoDB, Express.js, React, and Node.js), the 
 Currently, the app provides the latest job postings on LinkedIn, narrowed down to software engineering positions that require tools and technologies such as Ruby, Rails, JavaScript, React, Express.js, Node.js, HTML/CSS, PostgresSQL, and MongoDB (these are the tools and technologies App Academy students know upon graduation).
 
 ## Features
-1. Job Listings
-2. Debriefs
-3. Search (by company)
-4. Profile
+1. User Authentication, BCrypt Hashing
+2. Job Listings
+3. Debriefs
+4. Search (by company)
+5. Profile
 
 ## How to use (for job seekers)
 - The Job Listings page is the primary source for the most recent job listings, on LinkedIn, and related to the skillset taught in App Academy's program. The page is to provide a clean quick look of listings with only a link to the actual listing and a favorite feature. The link to the listing is where you'd go and apply. The "favorite" feature allows a user to save a job listing to their profile for later viewing--listings can be favorited and unfavorited.
@@ -74,8 +70,6 @@ For developers interested in using this application for learning purposes or for
 4. Personal profile customization, such as profile picture, job seeking status, bio, contact, and etc.
 5. Friending feature
 6. "Like" feature for debriefs, to provide latest and more relevant debrief feed
-
-
 
 [Ying Huan Chen]: https://github.com/yinghuanchen
 [clint_chu]: https://github.com/clint-chu
