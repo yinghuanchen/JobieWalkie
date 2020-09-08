@@ -2,14 +2,14 @@
    <br>
    <a href="https://jobiewalkie.herokuapp.com/#/"><img src="https://github.com/yinghuanchen/JobieWalkie/blob/master/images/jobiewalkie-icon.jpeg" alt="JobieWalkie" width="200"></a>
    <br>
-   JobieWalkie
+   JobieWalkie</a>
    <br>
 </h1>
 
-<h2 align="center">An exclusive social networking community for App Academy software engineers.</h2>
+<h2 align="center">A social networking community for App Academy software engineers.</h2>
 
 <p align="center">
-   Created by
+   ### Created by
    <br>
    <a href="https://github.com/yinghuanchen">Emily Chen</a>
    <br>
