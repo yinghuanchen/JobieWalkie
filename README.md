@@ -28,7 +28,7 @@ JobieWalkie is a collaborated effort to improve the job search process for softw
 <p align="center">
    <a href="#design-and-technologies">Design and Technologies</a> •
    <a href="#features">Features</a> •
-   <a href="#how-to-use-job-seekers">How To Use</a> •
+   <a href="#how-to-use">How To Use</a> •
    <a href="#setup">Setup</a> •
    <a href="#features-coming-soon">Coming Soon</a>
 </p>
@@ -46,7 +46,7 @@ Currently, the app provides the latest job postings on LinkedIn, narrowed down t
 4. Search (by company)
 5. Profile
 
-## How to use (for job seekers)
+## How To Use
 - The Job Listings page is the primary source for the most recent job listings, on LinkedIn, and related to the skillset taught in App Academy's program. The page is to provide a clean quick look of listings with only a link to the actual listing and a favorite feature. The link to the listing is where you'd go and apply. The "favorite" feature allows a user to save a job listing to their profile for later viewing--listings can be favorited and unfavorited.
 
 - The Debrief page is the source for any debriefs. Users can view other students' authored debriefs sorted by most recent. This page can provide deeper insight to a company's interview process or greater knowledge of what to expect in general.
@@ -55,7 +55,7 @@ Currently, the app provides the latest job postings on LinkedIn, narrowed down t
 
 - The Profile page is where users can view favorited job postings as well as any authored debriefs. Users can easily navigate between these items and make any changes.
 
-## Setup (for developers)
+## Setup
 For developers interested in using this application for learning purposes or for creating a similar project using this as a skeleton, there are a few large packages that were ommitted from this repo in order to reduce the repo size. These are the packages required to be installed once this repo is cloned.
 
 1.
