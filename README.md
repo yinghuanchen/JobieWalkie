@@ -39,6 +39,9 @@ Primarily, built on a MERN stack (MongoDB, Express.js, React, and Node.js), the 
 
 Currently, the app provides the latest job postings on LinkedIn, narrowed down to software engineering positions that require tools and technologies such as Ruby, Rails, JavaScript, React, Express.js, Node.js, HTML/CSS, PostgresSQL, and MongoDB (these are the tools and technologies App Academy students know upon graduation).
 
+![main_page](https://user-images.githubusercontent.com/65005487/93142550-d4d18c80-f718-11ea-8219-3737b139ee5f.gif)
+
+
 ## Features
 1. User Authentication, BCrypt Hashing
 2. Job Listings
