@@ -22,7 +22,7 @@
 </p>
 
 <p>
-JobieWalkie is a collaborated effort to improve the job search process for software engineers, particularly App Academy job seekers. Job searching can be a tedious and/or disorganized task for any occupation where ambiguity in job titles, job descriptions, job requirements, and etc is rampant. The effort becomes more cumbersome as job postings become old or newer job postings, prime listings, are buried in an ocean of links. JobieWalkie is designed to minimize the impact of these issues by aggregating the latest job listings from LinkedIn, filtering job postings relevant to App Academy students' skillset, and providing a peer-to-peer community for networking.
+JobieWalkie is a collaborated effort to improve the job search process for software engineers, particularly App Academy job seekers. Job searching can be a tedious and/or disorganized task for any occupation where ambiguity in job titles, job descriptions, job requirements, and etc is rampant. The effort becomes more cumbersome as job postings become old or newer job postings, prime listings, are buried in an ocean of links. JobieWalkie is designed to minimize the impact of these issues by aggregating the latest job listings from LinkedIn, filtering job postings relevant to App Academy students' skillset, and providing a peer-to-peer community for networking. [Live Demo](https://jobiewalkie.herokuapp.com/#/)
 </p>
 
 <p align="center">
