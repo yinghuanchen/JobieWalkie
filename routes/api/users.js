@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs")
 const User = require("../../models/User")
 const Favorite = require("../../models/Favorite");
 const JobListing = require("../../models/JobListing");
+const Like = require("../../models/Like");
 const jwt = require("jsonwebtoken")
 const keys = require("../../config/keys")
 const passport = require("passport")
@@ -42,6 +43,8 @@ router.get(
 );
 
 
+
+
 // show 
 router.get("/:id", (req, res) => {
   User.findById(req.params.id)
@@ -60,6 +63,17 @@ router.get(
      .then((listings) => {
        return res.json(listings.map((ele) => ele.jobListing));
      });
+  }
+)
+
+router.get(
+  "/current/likeDebriefId",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Like.find({ user: req.user.id })
+      .then((listings) => {
+        return res.json(listings.map((ele) => ele.debrief));
+      });
   }
 )
 

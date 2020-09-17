@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import { connect } from "react-redux"
-import { deleteDebrief, updateDebrief } from "../../actions/debrief_actions"
+import { deleteDebrief, updateDebrief } from "../../actions/debrief_actions" 
+import { createLike, deleteLike, fetchUserLikeDebriefIds} from "../../actions/like_actions"
 import { fetchAllDebriefs } from "../../util/debrief_api_util"
 
-const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetchAllDebriefs }) => {
+const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetchAllDebriefs, likes, createLike, deleteLike, fetchUserLikeDebriefIds }) => {
 
     const [isEditing, setIsEditing] = useState(false)
     const [debriefIntJobTitle, setDebriefIntJobTitle] = useState(debrief.jobTitle)
@@ -12,6 +13,28 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetch
     const [debriefIntStage, setDebriefIntStage] = useState(debrief.interviewStage)
     const [debriefIntSummary, setDebriefIntSummary] = useState(debrief.interviewSummary)
     const [debriefIntComments, setDebriefIntComments] = useState(debrief.comments)
+
+
+    const handleCreateLike = () => {
+      createLike(debrief._id)
+    };
+
+    const handleDeleteLike = () => {
+      deleteLike(debrief._id).then(() => fetchUserLikeDebriefIds())
+    };
+
+    const isLike = debrief._id in likes;
+
+    const placeLike = isLike ? (
+      <button className="like-btn" onClick={handleDeleteLike}>
+        <i className="fas fa-thumbs-up fa-lg like"></i>
+      </button>
+    ) : (
+        <button className="like-btn" onClick={handleCreateLike}> 
+          <i className="fas fa-thumbs-up fa-lg unlike"></i>
+        </button>
+    );
+
 
     const handleSubmit = () => {
         setIsEditing(false)
@@ -144,7 +167,8 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetch
     );
 
     return (
-        <div className = 'debrief-body'>
+        <div className = 'debrief-body'> 
+            {placeLike}
             <span>
                 <p className='firstItem debrief-company'>Company: {debrief.company.name}</p>
             </span>
@@ -175,7 +199,8 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetch
 
 const mapSTP = (state) => {
     return {
-        currentUser: state.session.user
+        currentUser: state.session.user, 
+        likes: state.likes ? state.likes : {},
     }
 }
 
@@ -183,7 +208,10 @@ const mapDTP = (dispatch) => {
     return {
         fetchAllDebriefs: () => dispatch(fetchAllDebriefs()),
         deleteDebrief: (debrief) => dispatch(deleteDebrief(debrief)),
-        updateDebrief: (debrief) => dispatch(updateDebrief(debrief))
+        updateDebrief: (debrief) => dispatch(updateDebrief(debrief)), 
+        createLike: (debriefId) => dispatch(createLike(debriefId)), 
+        deleteLike: (debriefId) => dispatch(deleteLike(debriefId)), 
+      fetchUserLikeDebriefIds: () => dispatch(fetchUserLikeDebriefIds())
     }
 }
 

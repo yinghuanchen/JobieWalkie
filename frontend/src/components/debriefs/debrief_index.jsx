@@ -1,15 +1,16 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
 //import { fetchAllCompanies } from "../../actions/company_actions"
-import { fetchAllDebriefs } from "../../actions/debrief_actions"
+import { fetchAllDebriefs } from "../../actions/debrief_actions" 
+import { fetchUserLikeDebriefIds } from '../../actions/like_actions'; 
 import DebriefList from "./debrief_list"
 import '../../stylesheets/debrief.css'
 
-const DebriefIndex = ({  currentUser, debriefs, fetchAllDebriefs }) => {
+const DebriefIndex = ({ currentUser, debriefs, fetchAllDebriefs, fetchUserLikeDebriefIds }) => {
 
-    // useEffect(() => {
-    //     fetchAllCompanies()
-    // }, [fetchAllCompanies])
+   useEffect(() => {
+       fetchUserLikeDebriefIds()
+   }, [])
 
     useEffect(() => {
         fetchAllDebriefs()
@@ -33,7 +34,8 @@ const mapSTP = (state) => {
 const mapDTP = (dispatch) => {
     return {
         //fetchAllCompanies: () => dispatch(fetchAllCompanies()),
-        fetchAllDebriefs: () => dispatch(fetchAllDebriefs())
+        fetchAllDebriefs: () => dispatch(fetchAllDebriefs()), 
+        fetchUserLikeDebriefIds: () => dispatch(fetchUserLikeDebriefIds()) 
     }
 }
 
