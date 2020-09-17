@@ -2,11 +2,12 @@ import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import { fetchCompanyDebriefs } from "../../actions/debrief_actions"
+import { fetchUserLikeDebriefIds } from '../../actions/like_actions'; 
 import { fetchCompany } from "../../actions/company_actions"
 import DebriefList from "../debriefs/debrief_list"
 import '../../stylesheets/company-show.css'
 
-const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, match }) => {
+const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, match, fetchUserLikeDebriefIds }) => {
 
     let companyId = match.params.companyId
 
@@ -14,6 +15,10 @@ const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, ma
         fetchCompany(companyId)
     }, [fetchCompany, companyId])
 
+    useEffect(() => {
+      fetchUserLikeDebriefIds()
+    }, [])
+    
     useEffect(() => {
         fetchCompanyDebriefs(companyId)
     }, [fetchCompanyDebriefs, companyId])
@@ -45,6 +50,7 @@ const mapDTP = (dispatch) => {
     return {
         fetchCompanyDebriefs: (companyId) => dispatch(fetchCompanyDebriefs(companyId)),
         fetchCompany: (companyId) => dispatch(fetchCompany(companyId)),
+        fetchUserLikeDebriefIds: () => dispatch(fetchUserLikeDebriefIds())
     }
 }
 

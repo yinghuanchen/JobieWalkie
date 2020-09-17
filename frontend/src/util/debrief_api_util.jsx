@@ -27,3 +27,4 @@ export const updateDebrief = (debrief) => {
 export const deleteDebrief = (debriefId) => {
     return axios.delete(`/api/debriefs/${debriefId}`)
 }
+

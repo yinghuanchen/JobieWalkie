@@ -20,7 +20,7 @@ router.post(
             debrief: req.body.debriefId,
             user: req.user,
         });
-        newLike.save().then((newLike) => res.json(newLike.debrief));
+        newLike.save().then((newLike) => res.json(newLike.debrief)).catch((err) => console.log(err));;
     }
 )
 
@@ -30,7 +30,7 @@ router.delete(
     (req, res) => {
         Like.findOneAndDelete({
             user: req.user.id,
-            jobListing: req.body.debriefId,
+            debrief: req.body.debriefId,
         }).then(() => res.json({ msg: "remove like!" }))
             .catch((err) => console.log(err));
     }
