@@ -36,7 +36,7 @@ const DebriefSchema = new Schema(
     comments: {
       type: String,
       required: true,
-    },
+    },      
   },
   {
     timestamps: true,

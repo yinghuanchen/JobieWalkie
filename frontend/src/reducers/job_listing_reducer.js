@@ -12,6 +12,8 @@ const jobListingReducer = (oldState = {}, action) => {
             return Object.assign({}, oldState, action.jobListings)
         case RECEIVE_JOB_LISTING:
             return Object.assign({}, oldState, { [action.jobListing.id]: action.jobListing })
+        case CLEAR_JOB_LISTINGS: 
+            return {};
         default:
             return oldState
     }
