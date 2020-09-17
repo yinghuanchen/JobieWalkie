@@ -2,6 +2,7 @@ import React, {useState, useEffect, Component } from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import {connect} from 'react-redux';
 import mapStyle from './mapStyle.js';
+import googleMapsApiKey from "../../config/keys_front"; 
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
@@ -53,7 +54,7 @@ const  MapContainer  = (props) =>  {
         case "Santa Clara, CA":
           return { lat: 37.35, lng: -121.96 };
         case "Santa Clara County, CA":
-         return { lat: 37.354, lng: -121.955 };
+          return { lat: 37.354, lng: -121.955 };
         case "Sunnyvale, CA":
           return { lat: 37.36, lng: -122.03 };
         case "Cupertino, CA":
@@ -76,6 +77,8 @@ const  MapContainer  = (props) =>  {
           return { lat: 37.6818, lng: -121.768 };
         case "Los Altos, CA":
           return { lat: 37.379, lng: -122.137 };
+        case "Menlo park, CA":
+          return { lat: 37.45383, lng: -122.182 };
         default:
           return null;
       }
@@ -127,6 +130,8 @@ const mSTP = (state) => ({
   place: state.place,
 });
 
-export default connect(mSTP)(GoogleApiWrapper({
-  apiKey: "AIzaSyBMhBKWkTQc-kmQolE3en1V1Fm0Np4PJOg",
-})(MapContainer)); 
+export default connect(mSTP)(
+  GoogleApiWrapper({
+    apiKey: googleMapsApiKey,
+  })(MapContainer)
+); 

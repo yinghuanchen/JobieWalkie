@@ -3,7 +3,8 @@ const router = express.Router()
 const passport = require("passport")
 const keys = require("../../config/keys")
 const Debrief = require("../../models/Debrief")
-const Company = require("../../models/Company");
+const Company = require("../../models/Company"); 
+const Like = require("../../models/Like"); 
 // Index
 router.get("/", (req, res) => {
     Debrief.find()
@@ -77,7 +78,20 @@ router.delete(
       .then(() => res.json({ msg: "debrief removed" }))
       .catch((errs) => console.log(errs));
   }
-);
+);  
+
+router.get(
+  "/:id/likeCount",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Like.find({ debrief: req.params.id })
+      .then((likes) => {
+        return res.json(likes.length);
+      });
+  }
+)
+
+
 
 // router.route('/update').post(function(req,res){
 
