@@ -35,7 +35,7 @@ const JobListingItem = ({
   }
 
 
-  const isFavorite = favorites.includes(jobListing._id);
+  const isFavorite = jobListing._id in favorites;
 
   const placeFavorite = isFavorite ? (
     <button className="favorite-btn" onClick={handleDeleteFavorite}>
@@ -77,7 +77,7 @@ const JobListingItem = ({
 
 const mapSTP = (state) => {
     return {
-        favorites: state.favorites ? state.favorites : [],
+        favorites: state.favorites ? state.favorites : {},
     }
 }
 

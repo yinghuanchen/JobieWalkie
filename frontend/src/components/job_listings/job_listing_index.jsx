@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
-import { fetchAllJobListings } from "../../actions/job_listing_actions"
+import { fetchAllJobListings, clearJobListing } from "../../actions/job_listing_actions"
 import { fetchUserFavoriteJobListingIds } from "../../actions/favorite_actions";
 import JobListingItem from "./job_listing_item"; 
 import MapContainer from '../map/map';
 import '../../stylesheets/job_listings.css';
 
-const JobListingIndex = ({ favorites, jobListings, fetchUserFavoriteJobListingIds, fetchAllJobListings }) => {
+const JobListingIndex = ({ favorites, jobListings, clearJobListing, fetchUserFavoriteJobListingIds, fetchAllJobListings }) => {
+
+
+    useEffect(() => {
+      clearJobListing()
+    }, [])
 
     useEffect(() => {
         fetchAllJobListings()
@@ -42,7 +47,8 @@ const mapSTP = (state) => {
 const mapDTP = (dispatch) => {
     return {
       fetchAllJobListings: () => dispatch(fetchAllJobListings()),
-      fetchUserFavoriteJobListingIds: () => dispatch(fetchUserFavoriteJobListingIds())
+      fetchUserFavoriteJobListingIds: () => dispatch(fetchUserFavoriteJobListingIds()),
+      clearJobListing: () => dispatch(clearJobListing()),
     }
 }
 
