@@ -14,6 +14,7 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.renderErrors = this.renderErrors.bind(this)
+        this.handleDemoUser = this.handleDemoUser.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -40,6 +41,12 @@ class LoginForm extends React.Component {
         }
 
         this.props.login(user)
+    }
+
+    handleDemoUser() {
+        this.setState({ email: "demo@demo.com", password: "demo1234" })
+        const demoUser = { email: "demo@demo.com", password: "demo1234"}
+        this.props.login(demoUser)
     }
 
     renderErrors() {
@@ -77,6 +84,7 @@ class LoginForm extends React.Component {
                 <button className="session-form-btn">LOG IN</button>
                 {this.renderErrors()}
                 </form>
+                <button className="demo-user-btn" onClick={this.handleDemoUser}>DEMO USER</button>
             </div>
         )
     }

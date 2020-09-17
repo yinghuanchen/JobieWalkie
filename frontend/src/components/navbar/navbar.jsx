@@ -71,14 +71,14 @@ const NavBar = ({ loggedIn, logout, currentUser }) => {
 
 	return (
     <div className="NavBar">
-		<Link to="/jobListings/">
+		<Link to="/">
         <span className="left-container"> JobieWalkie</span>
       </Link>
       {SearchBar}
       <span className="right-container"> 
-				{githubLinks()}
-				{getLinks()} 
-			</span>
+			{githubLinks()}
+			{getLinks()} 
+		</span>
     </div>
   );
 }

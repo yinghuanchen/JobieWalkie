@@ -22,14 +22,14 @@
 </p>
 
 <p>
-JobieWalkie is a collaborated effort to improve the job search process for software engineers, particularly App Academy job seekers. Job searching can be a tedious and/or disorganized task for any occupation where ambiguity in job titles, job descriptions, job requirements, and etc is rampant. The effort becomes more cumbersome as job postings become old or newer job postings, prime listings, are buried in an ocean of links. JobieWalkie is designed to minimize the impact of these issues by aggregating the latest job listings from LinkedIn, filtering job postings relevant to App Academy students' skillset, and providing a peer-to-peer community for networking. 
+JobieWalkie is a collaborated effort to improve the job search process for software engineers, particularly App Academy job seekers. Job searching can be a tedious and/or disorganized task for any occupation where ambiguity in job titles, job descriptions, job requirements, and etc is rampant. The effort becomes more cumbersome as job postings become old or newer job postings, prime listings, are buried in an ocean of links. JobieWalkie is designed to minimize the impact of these issues by aggregating the latest job listings from LinkedIn, filtering job postings relevant to App Academy students' skillset, and providing a peer-to-peer community for networking.
+<a href="https://jobiewalkie.herokuapp.com/#/">Live Demo</a>
 </p>
-Live Demo: https://jobiewalkie.herokuapp.com/#/
+
 <p align="center">
    <a href="#design-and-technologies">Design and Technologies</a> •
    <a href="#features">Features</a> •
    <a href="#how-to-use">How To Use</a> •
-   <a href="#setup">Setup</a> •
    <a href="#features-coming-soon">Coming Soon</a>
 </p>
 
@@ -57,14 +57,6 @@ Currently, the app provides the latest job postings on LinkedIn, narrowed down t
 - Company Page via Search is where users can view all debriefs related to a specific company. In addition to the above in Debriefs, users can author new debriefs and provide feedback on their interview experience. The purpose here is for users to provide valuable feedback to help peers better prepare for an interview or the company itself.
 
 - The Profile page is where users can view favorited job postings as well as any authored debriefs. Users can easily navigate between these items and make any changes.
-
-## Setup
-For developers interested in using this application for learning purposes or for creating a similar project using this as a skeleton, there are a few large packages that were ommitted from this repo in order to reduce the repo size. These are the packages required to be installed once this repo is cloned.
-
-1.
-2.
-3.
-4.
 
 ## Features Coming Soon
 1. Database of job postings refreshed daily (automatically)
