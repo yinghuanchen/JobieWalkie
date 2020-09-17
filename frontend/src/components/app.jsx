@@ -36,10 +36,6 @@ const App = () => (
 
 export default App
 
-// JW-TODO: Replace React icon in favicon.ico with a JobieWokie icon.
-
-// Deploy to Heroku
-
 // JW-TODOs:
   // Debriefs: Convert userId to userHandle
   // Debriefs: Edit button content needs CSS
