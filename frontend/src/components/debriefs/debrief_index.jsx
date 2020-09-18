@@ -1,27 +1,49 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
 //import { fetchAllCompanies } from "../../actions/company_actions"
-import { fetchAllDebriefs } from "../../actions/debrief_actions" 
+import {
+  fetchAllDebriefs,
+  fetchAllDebriefsSortByLikeCount,
+} from "../../actions/debrief_actions"; 
 import { fetchUserLikeDebriefIds } from '../../actions/like_actions'; 
 import DebriefList from "./debrief_list"
 import '../../stylesheets/debrief.css'
 
-const DebriefIndex = ({ currentUser, debriefs, fetchAllDebriefs, fetchUserLikeDebriefIds }) => {
+const DebriefIndex = ({
+  currentUser,
+  debriefs,
+  fetchAllDebriefs,
+  fetchAllDebriefsSortByLikeCount,
+  fetchUserLikeDebriefIds,
+}) => {
+  const [indexType, setIndexType] = useState("create time");
 
-   useEffect(() => {
-       fetchUserLikeDebriefIds()
-   }, [])
+  useEffect(() => {
+    fetchUserLikeDebriefIds();
+  }, []);
 
-    useEffect(() => {
-        fetchAllDebriefs()
-    }, [fetchAllDebriefs])
-    
-    return (
-        <div className='main-debrief'>
-            <DebriefList currentUser={currentUser}  debriefs={debriefs}/>
-        </div>        
-    )
-}
+  useEffect(() => {
+    fetchAllDebriefs();
+  }, [fetchAllDebriefs]);
+
+  const handleToggle = () => {
+      if(indexType === "create time") {
+          fetchAllDebriefsSortByLikeCount();
+          setIndexType("like count"); 
+      } else {
+          fetchAllDebriefs();
+          setIndexType("create time");
+      }
+  }
+
+  const text = indexType === "create time" ? "like count" : "create time";
+  return (
+    <div className="main-debrief">
+      <button onClick={handleToggle}>Sorted By {text}</button>
+      <DebriefList currentUser={currentUser} debriefs={debriefs} />
+    </div>
+  );
+};
 
 const mapSTP = (state) => {
     return {
@@ -33,10 +55,12 @@ const mapSTP = (state) => {
 
 const mapDTP = (dispatch) => {
     return {
-        //fetchAllCompanies: () => dispatch(fetchAllCompanies()),
-        fetchAllDebriefs: () => dispatch(fetchAllDebriefs()), 
-        fetchUserLikeDebriefIds: () => dispatch(fetchUserLikeDebriefIds()) 
-    }
+      //fetchAllCompanies: () => dispatch(fetchAllCompanies()),
+      fetchAllDebriefs: () => dispatch(fetchAllDebriefs()),
+      fetchUserLikeDebriefIds: () => dispatch(fetchUserLikeDebriefIds()),
+      fetchAllDebriefsSortByLikeCount: () =>
+        dispatch(fetchAllDebriefsSortByLikeCount()),
+    };
 }
 
 export default connect(mapSTP, mapDTP)(DebriefIndex)

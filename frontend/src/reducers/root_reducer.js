@@ -6,7 +6,8 @@ import debriefReducer from "./debrief_reducer"
 import favoriteReducer from "./favorite_reducer"
 import jobListingReducer from "./job_listing_reducer"
 import placeReducer from './place_reducer'; 
-import likeReducer from './like_reducer';
+import likeReducer from './like_reducer'; 
+
 const rootReducer = combineReducers({
   errors: errorsReducer,
   companies: companyReducer,
