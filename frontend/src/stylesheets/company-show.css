@@ -60,7 +60,7 @@
 
 .sort-button-container {
     width: 691px;
-    margin: 0px 0px 0px 360px;
+    margin: 0 auto;
 }
 
 .sort-button:focus {
