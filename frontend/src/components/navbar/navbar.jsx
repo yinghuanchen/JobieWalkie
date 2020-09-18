@@ -48,19 +48,19 @@ const NavBar = ({ loggedIn, logout, currentUser }) => {
 		<div className="profile-dropdown-container fab fa-github-alt" >
 			<ul className="profile-dropdown-content github-dropdown">
 				<a href="https://github.com/yinghuanchen" target="_blank" className="dropdown-btn">
-					<span class="fab fa-github-square"></span>
+					<span className="fab fa-github-square"></span>
 					<span className="member-names">Emily Chen</span>
 				</a>
 				<a href="https://github.com/thomaslgrega" target="_blank" className="dropdown-btn">
-					<span class="fab fa-github-square"></span>
+					<span className="fab fa-github-square"></span>
 					<span className="member-names">Thomas Grega</span>
 				</a>
 				<a href="https://github.com/sulizz" target="_blank" className="dropdown-btn">
-					<span class="fab fa-github-square"></span>
+					<span className="fab fa-github-square"></span>
 					<span className="member-names">Suliz Basnet</span>
 				</a>
 				<a href="https://github.com/clint-chu" target="_blank" className="dropdown-btn">
-					<span class="fab fa-github-square"></span>
+					<span className="fab fa-github-square"></span>
 					<span className="member-names">Clint Chu</span>
 				</a>
 			</ul>

@@ -101,7 +101,7 @@
 
 .debrief-body > span > .firstItem {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     padding: 6px;
 }
 
@@ -163,12 +163,42 @@
 }
 
 .like-btn {
-    margin-left: 95%;
-    width: 30px;
+    display: flex;
+    width: 70px;
+    margin-left: 90%;
     display: inline-block;
     cursor: pointer;
     background-color: inherit;
     margin-top: 5px;
+}
+
+.sort-button {
+    display: block;
+    width: 160px;
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 5px;
+    border-radius: 5px;
+    border: #343536 1px solid;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.sort-button-container {
+    width: 691px;
+    margin: 0 auto;
+}
+
+.sort-button:focus {
+    outline: 0;
+}
+
+.sort-button:hover {
+    border: white 1px solid;
+}
+
+span.like-count {
+    display: inline;
 }
 
 .debrief-company-span {

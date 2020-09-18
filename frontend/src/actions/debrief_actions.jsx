@@ -28,11 +28,27 @@ export const fetchAllDebriefs = () => (dispatch) => {
     .catch((err) => console.log(err))
 }
 
+export const fetchAllDebriefsSortByLikeCount = () => (dispatch) => {
+  return DebriefAPIUtil.fetchAllDebriefsSortByLikeCount()
+    .then((debriefs) => {
+      dispatch(receiveAllDebriefs(debriefs));
+    })
+    .catch((err) => console.log(err));
+};
+
 export const fetchCompanyDebriefs = (companyId) => (dispatch) => {
     return DebriefAPIUtil.fetchCompanyDebriefs(companyId)
     .then((debriefs) => {dispatch(receiveAllDebriefs(debriefs))})
     .catch((err) => console.log(err))
 }
+
+export const fetchCompanyDebriefsSortByLikeCount = (companyId) => (dispatch) => {
+  return DebriefAPIUtil.fetchCompanyDebriefsSortByLikeCount(companyId)
+    .then((debriefs) => {
+      dispatch(receiveAllDebriefs(debriefs));
+    })
+    .catch((err) => console.log(err));
+};
 
 export const fetchUserDebriefs = () => (dispatch) => {
     return DebriefAPIUtil.fetchUserDebriefs()

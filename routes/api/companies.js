@@ -62,4 +62,18 @@ router.get(
   }
 )
 
+router.get(
+  "/:id/debriefs/sortedByLikeCount",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Debrief.find({ company: req.params.id })
+      .populate("company")
+      .sort({ likeCount: -1 })
+      .then((debriefs) => {
+        return res.json(debriefs);
+      })
+      .catch((err) => res.json(err));
+  }
+);
+
 module.exports = router

@@ -5,6 +5,7 @@ const keys = require("../../config/keys")
 const Debrief = require("../../models/Debrief")
 const Company = require("../../models/Company"); 
 const Like = require("../../models/Like"); 
+const { isValidObjectId } = require("mongoose")
 // Index
 router.get("/", (req, res) => {
     Debrief.find()
@@ -17,6 +18,18 @@ router.get("/", (req, res) => {
         res.status(404).json({ noDebriefsFound: "No debriefs found" })
       );
 })
+
+router.get("/sortedByLikeCount", (req, res) => {
+  Debrief.find()
+    .populate("company")
+    .sort({ likeCount: -1 })
+    .then((debriefs) => {
+      return res.json(debriefs);
+    })
+    .catch((err) =>
+      res.status(404).json({ noDebriefsFound: "No debriefs found" })
+    );
+});
 
 router.post(
   "/",
@@ -82,12 +95,26 @@ router.delete(
 
 router.get(
   "/:id/likeCount",
-  passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Like.find({ debrief: req.params.id })
       .then((likes) => {
         return res.json(likes.length);
       });
+  }
+)
+
+router.get(
+  "/allLikeCount", 
+  (req, res) => {
+    Like.aggregate([ 
+      {$group: {_id: { debrief : "$debrief" }}}
+    ]).exec(
+       function (err, like) {
+         if (err) {
+           res.send(err);
+         }
+         res.json(like);}
+     )
   }
 )
 
