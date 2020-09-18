@@ -11,6 +11,7 @@ router.get("/", (req, res) => {
   JobListing.find()
     //might need to change the date string to date object
     .sort({ datePosted: -1 }) // newest first
+    .limit(150)
     .then((jobListings) => {
       return res.send(jobListings);
     })

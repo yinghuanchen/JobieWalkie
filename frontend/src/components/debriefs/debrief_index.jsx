@@ -28,9 +28,9 @@ const DebriefIndex = ({
   }, []);
 
    useEffect(() => {
-     indexType === "date created"
-       ? fetchAllDebriefs()
-       : fetchAllDebriefsSortByLikeCount();
+     if (indexType === "likes") {
+        fetchAllDebriefsSortByLikeCount();
+     }
    }, [likes]);
 
 

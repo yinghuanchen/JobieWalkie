@@ -46,4 +46,33 @@
     border: 2px solid  grey;
 }
 
+.sort-button {
+    display: block;
+    width: 160px;
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 5px;
+    border-radius: 5px;
+    border: #343536 1px solid;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.sort-button-container {
+    width: 691px;
+    margin: 0px 0px 0px 360px;
+}
+
+.sort-button:focus {
+    outline: 0;
+}
+
+.sort-button:hover {
+    border: white 1px solid;
+}
+
+span.like-count {
+    display: inline;
+}
+
 

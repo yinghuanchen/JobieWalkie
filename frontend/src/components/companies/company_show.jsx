@@ -29,9 +29,9 @@ const CompanyShow = ({ company, debriefs, likes, fetchCompanyDebriefs, fetchComp
     }, [companyId])
 
     useEffect(() => {
-      indexType === "date created"
-        ? fetchCompanyDebriefs(companyId)
-        : fetchCompanyDebriefsSortByLikeCount(companyId);
+      if (indexType === "likes") {
+        fetchCompanyDebriefsSortByLikeCount(companyId);;
+     }
     }, [likes]);
 
 
@@ -57,14 +57,22 @@ const CompanyShow = ({ company, debriefs, likes, fetchCompanyDebriefs, fetchComp
             className="companyImg"
             alt={company.name}
           />
-          <span className="company-name"> {company.name}</span>
+          <a href={`${company.companyLink}`} target="_blank">
+            <span className="company-name"> {company.name}</span>
+          </a>
+
           <Link className="create" to={`/debriefs/${companyId}/create`}>
             Create Debrief
           </Link>
         </div>
 
         <p>{company.link}</p>
-        <button onClick={handleToggle}>Sort By {text}</button>
+        <div className="sort-button-container">
+          <button className="sort-button" onClick={handleToggle}>
+            Sort By {text}
+          </button>
+        </div>
+
         <DebriefList debriefs={debriefs} />
       </div>
     );

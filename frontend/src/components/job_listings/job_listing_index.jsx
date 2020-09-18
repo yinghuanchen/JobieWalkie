@@ -27,7 +27,7 @@ const JobListingIndex = ({ favorites, jobListings, clearJobListing, fetchUserFav
           <MapContainer />
         </div>
         <ul className="joblisting-index">
-          {jobListings.slice(0, 101).map((jobListing) => {
+          {jobListings.map((jobListing) => {
             return (
               <JobListingItem key={jobListing._id} jobListing={jobListing} />
             );
