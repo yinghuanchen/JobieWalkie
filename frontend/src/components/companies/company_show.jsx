@@ -10,7 +10,7 @@ import { fetchCompany } from "../../actions/company_actions"
 import DebriefList from "../debriefs/debrief_list"
 import '../../stylesheets/company-show.css'
 
-const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, fetchCompanyDebriefsSortByLikeCount, match, fetchUserLikeDebriefIds }) => {
+const CompanyShow = ({ company, debriefs, likes, fetchCompanyDebriefs, fetchCompany, fetchCompanyDebriefsSortByLikeCount, match, fetchUserLikeDebriefIds }) => {
 
     let companyId = match.params.companyId;
 
@@ -26,7 +26,14 @@ const CompanyShow = ({ company, debriefs, fetchCompanyDebriefs, fetchCompany, fe
     
     useEffect(() => {
         fetchCompanyDebriefs(companyId)
-    }, [fetchCompanyDebriefs, companyId])
+    }, [companyId])
+
+    useEffect(() => {
+      indexType === "create time"
+        ? fetchCompanyDebriefs(companyId)
+        : fetchCompanyDebriefsSortByLikeCount(companyId);
+    }, [likes]);
+
 
     const handleToggle = () => {
       if (indexType === "create time") {
@@ -67,6 +74,7 @@ const mapSTP = (state, ownProps) => {
     return {
       company: state.companies[ownProps.match.params.companyId] || [],
       debriefs: Object.values(state.debriefs) || [],
+      likes: state.likes ? state.likes : {},
     };
 }
 

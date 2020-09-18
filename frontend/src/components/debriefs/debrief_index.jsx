@@ -15,6 +15,7 @@ const DebriefIndex = ({
   fetchAllDebriefs,
   fetchAllDebriefsSortByLikeCount,
   fetchUserLikeDebriefIds,
+  likes,
 }) => {
   const [indexType, setIndexType] = useState("create time");
 
@@ -24,17 +25,24 @@ const DebriefIndex = ({
 
   useEffect(() => {
     fetchAllDebriefs();
-  }, [fetchAllDebriefs]);
+  }, []);
+
+   useEffect(() => {
+     indexType === "create time"
+       ? fetchAllDebriefs()
+       : fetchAllDebriefsSortByLikeCount();
+   }, [likes]);
+
 
   const handleToggle = () => {
-      if(indexType === "create time") {
-          fetchAllDebriefsSortByLikeCount();
-          setIndexType("like count"); 
-      } else {
-          fetchAllDebriefs();
-          setIndexType("create time");
-      }
-  }
+    if (indexType === "create time") {
+      fetchAllDebriefsSortByLikeCount();
+      setIndexType("like count");
+    } else {
+      fetchAllDebriefs();
+      setIndexType("create time");
+    }
+  };
 
   const text = indexType === "create time" ? "like count" : "create time";
   return (
@@ -50,6 +58,7 @@ const mapSTP = (state) => {
       //companies: state.companies ? state.companies : {},
       currentUser: state.session.user,
       debriefs: state.debriefs ? Object.values(state.debriefs) : [],
+      likes: state.likes ? state.likes : {},
     };
 }
 
