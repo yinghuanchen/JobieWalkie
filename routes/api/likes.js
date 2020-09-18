@@ -1,10 +1,11 @@
-const express = require("express")
-const router = express.Router()
-const passport = require("passport")
-const jwt = require("jsonwebtoken")
-const keys = require("../../config/keys")
-const Like = require("../../models/Like")
-const User = require("../../models/User")
+const express = require("express");
+const router = express.Router();
+const passport = require("passport");
+const jwt = require("jsonwebtoken");
+const keys = require("../../config/keys");
+const Like = require("../../models/Like");
+const Debrief = require("../../models/Debrief");
+const User = require("../../models/User");
 
 router.post(
     "/",
@@ -27,11 +28,24 @@ router.post(
 router.delete(
     "/",
     passport.authenticate("jwt", { session: false }),
-    (req, res) => {
+    (req, res) => {  
+
         Like.findOneAndDelete({
             user: req.user.id,
             debrief: req.body.debriefId,
-        }).then(() => res.json({ msg: "remove like!" }))
+        }).then((like) => {
+            Debrief.findByIdAndUpdate(
+              { _id: like.debrief },
+              {
+                $inc: {
+                  likeCount: -1,
+                },
+              },
+              { new: true }
+            )
+              .then((debrief) => res.json(debrief))
+              .catch((err) => console.log(err));
+        })
             .catch((err) => console.log(err));
     }
 )
