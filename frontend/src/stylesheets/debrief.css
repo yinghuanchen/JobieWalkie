@@ -19,9 +19,9 @@
 
 .debrief-body {
     margin: auto;
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #1f1f1f;
     border: 1px solid #343536;
     margin-bottom: 10px;
@@ -152,9 +152,25 @@
 }
 
 .like {
-    color: green; 
+    display: inline-block;
+    color: #3b5998; 
+    background: inherit;
 }
 
 .unlike {
+    display: inline-block;
+    background: inherit;
+}
 
+.like-btn {
+    margin-left: 95%;
+    width: 30px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: inherit;
+    margin-top: 5px;
+}
+
+.debrief-company-span {
+    /* width: 600px; */
 }

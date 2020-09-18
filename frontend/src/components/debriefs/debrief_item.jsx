@@ -169,7 +169,7 @@ const DebriefItem = ({ currentUser, debrief, deleteDebrief, updateDebrief, fetch
     return (
         <div className = 'debrief-body'> 
             {placeLike}
-            <span>
+            <span className='debrief-company-span'>
                 <p className='firstItem debrief-company'>Company: {debrief.company.name}</p>
             </span>
             <span>
