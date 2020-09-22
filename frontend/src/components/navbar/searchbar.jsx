@@ -73,7 +73,7 @@ const SearchBar = ({ searchCompany, searchResults, path }) => {
           type="text"
           value={inputStr}
           onChange={handleUpdate}
-          placeholder='Search'
+          placeholder='Search company'
         />
         <button className="search-bar-input-btn" onClick={handleClick}>
           <i className="fas fa-search fa-lg search-bar-input-icon"></i>
